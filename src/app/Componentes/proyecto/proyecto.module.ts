@@ -10,6 +10,9 @@ import { ProyectoComponent } from './proyecto.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ProyectoComponent
   ]
 })
 export class ProyectoModule { }

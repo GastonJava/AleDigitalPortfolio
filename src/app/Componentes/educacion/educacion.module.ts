@@ -10,6 +10,7 @@ import { EducacionComponent } from './educacion.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [EducacionComponent]
 })
 export class EducacionModule { }

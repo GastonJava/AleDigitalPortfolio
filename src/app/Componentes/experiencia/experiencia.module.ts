@@ -10,6 +10,7 @@ import { ExperienciaComponent } from './experiencia.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [ExperienciaComponent]
 })
 export class ExperienciaModule { }

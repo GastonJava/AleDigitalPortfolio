@@ -1,15 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { InvitadoComponent } from './invitado.component';
-
-
+import { FooterComponent } from './footer.component';
 
 @NgModule({
   declarations: [
-    InvitadoComponent
+    FooterComponent
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [FooterComponent]
 })
-export class InvitadoModule { }
+export class FooterModule { }

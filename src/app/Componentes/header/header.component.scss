@@ -1,0 +1,9 @@
+@import '../../Variables/global-variable.scss';
+
+//default estilo mayor a 1366px
+header {
+    width: 90%;
+    height: 30%;
+    background-color: $color-principal;
+}
+

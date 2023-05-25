@@ -1,0 +1,20 @@
+.container-header {
+  background-color: blue;
+  height: 90px;
+}
+
+.container-proyecto {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-color: red;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1365px) {
+  /* Estilos para tablets */
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 1023px) {
+  /* Estilos para dispositivos móviles */
+}

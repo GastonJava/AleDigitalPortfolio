@@ -10,6 +10,7 @@ import { HardsoftComponent } from './hardsoft.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [HardsoftComponent]
 })
 export class HardsoftModule { }
