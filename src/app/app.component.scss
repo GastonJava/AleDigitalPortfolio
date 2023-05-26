@@ -1,6 +1,12 @@
+@import '../app/Variables/global-variable.scss';
+
 .container-header {
-  background-color: blue;
+  background-color: $color-principal;
   height: 90px;
+}
+
+.container-sobremi {
+  background-color: blueviolet;
 }
 
 .container-proyecto {
