@@ -1,3 +1,7 @@
+//importaciones de otros scss 
+@import 'mixins';
+
+
 // Variables específicas del header
 $color-principal: #171B23;
 $color-secundario: #161920;
@@ -8,6 +12,7 @@ $header-lenguaje-text: #4E6792;
 $header-lenguaje-bg: #D9D9D9;
 
 //sobre mi
+$sobremi-container-bg: #161920;
 $sobremi-card-bg: rgba(14, 100, 112, 0.02);
 $sobremi-footer-bg: rgba(57, 68, 67, 0.06);
 
@@ -32,10 +37,3 @@ $proyecto-bg: #171B23;
 //footer ---------------------------------------
 $footer-texto: #ffffff;
 $footer-bg: rgba(22, 25, 32, 0.76);
-
-//mixin metodos para display flex center
-@mixin flex-centrado {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}

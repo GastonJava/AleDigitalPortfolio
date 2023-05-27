@@ -2,11 +2,12 @@
 
 .container-header {
   background-color: $color-principal;
-  height: 90px;
+  height: 10vh;
 }
 
 .container-sobremi {
-  background-color: blueviolet;
+  background-color: $sobremi-card-bg;
+  height: 50vh;
 }
 
 .container-proyecto {

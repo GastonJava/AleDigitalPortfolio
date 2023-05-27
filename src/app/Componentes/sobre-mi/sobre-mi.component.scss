@@ -1,0 +1,84 @@
+@import "../../Variables/global-variable.scss";
+
+.container-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background: $sobremi-container-bg;
+}
+
+.container-left-right {
+  display: flex;
+  justify-content: center;
+  height: 80%;
+  width: 90%;
+  //background: red;
+}
+
+.left-card {
+  @include flex-centrado;
+  width: 48%;
+  height: 100%;
+  //background: blue;
+}
+
+.container-left {
+  @include flex-centrado;
+  width: 90%;
+  height: 90%;
+}
+
+.card {
+  border-radius: 25px;
+  width: 80%;
+  height: 90%;
+  background-color: $sobremi-card-bg;
+  @include drop-shadow(rgba(0, 0, 0, 0.25), 4px, 0, 4px);
+
+  .card-title {
+    h3 {
+      color: #fff;
+      text-align: center;
+    }
+  }
+
+  .card-descripcion {
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .card-descripcion-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+      overflow-wrap: break-word;
+      max-height: 100%;
+      width: 80%;
+    }
+    p {
+      color: #fff;
+      margin: 0;
+      font-size: 14px;
+      text-align: justify;
+    }
+  }
+}
+
+.right-card {
+  width: 48%;
+  height: 100%;
+  background-color: green;
+}
+
+.footer-container {
+  height: 20%;
+  width: 100%;
+  background-color: crimson;
+}

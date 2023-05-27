@@ -1,0 +1,17 @@
+
+//mixin metodos para display flex center
+@mixin flex-centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//mixin metodos para efectos Inner-shadow 
+@mixin inner-shadow($color, $blur, $x, $y) {
+    box-shadow: inset $x $y $blur $color;
+}
+
+//mixin metodos para efectos shadow-drop
+@mixin drop-shadow($color, $blur, $x, $y) {
+    box-shadow: $x $y $blur $color;
+}

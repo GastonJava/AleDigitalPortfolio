@@ -1,25 +1,5 @@
 @import "../../Variables/global-variable.scss";
 
-//default estilo mayor a 1366px
-/*
-header {
-    width: 90%;
-    height: 30%;
-    background-color: $color-principal;
-}
-
-.left-section {
-
-}
-
-.middle-section {
-
-}
-
-.background-usuario {
-    background-color: $header-session-bg;
-} */
-
 header {
   height: 98%;
 }
@@ -43,11 +23,26 @@ header {
   @include flex-centrado;
 }
 
+/*
 .left-section > img {
   width: 147px;
   height: 70px;
+} */
+
+.container-header-logo {
+ 
+  //@include inner-shadow(rgba(0, 0, 0, 0.25), 4px, 0, 4px);
+  @include flex-centrado;
+  width: 30%;
+  height: 50%;
+  @include inner-shadow(rgba(0, 0, 0, 0.25), 4px, 0, 4px);
+  img {
+    width: 98%;
+    height: 90%;
+  }
 }
 
+ //----- section del medio
 .middle-section {
   @include flex-centrado;
 }
@@ -60,12 +55,12 @@ header {
   height: 70%;
   border-radius: 50%;
   overflow: hidden;
-  background: red;
 }
 
 .img-circle > img {
   width: 100%;
   height: 100%;
+  opacity: 0.5;
 }
 
 .session,
@@ -92,11 +87,12 @@ header {
   background-color: $header-session-bg;
   width: 60%;
   height: 30%;
+  @include inner-shadow(rgba(0, 0, 0, 0.25), 4px, 0, 4px);
 }
 
 .session {
   .login-text {
-    color: azure;
+    color: #b6c8c8;
   }
 }
 
@@ -104,10 +100,10 @@ header {
     @include flex-centrado;
     width: 20%;
     height: 90%;
-    background: $header-lenguaje-bg;
+    //background: $header-lenguaje-bg;
 
   .lenguage-text {
-    background: azure;
+    background: #b6c8c8;
     color: $header-lenguaje-text;
     padding: 5px;
   }
