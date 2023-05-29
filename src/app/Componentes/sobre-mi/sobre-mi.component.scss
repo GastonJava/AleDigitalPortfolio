@@ -74,11 +74,97 @@
 .right-card {
   width: 48%;
   height: 100%;
-  background-color: green;
 }
 
+.container-right {
+  width: 100%;
+  height: 100%;
+}
+
+.img-container {
+  @include flex-centrado;
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 90%;
+  height: 90%;
+  border-radius: 30px;
+}
+
+/*
 .footer-container {
   height: 20%;
   width: 100%;
   background-color: crimson;
 }
+
+.svg-container {
+  width: 100%; 
+ 
+}
+
+.svg-container svg {
+  width: 100%; 
+  height: auto; 
+}
+*/
+
+
+.footer-container {
+  height: 20%;
+  width: 83%;
+  background-color: $sobremi-container-bg;
+  display: flex; 
+  align-items: center; 
+}
+
+
+.svg-container {
+  flex: 1; 
+  
+}
+
+.svg-container svg {
+  display: block; 
+  width: 100%; 
+  height: 100%; 
+}
+
+
+
+/*
+.footer-container {
+  height: 20%;
+  width: 83%;
+  background-color: $sobremi-container-bg;
+  position: relative;
+}
+
+.text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.text {
+  color: white;
+}
+
+.svg-container {
+  width: 100%;
+  height: 100%;
+}
+
+.svg-container svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+*/
