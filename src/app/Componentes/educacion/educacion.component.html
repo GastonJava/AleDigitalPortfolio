@@ -17,19 +17,26 @@
             <p>TODO</p>
           </div>
 
-          <div class="arrow"></div>
+           <!--<div class="arrow" [ngStyle]="{ '--offset': offset }"></div>-->
+           <div class="arrow" [ngClass]="{ 'active': botonactivado === 'TODO' }"></div>
         </div>
 
         <div class="curso-btn btn-bg btn-inactivo" [ngClass]="{ 'active': botonactivado === 'CURSO' }" (click)="setActivarBtn('CURSO')">
           <div class="container-insidebtn">
             <p >CURSO</p>
           </div>
+
+          <!--<div class="arrow" [ngStyle]="{ '--offset': offset }"></div>-->
+          <div class="arrow" [ngClass]="{ 'active': botonactivado === 'CURSO' }"></div>
         </div>
 
         <div class="otro-btn btn-bg btn-inactivo" [ngClass]="{ 'active': botonactivado === 'OTRO' }" (click)="setActivarBtn('OTRO')">
           <div class="container-insidebtn">
             <p >OTRO</p>
           </div>
+
+          <!--<div class="arrow" [ngStyle]="{ '--offset': offset }"></div>-->
+          <div class="arrow" [ngClass]="{ 'active': botonactivado === 'OTRO' }"></div>
         </div>
       </div>
     </div>

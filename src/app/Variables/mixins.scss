@@ -15,3 +15,7 @@
 @mixin drop-shadow($color, $blur, $x, $y) {
     box-shadow: $x $y $blur $color;
 }
+
+@mixin border-educacion-card($width, $style, $color) {
+    border: $width $style $color;
+  }

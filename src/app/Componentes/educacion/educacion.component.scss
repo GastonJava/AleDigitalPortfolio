@@ -55,6 +55,20 @@
   position: relative;
   background: white;
   font-weight: bold;
+  transition: background 0.9s ease; /* Agregamos la transición al cambio de color de fondo */
+
+  //sombras para botones
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra leve */
+  transition: box-shadow 0.3s ease; /* Transición suave */
+
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el cursor */
+  }
+  
+  &.active {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra aún más pronunciada en estado activo */
+    border-radius: 8px;
+  }
 
   .container-insidebtn {
     p {color: black;}
@@ -65,12 +79,15 @@
 .btn-inactivo.active {
   background: #A93F3F;
   border: 1px solid black;
+  transition: background 0.9s ease; /* Agregamos la transición al cambio de color de fondo */
 
   .container-insidebtn {
-    p {color: white;}
+    p {
+      color: white;
+      margin: 0;
+    
+    }
   }
-
-
 }
 
 .btn-bg {
@@ -84,7 +101,7 @@
 // triangulo selector del boton
 .arrow {
   position: absolute;
-  bottom: -10px; /* Controla la posición vertical del triángulo */
+  bottom: -15px; /* Controla la posición vertical del triángulo */
   left: 50%; /* Coloca el triángulo en el centro horizontal del botón */
   transform: translateX(-50%);
   width: 0;
@@ -92,6 +109,14 @@
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-top: 10px solid #A93F3F; /* Color del triángulo, puedes ajustarlo según tus necesidades */
+  transition: transform 0.5s ease;
+  opacity: 0; /* Oculta la flecha por defecto */
+  //transform: translateX(-50%); /* Ajusta la posición inicial del triángulo */
+}
+
+.arrow.active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%); /* Mueve la flecha a la posición del botón activo */
 }
 
 .btn-bg:hover {
@@ -137,6 +162,7 @@
     margin: 0 10px 20px;
     border-radius: 10px;
     padding: 20px;
+    @include border-educacion-card(1px, solid, rgba(0, 0, 0, 0.4));
 
     .card-title > h2, .card-subtitle > p, .card-footer > h3 { text-align: center;}
 
