@@ -1,1 +1,159 @@
-<p>educacion works!</p>
+<div class="container-edu">
+  <div class="fila1">
+    <div class="container-izq">
+      <div class="container-titulo">
+        <h2>Educacion.</h2>
+      </div>
+
+      <div class="container-subtitulo">
+        <p>Aqui puedes ingresar tu educacion correspondida</p>
+      </div>
+    </div>
+
+    <div class="container-der">
+      <div class="container-btn">
+        <div class="todo-btn btn-bg btn-inactivo" [ngClass]="{ 'active': botonactivado === 'TODO' }" (click)="setActivarBtn('TODO')">
+          <div class="container-insidebtn">
+            <p>TODO</p>
+          </div>
+
+          <div class="arrow"></div>
+        </div>
+
+        <div class="curso-btn btn-bg btn-inactivo" [ngClass]="{ 'active': botonactivado === 'CURSO' }" (click)="setActivarBtn('CURSO')">
+          <div class="container-insidebtn">
+            <p >CURSO</p>
+          </div>
+        </div>
+
+        <div class="otro-btn btn-bg btn-inactivo" [ngClass]="{ 'active': botonactivado === 'OTRO' }" (click)="setActivarBtn('OTRO')">
+          <div class="container-insidebtn">
+            <p >OTRO</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fila2">
+    <div class="card-container">
+
+      <div class="card">
+        <div class="card-title">
+          <h2>Curso</h2>
+        </div>
+
+        <div class="card-subtitle">
+          <p>Online Coursera</p>
+        </div>
+
+        <div class="card-body">
+          <div class="fecha-container">
+            <div class="fecha-izq">
+              <h4>Fecha Inicial</h4>
+              <p>11-12-2019</p>
+            </div>
+
+            <div class="fecha-der">
+              <h4>Fecha Final</h4>
+              <p>11-12-2022</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <h3>UX/UI design</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <h2>Institucion</h2>
+        </div>
+
+        <div class="card-subtitle">
+          <p>Instituto Santo Domingo</p>
+        </div>
+
+        <div class="card-body">
+          <div class="fecha-container">
+            <div class="fecha-izq">
+              <h4>Fecha Inicial</h4>
+              <p>11-12-2019</p>
+            </div>
+
+            <div class="fecha-der">
+              <h4>Fecha Final</h4>
+              <p>11-12-2022</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <h3>Analista De Sistemas</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <h2>Curso</h2>
+        </div>
+
+        <div class="card-subtitle">
+          <p>Argentina Programa</p>
+        </div>
+
+        <div class="card-body">
+          <div class="fecha-container">
+            <div class="fecha-izq">
+              <h4>Fecha Inicial</h4>
+              <p>11-12-2019</p>
+            </div>
+
+            <div class="fecha-der">
+              <h4>Fecha Final</h4>
+              <p>11-12-2022</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <h3>Desarrollador Java Fullstack</h3>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">
+          <h2>Curso 4</h2>
+        </div>
+  
+        <div class="card-subtitle">
+          <p>Online Coursera</p>
+        </div>
+  
+        <div class="card-body">
+          <div class="fecha-container">
+            <div class="fecha-izq">
+              <h4>Fecha Inicial</h4>
+              <p>11-12-2019</p>
+            </div>
+  
+            <div class="fecha-der">
+              <h4>Fecha Final</h4>
+              <p>11-12-2022</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="card-footer">
+          <h3>UX/UI design</h3>
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>
+</div>

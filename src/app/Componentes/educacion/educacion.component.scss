@@ -1,0 +1,189 @@
+@import "../../Variables/global-variable.scss";
+
+.container-edu {
+    padding: 20px;
+}
+
+.fila1 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+
+.container-izq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.container-titulo,
+.container-subtitulo {
+  width: 80%;
+}
+
+.container-titulo {
+
+  h2 {
+    color: #D9D9D9;
+  }
+}
+
+.container-subtitulo {
+
+  p {
+    color: #FFFFFF;
+  }
+}
+
+.container-der {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+//botnes activos y inactivos background color
+.btn-inactivo {
+  position: relative;
+  background: white;
+  font-weight: bold;
+
+  .container-insidebtn {
+    p {color: black;}
+  }
+  
+}
+
+.btn-inactivo.active {
+  background: #A93F3F;
+  border: 1px solid black;
+
+  .container-insidebtn {
+    p {color: white;}
+  }
+
+
+}
+
+.btn-bg {
+  @include flex-centrado;
+  //background: white;
+  height: 80%;
+  width: calc((80% / 3) - 20px);
+  
+}
+
+// triangulo selector del boton
+.arrow {
+  position: absolute;
+  bottom: -10px; /* Controla la posición vertical del triángulo */
+  left: 50%; /* Coloca el triángulo en el centro horizontal del botón */
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #A93F3F; /* Color del triángulo, puedes ajustarlo según tus necesidades */
+}
+
+.btn-bg:hover {
+  cursor: pointer;
+}
+
+.container-insidebtn {
+  height: 80%;
+}
+
+/*
+.todo-btn {background-color: #A93F3F; color: white;}
+.curso-btn {color: black;}
+.otro-btn {color: black;}
+ */
+
+// fila 2 card container cardssss
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  //agregar diferentes colores en las card...
+  .card:nth-child(odd){ //impar
+    background: $educacion-card-bg1;
+
+    .card-title > h2, 
+    .card-subtitle > p, 
+    .card-footer > h3 { color: $texto-card-verde;}
+
+  }
+  .card:nth-child(even) { //par
+    background: $educacion-card-bg2;
+
+    .card-title > h2, 
+    .card-subtitle > p, 
+    .card-footer > h3 { color: $texto-card-gris;}
+  }
+
+  .card {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 0 10px 20px;
+    border-radius: 10px;
+    padding: 20px;
+
+    .card-title > h2, .card-subtitle > p, .card-footer > h3 { text-align: center;}
+
+    .card-title {
+      h2 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+
+    .card-subtitle {
+      p {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+    }
+
+    .card-body {
+      .fecha-container {
+        display: flex;
+        justify-content: space-between;
+
+        .fecha-izq,
+        .fecha-der {
+          flex: 1;
+          text-align: center;
+
+          h4 {
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #888;
+          }
+
+          p {
+            font-size: 14px;
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+
+    .card-footer {
+      h3 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+}
