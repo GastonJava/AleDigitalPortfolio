@@ -14,12 +14,16 @@
   height: 5vh;
   width: 100%;
   background-color: #161920;
-
 }
 
 .container-educacion {
   background-color: $color-principal;
   height: auto;
+}
+
+.container-hardsoft {
+  background-color: $color-secundario;
+  height: 50%;
 }
 
 .container-proyecto {
