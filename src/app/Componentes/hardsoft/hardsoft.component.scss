@@ -1,86 +1,102 @@
 @import "../../Variables/global-variable.scss";
 
 .container {
-    //background: red;
-    height: 100%;
+  //background: red;
+  height: 100%;
 }
 
 .hardsoft-header {
-    @include flex-centrado;
-    height: 30%;
-    width: 100%;
-    padding: 10px;
+  @include flex-centrado;
+  height: 30%;
+  width: 100%;
+  padding: 10px;
 }
 
 .titulo {
-    width: 90%;
-    padding:10px;
+  width: 90%;
+  padding: 10px;
 
+  h3 {
+    color: $texto-hardskill;
+  }
 }
 
 .hardsoft-main {
-    @include flex-centrado;
-    //background: blue;
-    height: 50%;
-    padding: 10px;
+  @include flex-centrado;
+  //background: blue;
+  height: 50%;
+  padding: 10px;
 }
 
 .hardsoft-card {
-    @include flex-centrado;
-    flex-direction: column;
-    width: 90%;
-    height: 80%;
-    border-radius: 20px;
+  @include flex-centrado;
+  flex-direction: column;
+  width: 90%;
+  height: 80%;
+  border-radius: 20px;
 }
 
 .innercard {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .fila {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: stretch; // Cambio clave: estirar las imágenes verticalmente
-    align-content: stretch; // Cambio clave: ajustar la altura de fila según la cantidad de imágenes
-    height: auto; // Cambio clave: quitar la altura fija de fila
-    background-color: $container-img-skill;
-    border-radius: 15px;
-    flex-wrap: wrap;
-    padding: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch; // Cambio clave: estirar las imágenes verticalmente
+  align-content: stretch; // Cambio clave: ajustar la altura de fila según la cantidad de imágenes
+  height: auto; // Cambio clave: quitar la altura fija de fila
+  background-color: $container-img-skill;
+  border-radius: 15px;
+  flex-wrap: wrap;
+  padding: 10px;
+  @include drop-shadow(rgba(0, 0, 0, 0.1), 8px, 4px, 0px);
 }
 
 .img-container {
-    @include flex-centrado;
-    height: 50%;
-    flex-basis: 20%;
+  @include flex-centrado;
+  height: 50%;
+  flex-basis: 20%;
 }
 
 .img-estilo {
-    width: 42px;
+  width: 42px;
 }
 
 // fooyter ---------------------------
 .hardsoft-footer {
-    display: flex;
-    justify-content: flex-end;
-    //background: pink;
-    height: 20%;
+  display: flex;
+  justify-content: flex-end;
+  //background: pink;
+  height: 20%;
 }
 
 .hardsoft-titulo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
-    padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 10px;
 }
 
 .hardsoft-titulo {
-    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+  width: 90%;
 
-    p {
-        text-align: end;
-    }
+  p {
+    color: $texto-hardskill;
+    text-align: flex-end;
+    width: 15%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  p:hover {
+    background-color: rgba(221, 221, 221, 0.11);
+  }
 }

@@ -1,0 +1,123 @@
+@import "../../Variables/global-variable.scss";
+
+.container {
+  @include flex-centrado;
+  flex-direction: column;
+    background-color: $proyecto-bg;
+    padding: 20px;
+  }
+  
+  .container-titulo {
+    @include flex-centrado;
+    height: 50px;
+    width: 100%;
+    color: #fff;
+  }
+
+  .innertitulo {
+    width: 90%;
+
+    h3{color: #909297;}
+  }
+  
+  .main {
+    display: flex;
+    height: auto;
+    width: 90%;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+  //altura de las filas 
+  .alto-filas {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .fila {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    margin-bottom: 1rem;
+  }
+
+  .fila:first-child {
+    margin-top: 0; // Elimina el margen superior en la primera tarjeta de cada fila
+  }
+
+  .fila:not(:last-child) {
+    margin-bottom: 1rem; // Espacio vertical entre las filas de tarjetas
+  }
+
+  .fila:nth-child(odd){
+    flex-direction: row;
+  }
+
+  .fila:nth-child(even){
+    flex-direction: row-reverse;
+  }
+  
+  .columna {
+    @include flex-centrado;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .columna h3,
+  .columna p {
+    @include flex-centrado;
+  }
+  
+  .columna img {
+    width: 100%;
+  }
+
+  .columna > img {width: 60%; height: 90%; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);}
+  
+  .columna h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #909297;
+  }
+  
+  .columna p {
+    color: rgba(221, 221, 221, 0.568627451);
+    margin-bottom: 10px;
+  }
+  
+  .detalle-proyecto {
+    background-color: $proyecto-btn-bg3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid #0b0909e5;
+  }
+  
+  .detalle-proyecto:hover {
+    background: $proyecto-btn-bg2;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    width: 90%;
+  }
+  
+  .cargar-mas {
+    //background-color:rgba(221, 221, 221, 0.11);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .cargar-mas:hover {
+    background-color: rgba(221, 221, 221, 0.04);
+  }

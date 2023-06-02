@@ -53,7 +53,7 @@
 //botnes activos y inactivos background color
 .btn-inactivo {
   position: relative;
-  background: white;
+  background: rgba(221, 221, 221, 0.568627451);
   font-weight: bold;
   transition: background 0.9s ease; /* Agregamos la transición al cambio de color de fondo */
 
