@@ -1,0 +1,113 @@
+@import "../../Variables/global-variable.scss";
+
+.footer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  // Estilos para .footer aquí
+
+  .over-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    //background-color: beige;
+
+    // Estilos para .over-container aquí
+
+    .column1 {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 50%;
+      height: 100%;
+      //background: grey;
+
+      .container-center {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        flex-direction: column;
+        height: 70%;
+        width: 90%;
+      }
+
+      // Estilos para .column1 aquí
+
+      .image-ico {
+        @include flex-centrado;
+        background: center;
+        height: 50%;
+        width: 40%;
+
+        img {
+          // Estilos para img aquí
+          width: 128px;
+          height: 48px;
+        }
+      }
+
+      .nombre-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 50%;
+        width: 80%;
+
+        p {
+          color: #909297;
+          // Estilos para p aquí
+        }
+      }
+    }
+
+    .columna2 {
+      position: absolute;
+      right: 0;
+      z-index: 2;
+      width: 50%;
+      height: 100%;
+
+      // Estilos para .columna2 aquí
+
+      .textos {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 50%;
+        padding: 5px;
+
+        p {
+          color: #909297;
+          // Estilos para p aquí
+        }
+      }
+    }
+  }
+
+  .imagen-container-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+
+    // Estilos para .imagen-container-bg aquí
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
