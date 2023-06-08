@@ -6,7 +6,7 @@
 }
 
 .hardsoft-header {
-  @include flex-centrado;
+  @include flex-jcenter-aend;
   height: 30%;
   width: 100%;
   padding: 10px;
@@ -46,12 +46,16 @@
   justify-content: space-evenly;
   align-items: stretch; // Cambio clave: estirar las imágenes verticalmente
   align-content: stretch; // Cambio clave: ajustar la altura de fila según la cantidad de imágenes
-  height: auto; // Cambio clave: quitar la altura fija de fila
+  height: 90%; // Cambio clave: quitar la altura fija de fila
   background-color: $container-img-skill;
   border-radius: 15px;
   flex-wrap: wrap;
   padding: 10px;
   @include drop-shadow(rgba(0, 0, 0, 0.1), 8px, 4px, 0px);
+}
+
+.img-titulo {
+
 }
 
 .img-container {
@@ -63,6 +67,15 @@
 .img-estilo {
   width: 42px;
 }
+
+//titulo------------------------------
+.titulo-container {
+
+  p {
+    color: wheat;
+  }
+}
+
 
 // fooyter ---------------------------
 .hardsoft-footer {

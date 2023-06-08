@@ -6,6 +6,12 @@
     align-items: center;
 }
 
+@mixin flex-jcenter-aend {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
 //mixin metodos para efectos Inner-shadow 
 @mixin inner-shadow($color, $blur, $x, $y) {
     box-shadow: inset $x $y $blur $color;
