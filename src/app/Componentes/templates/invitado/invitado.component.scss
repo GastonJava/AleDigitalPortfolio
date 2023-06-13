@@ -1,25 +1,31 @@
-@import '../app/Variables/global-variable.scss';
+@import "../../../Variables/global-variable.scss";
 
 .container-header {
   background-color: $color-principal;
   height: 10vh;
+  box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.27);
+}
+
+.divider-header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background-color: #161920;
+  box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.75);
 }
 
 .divider {
-  //height: 5vh;
+  position: relative;
+  z-index: 100;
   width: 100%;
   background-color: #161920;
+  box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.75);
+  height: 8px;
 }
 
 .container-sobremi {
   background-color: $sobremi-card-bg;
-  height:90vh;
-}
-
-.divider {
-  //height: 5vh;
-  width: 100%;
-  background-color: #161920;
+  height: 90vh;
 }
 
 .container-educacion {
@@ -28,7 +34,7 @@
 }
 
 .container-hardsoft {
-  background-color: $color-secundario;
+  //background-color: $color-secundario;
   //height: 50%;
   height: 100vh;
 }
@@ -38,12 +44,6 @@
   flex-direction: column;
   overflow: auto;
   background-color: $proyecto-bg;
-}
-
-.divider {
-  //height: 8vh;
-  width: 100%;
-  background-color: $color-principal;
 }
 
 .container-footer {

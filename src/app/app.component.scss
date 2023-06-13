@@ -1,9 +1,16 @@
 @import '../app/Variables/global-variable.scss';
 
+
+.container {
+  max-width: 100%;
+}
+
+/*
 .container-header {
   background-color: $color-principal;
   height: 10vh;
 }
+
 
 .divider {
   //height: 5vh;
@@ -54,8 +61,11 @@
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1365px) {
-  /* Estilos para tablets */
+  
 }
+
+*/
+
 
 /* Estilos para dispositivos móviles */
 @media screen and (max-width: 1023px) {

@@ -7,6 +7,7 @@ import { FooterModule } from './footer/footer.module';
 import { ProyectoModule } from './proyecto/proyecto.module';
 import { SobreMiModule } from './sobre-mi/sobre-mi.module';
 import { HardsoftModule } from './hardsoft/hardsoft.module';
+import { InvitadoRoutingModule } from './invitado-routing.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { HardsoftModule } from './hardsoft/hardsoft.module';
     EducacionModule, 
     HardsoftModule,
     ProyectoModule,
-    FooterModule
+    FooterModule,
+    InvitadoRoutingModule
   ],
   declarations: [
     InvitadoComponent,
