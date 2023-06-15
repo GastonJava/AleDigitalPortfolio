@@ -216,3 +216,95 @@
     }
   }
 }
+
+//responsive --- -- - - -- - -
+@media screen and (min-width: 768px) and (max-width: 1023px){
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  
+    //agregar diferentes colores en las card...
+    .card:nth-child(odd){ //impar
+      background: $educacion-card-bg1;
+  
+      .card-title > h2, 
+      .card-subtitle > p, 
+      .card-footer > h3 { color: $texto-card-verde;}
+  
+    }
+    .card:nth-child(even) { //par
+      background: $educacion-card-bg2;
+  
+      .card-title > h2, 
+      .card-subtitle > p, 
+      .card-footer > h3 { color: $texto-card-gris;}
+    }
+  
+    .card {
+      flex: 0 0 calc(33.33% - 20px);
+      margin: 0 10px 20px;
+      border-radius: 10px;
+      padding: 20px;
+      @include border-educacion-card(1px, solid, rgba(0, 0, 0, 0.4));
+  
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  
+      .card-title > h2, .card-subtitle > p, .card-footer > h3 { text-align: center;}
+  
+      .card-title {
+        h2 {
+          margin-bottom: 10px;
+          font-size: 13px;
+          font-weight: bold;
+        }
+      }
+  
+      .card-subtitle {
+        p {
+          margin-bottom: 10px;
+          font-size: 14px;
+        }
+      }
+  
+      .card-body {
+        .fecha-container {
+          display: flex;
+          justify-content: space-between;
+  
+          .fecha-izq,
+          .fecha-der {
+            flex: 1;
+            text-align: center;
+  
+            h4 {
+              margin-bottom: 5px;
+              font-size: 12px;
+              color: #888;
+            }
+  
+            p {
+              font-size: 14px;
+              color: #FFFFFF;
+            }
+          }
+        }
+      }
+  
+      .card-footer {
+        h3 {
+          font-size: 13px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
+
+}
+
+@media screen and (max-width: 767px) {
+
+}
