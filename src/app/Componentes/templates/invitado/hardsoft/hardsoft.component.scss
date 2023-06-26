@@ -96,14 +96,37 @@
   justify-content: flex-end;
   width: 90%;
 
-  p {
+  .btn-container {
+    @include flex-centrado;
+    width: 15%;
+    height: 80%;
+    //background: blue;
+
     color: $texto-hardskill;
     text-align: flex-end;
-    width: 15%;
-    padding: 10px 20px;
+
+    padding: 5px;
     border-radius: 5px;
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    .btn-container-center {
+
+      @include flex-centrado;
+      width: 90%;
+      height: 90%;
+
+      p {
+        color: $texto-hardskill;
+        text-align: flex-end;
+        //width: 15%;
+        padding: 0px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        font-size: 16px;
+      }
+    }
   }
 
   p:hover {
