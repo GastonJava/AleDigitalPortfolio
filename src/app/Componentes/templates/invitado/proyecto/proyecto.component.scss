@@ -124,3 +124,22 @@
   .cargar-mas:hover {
     background-color: rgba(221, 221, 221, 0.04);
   }
+
+  //responsive --- -- - - -- - -
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+  .main {
+    display: flex;
+    height: auto;
+    width: 98%;
+    background: red;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+
+}
+
+@media screen and (max-width: 767px) {
+}
