@@ -220,11 +220,20 @@
 //responsive --- -- - - -- - -
 @media screen and (min-width: 768px) and (max-width: 1023px){
 
+// el titulo y subtitulo
+.fila1 {height: 20vh; padding: 10px;}
+
+
+// las cards
+.fila2 {height: 80vh;}
+
   .card-container {
+    background: red;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    height: 100%;
   
     //agregar diferentes colores en las card...
     .card:nth-child(odd){ //impar
@@ -244,10 +253,10 @@
     }
   
     .card {
-      flex: 0 0 calc(33.33% - 20px);
-      margin: 0 10px 20px;
+      flex: 0 0 calc(33.33% - 10px);
+      margin: 0 10px 0 10px;
       border-radius: 10px;
-      padding: 20px;
+      padding: 10px;
       @include border-educacion-card(1px, solid, rgba(0, 0, 0, 0.4));
   
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
