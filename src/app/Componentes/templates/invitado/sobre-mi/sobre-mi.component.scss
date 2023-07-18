@@ -441,11 +441,13 @@
   .image-container {
     position: relative;
     bottom: 30px;
+
+    height: 90%; 
   }
   
   .img-bar {
     width: 100%;
-    display: block;
+    display: none;
   }
   
   .text-container {
@@ -468,7 +470,7 @@
   }
   
   .icon-letra > i {
-   font-size: 22px;
+   font-size: 38px;
   }
   
   .linkedin-ico {
