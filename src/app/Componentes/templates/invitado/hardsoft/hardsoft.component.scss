@@ -191,7 +191,10 @@
 
   .container {
     //background: red;
+    @include flex-centrado;
+    flex-direction: column;
     height: 100%;
+   
   }
   
   .hardsoft-header {
@@ -206,6 +209,7 @@
     padding: 10px;
   
     h3 {
+      font-size: 25px;
       color: $texto-hardskill;
     }
   }
@@ -235,8 +239,8 @@
     justify-content: space-evenly;
     align-items: stretch; // Cambio clave: estirar las imágenes verticalmente
     align-content: stretch; // Cambio clave: ajustar la altura de fila según la cantidad de imágenes
-    height: 90%; // Cambio clave: quitar la altura fija de fila
-    background-color: $container-img-skill;
+    height: auto; // Cambio clave: quitar la altura fija de fila
+    background-color: rgba(217, 217, 217, 0);
     border-radius: 15px;
     flex-wrap: wrap;
     padding: 10px;
@@ -244,6 +248,7 @@
   }
   
   .img-titulo {
+    width: 50%
   }
   
   .img-container {
@@ -260,14 +265,52 @@
   .titulo-container {
     p {
       color: wheat;
+      text-align: center;
     }
   }
   
-  // fooyter ---------------------------
+  // footer ---------------------------
   .hardsoft-footer {
     display: flex;
     justify-content: flex-end;
     //background: pink;
     height: 20%;
+    width: 98%;
   }
+
+  .hardsoft-titulo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .hardsoft-titulo {
+    display: flex;
+    justify-content: flex-end;
+    width: 90%;
+  
+    .btn-container {
+      @include flex-centrado;
+      width: 40%;
+  
+  
+      .btn-container-center {
+        p {
+        
+          cursor: pointer;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.0);
+          font-size: 16px;
+        }
+      }
+    }
+  
+    p:hover {
+      background-color: rgba(221, 221, 221, 0.11);
+    }
+  }
+
+  
 }
