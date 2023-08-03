@@ -163,6 +163,7 @@
 
 @media screen and (max-width: 767px) {
 
+  .footer {width: 98%;}
   .footer .over-container .column1 .container-center .nombre-container {height: 80%; width: 100%;}
 
   .imagen-container-bg {
@@ -184,5 +185,5 @@
     }
   }
 
-  .footer .over-container .columna2 .textos { align-items: flex-end; } // especifisidad
+  .footer .over-container .columna2 .textos { align-items: flex-end; width: 98%; } // especifisidad
 }
