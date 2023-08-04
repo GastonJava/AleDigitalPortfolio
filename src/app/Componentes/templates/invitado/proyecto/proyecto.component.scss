@@ -251,6 +251,22 @@
       color: rgba(221, 221, 221, 0.568627451);
       margin-bottom: 10px;
     }
+
+    .fila .col-flex2 .btn-cover {
+      @include flex-centrado();
+      height: 80%;
+      width: 90%;
+
+      button {
+        height: 50%;
+        width: 70%;
+        p {
+          font-size: 10px;
+          margin-bottom: 2px;
+        }
+      }
+
+    }
     
     .detalle-proyecto {
       background-color: $proyecto-btn-bg3;

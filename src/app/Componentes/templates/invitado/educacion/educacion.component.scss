@@ -318,7 +318,7 @@
 @media screen and (max-width: 767px) {
 
   .container-edu {
-    padding: 08px;
+    padding: 20px;
     width: 98%;
 }
   
@@ -328,7 +328,7 @@
   flex-direction: column;
   height: 20vh; 
   padding: 5px;
-
+margin-bottom: 10px;
 }
 
 .container-izq {
@@ -435,6 +435,7 @@
     .card {
       flex: 0 0 calc(100%);
       margin: 0 10px 0 10px;
+      margin-bottom: 10px;
       border-radius: 10px;
       padding: 10px;
       @include border-educacion-card(1px, solid, rgba(0, 0, 0, 0.4));

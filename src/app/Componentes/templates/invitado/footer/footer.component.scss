@@ -185,5 +185,6 @@
     }
   }
 
-  .footer .over-container .columna2 .textos { align-items: flex-end; width: 98%; } // especifisidad
+  .footer .over-container .columna2 .textos { align-items: flex-end; } // especifisidad
+  .footer .over-container .columna2 {width: 90%;}
 }

@@ -74,7 +74,7 @@
 /* Estilos para dispositivos móviles */
 @media screen and (max-width: 767px) {
   .container-header {
-    background-color: blue;
+    border: 1px solid blue;
     height: 10vh;
     box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.27);
   }

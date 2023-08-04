@@ -264,6 +264,7 @@ header {
     height: 80%;
     @include inner-shadow(rgba(0, 0, 0, 0.25), 4px, 0, 4px);
     img {
+      border-radius: 15%;
       width: 98%;
       height: 90%;
     }
@@ -318,15 +319,21 @@ header {
   }
   
   .session {
+
+    //nuevo agregado ----
+    @include flex-centrado();
+
+    width: 62%;
+    height: 80%;
     .login-text {
       color: #b6c8c8;
-      font-size: 12px;
+      font-size: 10px;
     }
   }
   
   .lenguaje-btn {
       @include flex-centrado;
-      width: 80%;
+      width: 38%;
       height: 80%;
       //background: $header-lenguaje-bg;
   
