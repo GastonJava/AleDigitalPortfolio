@@ -51,12 +51,12 @@
   z-index: 100;
   width: 100%;
   background-color: #161920;
-  box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.25);
   height: 8px;
 }
 
 .container-footer {
-  background: $color-principal;
+  background: #161920; // $color-principal;
   //height: 30%;
   width: 100%;
   height: 20vh;
@@ -74,7 +74,7 @@
 /* Estilos para dispositivos móviles */
 @media screen and (max-width: 767px) {
   .container-header {
-    border: 1px solid blue;
+    border: 1px solid #0000ff1a;
     height: 10vh;
     box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.27);
   }

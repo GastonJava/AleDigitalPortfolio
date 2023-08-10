@@ -93,6 +93,7 @@
   }
   
   .detalle-proyecto {
+    display: unset;
     background-color: $proyecto-btn-bg3;
     color: white;
     padding: 10px 20px;
@@ -192,7 +193,8 @@
       //card sombra
       background-color: #171B23; /* Fondo en tu color deseado */
       border-radius: 8px;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra oscura */
+      //box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra oscura */
+      //box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.29);
       padding: 20px;
     }
   
@@ -206,10 +208,12 @@
   
     .fila:nth-child(odd){
       flex-direction: row;
+      box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.2);
     }
   
     .fila:nth-child(even){
       flex-direction: row-reverse;
+      box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.29);
     }
     
     .columna {
@@ -228,6 +232,7 @@
     .col-flex2 {
       flex: 2;
       width: 70%;
+
     }
   
     .columna h3,
@@ -242,14 +247,15 @@
     .columna > img {width: 90%; height: 60%; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);}
     
     .columna h3 {
-      font-size: 18px;
+      font-size: 15px;
       font-weight: bold;
       color: #909297;
     }
     
     .columna p {
+      font-size: 13px;
       color: rgba(221, 221, 221, 0.568627451);
-      margin-bottom: 10px;
+      margin-bottom: 5px;
     }
 
     .fila .col-flex2 .btn-cover {
@@ -269,6 +275,8 @@
     }
     
     .detalle-proyecto {
+      display: flex;
+      align-items: center;
       background-color: $proyecto-btn-bg3;
       color: white;
       padding: 10px 20px;
