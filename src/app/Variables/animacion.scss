@@ -1,0 +1,73 @@
+// animacion seccion HEADER *************
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+// animacion seccion SOBRE MI *************
+
+.slide-in-right {
+  animation: slideInRight 1s ease-in-out;
+}
+
+@keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+  animation: slideLeft 2s ease-in-out;
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+  to {
+      opacity: 0;
+      transform: translateX(0);
+  }
+}
+
+.slide-in{
+  animation: slideIn 1s ease-in;
+}
+
+@keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
+
+.slide-out{
+  animation: slideOut 1s ease-out;
+}
+
+@keyframes slideOut {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
