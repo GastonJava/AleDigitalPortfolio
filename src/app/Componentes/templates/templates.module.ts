@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { ServidorCaidoComponent } from './servidor-caido/servidor-caido.component';
 
 
+
 @NgModule({
-    declarations: [ ServidorCaidoComponent],
+    declarations: [ ServidorCaidoComponent,],
     exports: [ ServidorCaidoComponent],
     imports: [
       CommonModule,
