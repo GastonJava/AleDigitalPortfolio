@@ -3,17 +3,19 @@ import { CommonModule } from '@angular/common';
 import { ProyectoComponent } from './proyecto.component';
 import { DetallesProyectoComponent } from './detalles-proyecto/detalles-proyecto.component';
 import { ProyectoRouting } from './proyecto.routing';
+import { CarruselModule } from './carrusel/carrusel.module';
+import { DetallesProyectoModule } from './detalles-proyecto/detalles-proyecto.module';
 
 
 
 @NgModule({
   declarations: [
     ProyectoComponent,
-    DetallesProyectoComponent
   ],
   imports: [
     CommonModule,
-    ProyectoRouting
+    ProyectoRouting,
+    DetallesProyectoModule
   ],
   exports: [
     ProyectoComponent
