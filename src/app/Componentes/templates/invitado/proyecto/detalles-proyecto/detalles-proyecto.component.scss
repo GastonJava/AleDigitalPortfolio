@@ -1,12 +1,21 @@
 //importamos variables globales de detalle-proyecto
 @import "../../../../../Variables/variable-detalle-proyecto.scss";
 
-.seccion-titulo {
-  @include flex-centrado;  
-  //position: relative;
+//TODO: General
+.seccion-titulo,
+.seccion-resumen {
   height: 100vh;
   width: 100%;
   max-width: 100%;
+
+}
+
+
+//TODO: SECCION TITULO ===========
+.seccion-titulo {
+  @include flex-centrado;  
+  //position: relative;
+
   box-sizing: border-box;
 }
 
@@ -52,4 +61,10 @@
     cursor: pointer;
 
     i {font-size: 48px; color: $color-boton-bajar;}
+  }
+
+
+  //TODO: SECCION RESUMEN ===========
+  .seccion-resumen {
+    background-color: red;
   }
