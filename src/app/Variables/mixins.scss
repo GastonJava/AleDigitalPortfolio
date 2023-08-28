@@ -18,6 +18,17 @@
     align-items: start;
 }
 
+@mixin flex-jevenly-anone {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@mixin flex-jevenly-astart {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
 //mixin metodos para efectos Inner-shadow 
 @mixin inner-shadow($color, $blur, $x, $y) {
     box-shadow: inset $x $y $blur $color;
