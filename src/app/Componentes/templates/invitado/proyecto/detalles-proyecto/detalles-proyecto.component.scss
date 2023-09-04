@@ -5,7 +5,10 @@
 .seccion-titulo,
 .seccion-resumen,
 .seccion-problema,
-.seccion-responsabilidad {
+.seccion-responsabilidad,
+.seccion-usuario,
+.seccion-investigacion,
+.seccion-puntosdebiles {
   height: 100vh;
   width: 100%;
   max-width: 100%;
@@ -387,6 +390,204 @@
         height: 80%;
         color: $color-titulo;
       }
+    }
+  }
+}
+
+//TODO: SECCION USUARIO ===========
+.seccion-usuario {
+  @include flex-centrado;
+  .container-usuario {
+    @include flex-centrado;
+    width: 90%;
+    height: 90%;
+  }
+
+  .bloque1,
+  .bloque2,
+  .bloque3 {
+    height: 80%;
+  }
+
+  .bloque1 {
+    @include flex-centrado;
+    width: 45%;
+
+    .container-h1 {
+      @include flex-centrado;
+      height: 50%;
+
+      h1 {
+        font-size: 18px;
+        color: white;
+      }
+
+      span {
+        color: $color-titulo-span;
+      }
+    }
+  }
+
+  .bloque2 {
+    width: 1%;
+    height: 50%;
+    background-color: #fff;
+  }
+  .bloque3 {
+    @include flex-centrado;
+    width: 45%;
+  }
+
+  .bloque3__container-lista {
+    @include flex-centrado;
+    height: 60%;
+    width: 90%;
+
+    ul {
+      @include flex-jevenly-anone;
+      flex-direction: column;
+      height: 90%;
+      width: 90%;
+
+      li {
+        color: #fff;
+      }
+    }
+  }
+}
+
+//TODO: SECCION INVESTIGACION ===========
+.seccion-investigacion {
+  .content-header {
+    @include flex-centrado;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    margin-bottom: 8px;
+    border-left: 2px solid $color-barra-ico-titulo; /* Agrega una línea vertical a la izquierda */
+    padding-left: 10px; /* Agrega espacio a la izquierda de la línea */
+
+    .content-header-90 {
+      width: 90%;
+
+      h1 {
+        color: $color-titulo;
+        text-align: start;
+      }
+
+      span {
+        color: $color-titulo-span;
+      }
+    }
+  }
+
+  // el main --------
+  .main-investigacion {
+    height: 80%;
+
+    .investigacion-img {
+      @include flex-centrado;
+      height: 30%;
+
+      i {
+        color: #4e6792;
+        font-size: 38px;
+      }
+    }
+
+    .investigacion-texto {
+      @include flex-centrado;
+      height: 70%;
+
+      .container-p {
+        width: 80%;
+
+        p {
+          color: $color-titulo;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+//TODO: SECCION PUNTOSDEBILES ===========
+.seccion-puntosdebiles {
+  .content-header {
+    @include flex-centrado;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    margin-bottom: 8px;
+    border-left: 2px solid $color-barra-ico-titulo; /* Agrega una línea vertical a la izquierda */
+    padding-left: 10px; /* Agrega espacio a la izquierda de la línea */
+  }
+
+  .content-header-90 {
+    width: 90%;
+
+    h1 {
+      font-size: calc(1rem + 1.5vw);
+      color: $color-titulo;
+      text-align: start;
+    }
+
+    span {
+      color: $color-titulo-span;
+    }
+  }
+
+  //Main puntosdebiles
+  .main-puntosdebiles {
+    display: flex;
+
+    height: 70%;
+
+    .puntosdebiles-container1,
+    .puntosdebiles-container2,
+    .puntosdebiles-container3 {
+      @include flex-centrado;
+      flex-direction: column;
+      width: 90%;
+
+      .content-icon,
+      .content-titulo {
+        @include flex-centrado;
+      }
+      .content-subtitulo {
+        .container-p90 {
+          @include flex-centrado;
+          height: 90%;
+          width: 90%;
+          text-align: center;
+        }
+      }
+
+      .content-icon {
+        height: 20%;
+        width: 90%;
+        i {
+          font-size: 28px;
+          color: $color-barra-ico-titulo;
+        }
+      }
+      .content-titulo {
+        height: 10%;
+        color: $color-barra-ico-titulo;
+      }
+      .content-subtitulo {
+        height: 70%;
+        color: $color-titulo;
+      }
+    }
+
+    .puntosdebiles-container1 {
+    }
+
+    .puntosdebiles-container2 {
+    }
+
+    .puntosdebiles-container3 {
     }
   }
 }
