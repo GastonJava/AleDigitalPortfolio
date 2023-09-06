@@ -4,12 +4,17 @@
 //TODO: General
 .seccion-titulo,
 .seccion-resumen,
-.seccion-problema,
-.seccion-responsabilidad,
 .seccion-usuario,
 .seccion-investigacion,
 .seccion-puntosdebiles {
   height: 100vh;
+  width: 100%;
+  max-width: 100%;
+}
+
+.seccion-problema,
+.seccion-responsabilidad {
+  height: 90vh;
   width: 100%;
   max-width: 100%;
 }
@@ -142,6 +147,7 @@
       }
 
       .content-der-textos-subtitulo {
+        width: 90%;
         p {
           color: $color-titulo;
         }
@@ -173,7 +179,7 @@
 
       .container-img {
         position: relative;
-        max-width: 100%;
+        max-width: 90%;
         height: 90%;
         display: block;
 
@@ -199,6 +205,7 @@
 
 .seccion-problema {
   //background-color: $color-principal-bg2;
+
 
   .content-header {
     @include flex-centrado;
@@ -226,6 +233,7 @@
   .main-problema {
     @include flex-centrado;
     height: 80%;
+    padding: 20px;
   }
 
   .main-problema__col1,
@@ -251,15 +259,20 @@
     }
 
     .col1-container--titulo-subtitulo {
+      @include flex-jevenly-anone;
+      flex-direction: column;
       height: 80%;
       width: 90%;
 
       .titulo {
+        display: flex;
+        align-items: center;
         height: 20%;
         color: $color-barra-ico-titulo;
       }
 
       .subtitulo {
+        padding-top: 30px;
         height: 80%;
         color: $color-titulo;
       }
@@ -280,15 +293,20 @@
     }
 
     .col2-container--titulo-subtitulo {
+      @include flex-jevenly-anone;
+      flex-direction: column;
       height: 80%;
       width: 90%;
 
       .titulo {
+        display: flex;
+        align-items: center;
         height: 20%;
         color: $color-barra-ico-titulo;
       }
 
       .subtitulo {
+        padding-top: 30px;
         height: 80%;
         color: $color-titulo;
       }
@@ -303,7 +321,7 @@
     width: 100%;
     height: 20%;
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
     border-left: 2px solid $color-barra-ico-titulo; /* Agrega una línea vertical a la izquierda */
     padding-left: 10px; /* Agrega espacio a la izquierda de la línea */
 
@@ -324,6 +342,7 @@
   .main-responsabilidad {
     @include flex-centrado;
     height: 80%;
+    padding: 20px;
   }
 
   .main-responsabilidad__col1,
@@ -341,6 +360,7 @@
       align-items: center;
       height: 20%;
       width: 90%;
+      margin-bottom: 10px;
 
       i {
         font-size: 48px;
@@ -353,11 +373,14 @@
       width: 90%;
 
       .titulo {
+        display: flex;
+        align-items: center;
         height: 20%;
         color: $color-barra-ico-titulo;
       }
 
       .subtitulo {
+        padding-top: 30px;
         height: 80%;
         color: $color-titulo;
       }
@@ -370,6 +393,7 @@
       align-items: center;
       height: 20%;
       width: 90%;
+      margin-bottom: 10px;
 
       i {
         font-size: 48px;
@@ -382,11 +406,14 @@
       width: 90%;
 
       .titulo {
+        display: flex;
+        align-items: center;
         height: 20%;
         color: $color-barra-ico-titulo;
       }
 
       .subtitulo {
+        padding-top: 30px;
         height: 80%;
         color: $color-titulo;
       }
@@ -411,7 +438,7 @@
 
   .bloque1 {
     @include flex-centrado;
-    width: 45%;
+    width: 49%;
 
     .container-h1 {
       @include flex-centrado;
@@ -429,13 +456,13 @@
   }
 
   .bloque2 {
-    width: 1%;
+    width: 2%;
     height: 50%;
     background-color: #fff;
   }
   .bloque3 {
     @include flex-centrado;
-    width: 45%;
+    width: 49%;
   }
 
   .bloque3__container-lista {
@@ -484,6 +511,7 @@
   // el main --------
   .main-investigacion {
     height: 80%;
+    padding: 20px;
 
     .investigacion-img {
       @include flex-centrado;
