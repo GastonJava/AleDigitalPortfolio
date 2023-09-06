@@ -109,6 +109,7 @@
     align-items: center;
     flex-direction: row;
     height: 80%;
+    padding: 20px;
 
     .content-izq {
       @include flex-jevenly-anone;
@@ -568,7 +569,7 @@
   //Main puntosdebiles
   .main-puntosdebiles {
     display: flex;
-
+    padding: 20px;
     height: 70%;
 
     .puntosdebiles-container1,
