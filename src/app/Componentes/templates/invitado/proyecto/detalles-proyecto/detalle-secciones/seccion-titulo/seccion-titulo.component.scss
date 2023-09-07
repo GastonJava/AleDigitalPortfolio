@@ -1,0 +1,50 @@
+//importamos variables globales de detalle-proyecto
+@import "../../../../../../../Variables/variable-detalle-proyecto.scss";
+
+.content {
+    @include flex-jcenter-astart;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    max-width: 60%; // Ajusta el ancho máximo del contenido al 60% del contenedor
+  }
+  
+  .content-titulo {
+    color: #fff;
+    span {
+      color: $color-secundario-titulosiguiente; // Color del texto "proyecto"
+    }
+  }
+  
+  .content-divider {
+    width: 90%;
+    height: 2px;
+    background-color: $color-barra-divisora;
+    margin: 10px 0;
+  }
+  
+  .content-nombre {
+    color: $color-secundario-titulo;
+  }
+  
+  .floating-button {
+    @include flex-centrado;
+    position: absolute;
+    bottom: calc(20% - 30px); // Ajusta la distancia desde abajo según necesites
+    right: calc(
+      27% - 30px
+    ); // Ajusta la distancia desde la derecha según necesites
+    //background-color: #466D6B;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+  
+    i {
+      font-size: 48px;
+      color: $color-boton-bajar;
+    }
+  }
