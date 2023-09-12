@@ -43,6 +43,7 @@
         @include flex-centrado;
       }
       .content-subtitulo {
+        @include flex-centrado;
         .container-p90 {
           @include flex-centrado;
           height: 90%;

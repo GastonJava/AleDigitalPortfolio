@@ -25,7 +25,7 @@
 
 <div class="seccion-investigacion">
   <!-- Contenido de la sección "Problema" -->
- <app-seccion-investigacion></app-seccion-investigacion>
+  <app-seccion-investigacion></app-seccion-investigacion>
 </div>
 
 <div class="seccion-puntosdebiles">
@@ -34,11 +34,16 @@
 </div>
 
 <div class="seccion-personas">
-  <!-- Contenido de la sección "Personas" -->
-  <app-carusel-personas>
-    <!-- Aquí dentro iría el carrusel de "Personas" con las secciones "Metas", "Recorrido" y "Mapa Recorrido" -->
-    <app-metas></app-metas>
-    <app-recorrido></app-recorrido>
-    <app-mapa-recorrido></app-mapa-recorrido>
-  </app-carusel-personas>
+  <!-- Contenedor del carrusel -->
+  <div class="carousel">
+    <app-carusel></app-carusel>
+
+    <!--
+    <div class="content-icono--container">
+      <div class="icono-content">
+        <i class="bx bx-chevrons-right"></i>
+      </div>
+    </div>
+    -->
+  </div>
 </div>

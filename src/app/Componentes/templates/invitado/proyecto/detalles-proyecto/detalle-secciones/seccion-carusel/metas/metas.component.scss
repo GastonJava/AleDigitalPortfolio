@@ -1,0 +1,95 @@
+//variable global
+@import "../../../../../../../../Variables/variable-detalle-proyecto.scss";
+
+.content-header {
+  @include flex-centrado;
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  margin-bottom: 8px;
+  border-left: 2px solid $color-barra-ico-titulo; /* Agrega una línea vertical a la izquierda */
+  padding-left: 10px; /* Agrega espacio a la izquierda de la línea */
+
+  .content-header-90 {
+    width: 90%;
+
+    h1 {
+      color: $color-titulo;
+      text-align: start;
+    }
+
+    span {
+      color: $color-titulo-span;
+    }
+  }
+}
+
+.main-metas {
+  width: 100%;
+  height: 80%;
+}
+
+.main-metas--content {
+  height: 100%;
+}
+
+.content-fila1 {
+  @include flex-centrado;
+  height: 80%;
+
+  .col-metas,
+  .col-frustracion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 45%;
+    height: 98%;
+
+    .container-lista {
+      height: 60%;
+
+      ul {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        height: 90%;
+
+        li {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .metas--titulo,
+  .frustracion--titulo {
+    height: 20%;
+    padding-left: 20px;
+
+    h1 {
+      color: #fff;
+    }
+  }
+}
+
+// fila del PARRAFO ==================================
+.content-fila2 {
+  height: 20%;
+  @include flex-centrado;
+
+  .parrafo-container {
+    @include flex-centrado;
+    height: 90%;
+    width: 90%;
+
+    p {
+    color: #b9b8ec;
+      font-style: italic; 
+      //background-color: #f0f0f0;
+      background-color: #f0f0f036;
+      border-left: 4px solid #007bff; 
+      padding: 10px; 
+      margin: 10px 0;
+    }
+  }
+}

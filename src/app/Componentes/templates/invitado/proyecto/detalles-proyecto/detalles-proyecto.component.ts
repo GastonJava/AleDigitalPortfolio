@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DetallesProyectoComponent {
 
+  //carouselSections: string[] = ['metas', 'recorrido', 'mapa-recorrido'];
+
+
 }
