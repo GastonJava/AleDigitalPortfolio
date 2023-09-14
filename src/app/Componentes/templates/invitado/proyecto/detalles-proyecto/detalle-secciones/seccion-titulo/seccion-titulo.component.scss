@@ -42,9 +42,19 @@
     height: 60px;
     font-size: 24px;
     cursor: pointer;
+    animation: bounce 2s infinite;
   
     i {
       font-size: 48px;
       color: $color-boton-bajar;
+    }
+  }
+
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0); /* Posición inicial y final (sin cambio) */
+    }
+    50% {
+      transform: translateY(-10px); /* Posición elevada */
     }
   }

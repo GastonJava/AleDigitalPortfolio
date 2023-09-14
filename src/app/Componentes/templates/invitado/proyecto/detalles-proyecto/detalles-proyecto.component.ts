@@ -8,6 +8,12 @@ import { Component } from '@angular/core';
 export class DetallesProyectoComponent {
 
   //carouselSections: string[] = ['metas', 'recorrido', 'mapa-recorrido'];
-
-
+  scrollToResumen() {
+    console.log("funcionaaaa");
+    const resumenElement = document.getElementById('seccion-resumen');
+    if (resumenElement) {
+      resumenElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
 }

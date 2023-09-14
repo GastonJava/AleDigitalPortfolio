@@ -44,7 +44,6 @@ export class InvitadoComponent implements OnInit {
       };
   
       const observer = new IntersectionObserver(entries => {
-        console.log('Element is visible');
   
         entries.forEach(entry => {
           if (entry.isIntersecting) {

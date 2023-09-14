@@ -1,13 +1,13 @@
 
 <div class="container-detalles-proyecto">
 
-  <div class="seccion-titulo">
+  <div class="seccion-titulo" id="seccion-titulo">
     <!-- Contenido de la sección "Título" -->
-    <app-seccion-titulo></app-seccion-titulo>
+    <app-seccion-titulo  (scrollToResumenEvent)="scrollToResumen()"></app-seccion-titulo>
   </div>
   
   <!-- SECCION RESUMEN -->
-  <div class="seccion-resumen">
+  <div class="seccion-resumen" id="seccion-resumen">
     <app-seccion-resumen></app-seccion-resumen>
   </div>
   

@@ -7,7 +7,7 @@ import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '
 })
 export class CaruselComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
 
   
