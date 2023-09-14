@@ -1,7 +1,15 @@
 //importamos variables globales de detalle-proyecto
 @import "../../../../../Variables/variable-detalle-proyecto.scss";
 
-//ESTAMOS EN LA RAMA MODIFICACIONES-SEGURAS_detallecomponentes
+
+//contenedor
+.container-detalles-proyecto {
+  
+  @include flex-centrado;
+  flex-direction: column;
+
+}
+
 
 //TODO: General
 .seccion-titulo,
@@ -11,15 +19,15 @@
 .seccion-puntosdebiles,
 .seccion-personas {
   height: 100vh;
-  width: 100%;
-  max-width: 100%;
+  width: 90%;
+  max-width: 90%;
 }
 
 .seccion-problema,
 .seccion-responsabilidad {
   height: 90vh;
-  width: 100%;
-  max-width: 100%;
+  width: 90%;
+  max-width: 90%;
 }
 
 //TODO: SECCION TITULO ===========
@@ -57,6 +65,7 @@ app-seccion-resumen {
 //TODO: SECCION USUARIO ===========
 .seccion-usuario {
   @include flex-centrado;
+  border: 1px solid #4e679230;
 }
 
 app-seccion-usuario {
