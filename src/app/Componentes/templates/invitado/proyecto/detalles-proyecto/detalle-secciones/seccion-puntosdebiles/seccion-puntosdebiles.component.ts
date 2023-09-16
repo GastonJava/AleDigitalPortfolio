@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-seccion-puntosdebiles',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./seccion-puntosdebiles.component.scss']
 })
 export class SeccionPuntosdebilesComponent {
+
+  @Input() seccionPuntosdebilesData: any;
 
 }

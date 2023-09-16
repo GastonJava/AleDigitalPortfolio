@@ -1,29 +1,36 @@
-
 <div class="container">
   <div class="container-titulo">
     <div class="innertitulo">
       <h3>Casos De Estudios.</h3>
     </div>
-   
   </div>
   <div class="main">
-
     <div class="alto-filas">
 
-      <!--
-      <div class="fila">
+      <div *ngFor="let proyecto of proyectoDatos" class="fila">
         <div class="columna col-flex1">
-          <img src="../../../assets/Proyecto/proyecto1.png" alt="Imagen del proyecto" />
+          <!-- Aquí puedes usar proyecto.id para cargar la imagen desde tu archivo assets -->
+          <img
+            [src]="'../../../assets/Proyecto/' + proyecto.img"
+            alt="Imagen del proyecto"
+          />
         </div>
         <div class="columna col-flex2">
-          <h3>Aplicación web</h3>
-          <p>Tecnología: .NET</p>
-          <p>Descripción del proyecto</p>
-          <div class="btn-cover"><button class="detalle-proyecto"><p>Detalle De Proyecto</p></button></div>
+          <h3>{{ proyecto.nombre }}</h3>
+          <p>Tecnología: {{ proyecto.tecnologia }}</p>
+          <p>{{ proyecto.descripcion }}</p>
+          <div class="btn-cover">
+            <button
+              class="detalle-proyecto"
+              (click)="redirectToDetallesProyecto(proyecto.id)"
+            >
+              <p>Detalle De Proyecto</p>
+            </button>
+          </div>
         </div>
       </div>
-     -->
-       
+     
+   <!--
       <div class="fila">
         <div class="columna col-flex1">
           <img src="../../../assets/Proyecto/img-adoptapp2.png" alt="Imagen del proyecto" />
@@ -32,7 +39,11 @@
           <h3>Aplicación móvil, desktop</h3>
           <p>Tecnología: Diseño UI Figma</p>
           <p>Diseño UX/UI de Adoptapp...</p>
-          <div class="btn-cover"><button class="detalle-proyecto"><p>Detalle De Proyecto</p></button></div>
+          <div class="btn-cover">
+            <button class="detalle-proyecto">
+              <p>Detalle De Proyecto</p>
+            </button>
+          </div>
         </div>
       </div>
   
@@ -45,15 +56,15 @@
           <h3>Gaston ale dev</h3>
           <p>Tecnología: Angular 15</p>
           <p>Portfolio personal</p>
-          <div class="btn-cover"><button class="detalle-proyecto" (click)="redirectToDetallesProyecto()"><p>Detalle De Proyecto</p></button></div>
+          <div class="btn-cover"><button class="detalle-proyecto"><p>Detalle De Proyecto</p></button></div>
         </div>
       </div>
-    </div>
+    </div> 
+    -->
 
-    
-    <!-- Aquí se agregarán las filas y columnas de proyectos -->
+      <!-- Aquí se agregarán las filas y columnas de proyectos -->
+    </div>
+    <div class="footer">
+      <div class="cargar-mas">Cargar más</div>
+    </div>
   </div>
-  <div class="footer">
-    <div class="cargar-mas">Cargar más</div>
-  </div>
-</div>

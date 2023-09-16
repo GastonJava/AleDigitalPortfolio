@@ -20,7 +20,7 @@
 
         <div class="content-der-textos-subtitulo">
           <p>
-            Portfolio creado con Angular y potenciado por NGRX para el manejo de estados.
+            {{seccionResumenData.resumenTitulo}}
           </p>
         </div>
       </div>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="content-der-textos-subtitulo">
-          <p>Desde noviembre 2021 hasta marzo 2022</p>
+          <p>{{seccionResumenData.resumenDuracion}}</p>
         </div>
       </div>
     </div>
@@ -48,14 +48,16 @@
   <div class="content-der">
     <div class="container-img">
       <img
-        src="../../../../../assets/Proyecto/detalle-proyecto/proyecto3-a.png"
+        [src]="'../../../../../assets/Proyecto/detalle-proyecto/' + seccionResumenData.img1"
         alt="Imagen número 1"
       />
+
       <img
-        class="second-image"
-        src="../../../../../assets/Proyecto/detalle-proyecto/proyecto3.png"
-        alt="Imagen número 2"
+       class="second-image"
+       [src]="'../../../assets/Proyecto/detalle-proyecto/' + seccionResumenData.img2"
+       alt="Imagen número 2"
       />
+
     </div>
   </div>
 </div>

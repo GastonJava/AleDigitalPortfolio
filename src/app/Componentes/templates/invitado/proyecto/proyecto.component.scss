@@ -25,6 +25,7 @@
   
   .main {
     display: flex;
+    flex-direction: column;
     height: auto;
     width: 90%;
 
@@ -44,6 +45,7 @@
     display: flex;
     align-items: center;
     height: 250px;
+    border-bottom: 1px solid #5f9ea02e;
     //margin-bottom: 1rem;
   }
 

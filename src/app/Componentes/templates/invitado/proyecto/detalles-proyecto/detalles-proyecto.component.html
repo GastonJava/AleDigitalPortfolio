@@ -3,23 +3,23 @@
 
   <div class="seccion-titulo" id="seccion-titulo">
     <!-- Contenido de la sección "Título" -->
-    <app-seccion-titulo  (scrollToResumenEvent)="scrollToResumen()"></app-seccion-titulo>
+    <app-seccion-titulo [seccionTituloData]="seccionTituloData" (scrollToResumenEvent)="scrollToResumen()"></app-seccion-titulo>
   </div>
   
   <!-- SECCION RESUMEN -->
   <div class="seccion-resumen" id="seccion-resumen">
-    <app-seccion-resumen></app-seccion-resumen>
+    <app-seccion-resumen [seccionResumenData]="seccionResumenData"></app-seccion-resumen>
   </div>
   
   <!-- CONTENIDO DE SECCION PROBLEMA -->
   <div class="seccion-problema">
-    <app-seccion-problema></app-seccion-problema>
+    <app-seccion-problema [seccionProblemaData]="seccionProblemaData"></app-seccion-problema>
   </div>
   
   <!-- CONTENIDO DE SECCION RESPONSABILIDAD -->
   <div class="seccion-responsabilidad">
     <!-- Contenido de la sección "RESPONSABILIDAD" -->
-    <app-seccion-responsabilidad></app-seccion-responsabilidad>
+    <app-seccion-responsabilidad [seccionResponsabilidadData]="seccionResponsabilidadData"></app-seccion-responsabilidad>
   </div>
   
   <div class="seccion-usuario">
@@ -28,12 +28,12 @@
   
   <div class="seccion-investigacion">
     <!-- Contenido de la sección "Problema" -->
-    <app-seccion-investigacion></app-seccion-investigacion>
+    <app-seccion-investigacion [seccionInvestigacionData]="seccionInvestigacionData"></app-seccion-investigacion>
   </div>
   
   <div class="seccion-puntosdebiles">
     <!-- Contenido de la sección "Puntos debiles" -->
-    <app-seccion-puntosdebiles></app-seccion-puntosdebiles>
+    <app-seccion-puntosdebiles [seccionPuntosdebilesData]="seccionPuntosdebilesData"></app-seccion-puntosdebiles>
   </div>
   
   <div class="seccion-personas">

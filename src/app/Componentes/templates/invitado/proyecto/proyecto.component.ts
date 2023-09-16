@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProyectoDataService } from 'src/app/Servicios/proyecto/detalles-proyecto/detalles-proyecto-data.service';
 
 @Component({
   selector: 'app-proyecto',
@@ -8,11 +9,30 @@ import { Router } from '@angular/router';
 })
 export class ProyectoComponent {
 
-  constructor(private router: Router) { }
+  public proyectoDatos: any[] = [
+    {
+      id: 1,
+      nombre: 'Gaston ale dev',
+      tecnologia: 'Angular 15',
+      descripcion: 'Portfolio personal',
+      img: 'proyecto1.png',
+    },
+    {
+      id: 2,
+      nombre: 'Otro proyecto',
+      tecnologia: 'Angular 15',
+      descripcion: 'Proyecto personal',
+      img: 'img-adoptapp2.png',
+    },
+    // Agrega más objetos de proyecto según sea necesario
+  ];
 
-  redirectToDetallesProyecto() {
-    console.log("este seria el id ");
-    this.router.navigate(['/proyecto/detalles-proyecto']);
+  constructor(private router: Router, private proyectoDataService: ProyectoDataService) { }
+
+  redirectToDetallesProyecto(id: number) {
+    console.log("este seria el id "+id);
+    //this.proyectoDataService.setProyectoData(); // Almacena los datos del proyecto
+    this.router.navigate(['/proyecto/detalles-proyecto', id]);
   }
 
 }

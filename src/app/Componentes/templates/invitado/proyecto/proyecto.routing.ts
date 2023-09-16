@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 
 const routes: Routes = [
   /*{ path: 'detalles', component: ProyectoComponent },*/
-  { path: 'proyecto/detalles-proyecto', component: DetallesProyectoComponent }
+  { path: 'proyecto/detalles-proyecto/:id', component: DetallesProyectoComponent }
 ];
 
 @NgModule({

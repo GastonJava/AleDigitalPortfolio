@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-seccion-titulo',
@@ -9,7 +9,13 @@ export class SeccionTituloComponent {
 
   buttonClicked: boolean = false;
 
+  @Input() seccionTituloData: any;
+
   @Output() scrollToResumenEvent = new EventEmitter<void>();
+
+  ngOnInit() {
+    //console.log('recibio seccion-titulo?: '+JSON.stringify(this.seccionTituloData));
+  }
 
   // Método para notificar al componente principal que se debe desplazar al resumen
   scrollToResumen() {

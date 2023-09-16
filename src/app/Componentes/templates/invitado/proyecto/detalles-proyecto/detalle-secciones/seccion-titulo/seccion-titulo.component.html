@@ -1,12 +1,19 @@
 <!-- Contenido de la sección "Título" -->
 
 <div class="content">
-    <h1 class="content-titulo">Portfolio web <span> Alternativa</span></h1>
-    <div class="content-divider"></div>
-    <p class="content-nombre">Gaston Alejandro.</p>
-  </div>
+  <h1 class="content-titulo">
+    {{ seccionTituloData.titulo }}
+    <span> {{ seccionTituloData.span_titulo }}</span>
+  </h1>
+  <div class="content-divider"></div>
+  <p class="content-nombre">{{ seccionTituloData.subtitulo }}</p>
+</div>
 
-  <div class="floating-button">
-    <!-- <i class='bx bxs-down-arrow-circle'></i> -->
-    <i class="bx bx-chevrons-down" (click)="scrollToResumen()" [class.button-animation]="buttonClicked"></i>
-  </div>
+<div class="floating-button">
+  <!-- <i class='bx bxs-down-arrow-circle'></i> -->
+  <i
+    class="bx bx-chevrons-down"
+    (click)="scrollToResumen()"
+    [class.button-animation]="buttonClicked"
+  ></i>
+</div>

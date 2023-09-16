@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-seccion-investigacion',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./seccion-investigacion.component.scss']
 })
 export class SeccionInvestigacionComponent {
-
+  @Input() seccionInvestigacionData: any;
 }
