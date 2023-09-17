@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-mapa-recorrido',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./mapa-recorrido.component.scss']
 })
 export class MapaRecorridoComponent {
+  
+  //@Input() mapaRecorridoData: any;
+  @Input() mapaRecorridoDataArray: any;
+
 
 }

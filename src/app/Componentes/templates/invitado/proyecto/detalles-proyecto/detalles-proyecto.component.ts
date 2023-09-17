@@ -16,6 +16,7 @@ import { SeccionTituloDatosService } from 'src/app/Servicios/proyecto/detalles-p
 export class DetallesProyectoComponent implements OnInit {
 
   proyectoid: any;
+  caruselid: any;
 
   seccionTituloData: any;
   seccionResumenData: any;
@@ -40,6 +41,7 @@ export class DetallesProyectoComponent implements OnInit {
 
     const paramId = this.route.snapshot.paramMap.get('id');
     this.proyectoid = paramId ? +paramId : 0;
+    this.caruselid = this.proyectoid;
 
     // Obtén la lista de proyectos desde el servicio
     const detallesproyectoTitulo = this.seccionTituloService.getSeccionTituloData();
@@ -51,7 +53,6 @@ export class DetallesProyectoComponent implements OnInit {
     
 
     // Busca el proyecto correspondiente en la lista detalledatos
-    
     this.seccionTituloData = detallesproyectoTitulo.find( detalle => detalle.id == this.proyectoid); 
     this.seccionResumenData = detallesproyectoResumen.find( resumen => resumen.id === this.proyectoid);
     this.seccionProblemaData = detallesproyectoProblema.find( problema => problema.id === this.proyectoid);
