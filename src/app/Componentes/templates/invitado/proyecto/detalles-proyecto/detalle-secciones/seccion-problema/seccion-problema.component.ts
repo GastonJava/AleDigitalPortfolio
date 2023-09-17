@@ -6,7 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./seccion-problema.component.scss']
 })
 export class SeccionProblemaComponent {
-
-  @Input() seccionProblemaData: any;
+  @Input() datosProblema: any;
 
 }

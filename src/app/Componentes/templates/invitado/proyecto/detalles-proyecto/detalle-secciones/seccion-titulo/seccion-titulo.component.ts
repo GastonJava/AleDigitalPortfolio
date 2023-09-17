@@ -9,7 +9,7 @@ export class SeccionTituloComponent {
 
   buttonClicked: boolean = false;
 
-  @Input() seccionTituloData: any;
+  @Input() datosTitulo: any;
 
   @Output() scrollToResumenEvent = new EventEmitter<void>();
 

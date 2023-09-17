@@ -7,6 +7,6 @@ import { Component, Input } from '@angular/core';
 })
 export class SeccionResumenComponent {
 
-  @Input() seccionResumenData: any;
+  @Input() datosResumen: any;
   
 }

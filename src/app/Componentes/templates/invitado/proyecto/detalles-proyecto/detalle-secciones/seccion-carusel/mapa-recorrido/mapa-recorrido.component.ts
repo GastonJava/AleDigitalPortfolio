@@ -8,7 +8,15 @@ import { Component, Input } from '@angular/core';
 export class MapaRecorridoComponent {
   
   //@Input() mapaRecorridoData: any;
-  @Input() mapaRecorridoDataArray: any;
+  @Input() mapaRecorridoData: any;
+
+  ngOnInit() {
+    console.log(JSON.stringify(this.mapaRecorridoData));
+  }
+
+  
 
 
 }
+
+

@@ -6,7 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./seccion-puntosdebiles.component.scss']
 })
 export class SeccionPuntosdebilesComponent {
-
-  @Input() seccionPuntosdebilesData: any;
-
+  @Input() datosPuntosdebiles: any;
 }

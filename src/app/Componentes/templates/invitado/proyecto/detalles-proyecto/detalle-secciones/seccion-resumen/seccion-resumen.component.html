@@ -20,7 +20,7 @@
 
         <div class="content-der-textos-subtitulo">
           <p>
-            {{seccionResumenData.resumenTitulo}}
+            {{datosResumen.resumenTitulo}}
           </p>
         </div>
       </div>
@@ -39,7 +39,7 @@
         </div>
 
         <div class="content-der-textos-subtitulo">
-          <p>{{seccionResumenData.resumenDuracion}}</p>
+          <p>{{datosResumen.resumenDuracion}}</p>
         </div>
       </div>
     </div>
@@ -48,13 +48,13 @@
   <div class="content-der">
     <div class="container-img">
       <img
-        [src]="'../../../../../assets/Proyecto/detalle-proyecto/' + seccionResumenData.img1"
+        [src]="'../../../../../assets/Proyecto/detalle-proyecto/' + datosResumen.img1"
         alt="Imagen número 1"
       />
 
       <img
        class="second-image"
-       [src]="'../../../assets/Proyecto/detalle-proyecto/' + seccionResumenData.img2"
+       [src]="'../../../assets/Proyecto/detalle-proyecto/' + datosResumen.img2"
        alt="Imagen número 2"
       />
 
