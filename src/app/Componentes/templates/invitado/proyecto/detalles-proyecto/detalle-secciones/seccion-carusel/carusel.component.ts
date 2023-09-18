@@ -18,35 +18,21 @@ import { SeccionCaruselDataService } from 'src/app/Servicios/proyecto/detalles-p
   templateUrl: './carusel.component.html',
   styleUrls: ['./carusel.component.scss'],
 })
-export class CaruselComponent implements OnInit, AfterViewInit {
+export class CaruselComponent implements OnInit {
 
   @Input() caruselid: any;
 
   caruselDatosService: any;
 
-  personasData: any;
-  metasData: any;
-  recorridoData: any;
   mapaRecorridoData: any;
-
   mapaRecorridoDataArray: any;
 
   constructor(
-    private mapaRecorridoDataService: MapaRecorridoDataService,
-
     private caruselDataService: SeccionCaruselDataService
     ) {}
 
   ngOnInit(): void {
-
-    // Obtén la lista de proyectos desde el servicio
-    //const caruselMapaRecorridoData = this.mapaRecorridoDataService.getmapaRecorridoDatos();
-
     this.caruselDatosService = this.caruselDataService.getDatosProyecto(this.caruselid);
-
-    // Busca el proyecto correspondiente en la lista detalledatos
-    //this.mapaRecorridoData = caruselMapaRecorridoData.find( maparecorrido => maparecorrido.id === this.caruselid);
-    //this.mapaRecorridoDataArray = Array.of(this.mapaRecorridoData);
   }
 
   ngAfterViewInit() {}

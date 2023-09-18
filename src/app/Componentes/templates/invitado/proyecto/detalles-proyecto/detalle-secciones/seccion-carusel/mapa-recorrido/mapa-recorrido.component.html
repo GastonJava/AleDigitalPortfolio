@@ -5,7 +5,7 @@
 </div>
 
 <div class="main-mapa-recorrido">
-  <div *ngFor="let proyecto of mapaRecorridoData" class="mapa">
+  <div *ngFor="let proyecto of mapaArray" class="mapa">
     <div class="celda encabezado">ACTION</div>
     <div *ngFor="let action of proyecto.actions" class="celda">
       {{ action }}

@@ -19,9 +19,9 @@ export class ProyectoComponent {
     },
     {
       id: 2,
-      nombre: 'Otro proyecto',
-      tecnologia: 'Angular 15',
-      descripcion: 'Proyecto personal',
+      nombre: 'Adoptapp',
+      tecnologia: 'Diseño UX/UI Figma',
+      descripcion: 'Diseño de app de adopcion de mascotas.',
       img: 'img-adoptapp2.png',
     },
     // Agrega más objetos de proyecto según sea necesario

@@ -8,6 +8,7 @@ import { RecorridoDataService } from './recorrido/recorrido-data.service';
   providedIn: 'root',
 })
 export class SeccionCaruselDataService {
+  
   mapaRecorridoDataArray: any;
 
   constructor(
@@ -23,6 +24,10 @@ export class SeccionCaruselDataService {
     const caruselMetasData = this.metasDataService.getMetasDatos();
     const caruselRecorridoData = this.recorridoDataService.getRecorridoDatos();
     const caruselMapaRecorridoData = this.mapaRecorridoDataService.getmapaRecorridoDatos();
+    
+    const mapaArrayLocal: any[] = Array.of(caruselMapaRecorridoData.find( maparecorrido => maparecorrido.id === caruselId ));
+
+    console.log(caruselMapaRecorridoData);
 
     return {
       // Busca el proyecto correspondiente en la lista detalledatos
@@ -33,11 +38,8 @@ export class SeccionCaruselDataService {
       caruselRecorridoData: caruselRecorridoData.find(
         (recorrido) => recorrido.id == caruselId
       ),
-      caruselMapaRecorridoData: caruselMapaRecorridoData.find(
-        (maparecorrido) => maparecorrido.id === caruselId
-      ),
 
-      mapaRecorridoDataArray: Array.of(caruselMapaRecorridoData),
+      mapaArray: mapaArrayLocal,
     };
   }
 }

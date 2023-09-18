@@ -21,14 +21,14 @@ export class MetasDataService {
 
     {
       id: 2,
-      metas_li1: 'metas segundo proyecto',
-      metas_li2: 'metas segundo proyecto',
-      metas_li3: 'metas segundo proyecto',
+      metas_li1: 'El cuestionario debe ser accesible en línea, no limitado solo a formato presencial.',
+      metas_li2: 'Posibilidad de elegir el local más cercano mediante un mapa interactivo.',
+      metas_li3: 'Opción de elegir entre gatos o perros en el menú de selección.',
 
-      frustracion_li1: 'frustracion segundo proyecto',
-      frustracion_li2: 'frustracion segundo proyecto',
-      frustracion_li3: 'frustracion segundo proyecto',
-      cita: 'cita quota del segundo proyecto',
+      frustracion_li1: 'Es frustrante que no pueda filtrar por gatos o perros en el menú de selección.',
+      frustracion_li2: 'Decepción por la necesidad de descargar la aplicación móvil para poder utilizarla en el dispositivo.',
+      frustracion_li3: 'No hay una seccion con Preguntas y respuestas FAQ.',
+      cita: 'No Compres Mascotas, Adopta',
     },
   ];
 

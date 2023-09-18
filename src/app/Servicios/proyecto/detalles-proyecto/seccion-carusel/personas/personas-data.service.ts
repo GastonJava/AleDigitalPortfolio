@@ -15,9 +15,9 @@ export class PersonasDataService {
 
     {
       id: 2,
-      nombre: 'Alej',
-      nombre_span: 'P',
-      subtitulo: 'subtitulo segundo proyecto.',
+      nombre: 'Natalia',
+      nombre_span: 'J',
+      subtitulo: 'Estudiante de Marketing que necesita una pagina de adopción donde poder adoptar una mascota.',
     },
   ];
 
