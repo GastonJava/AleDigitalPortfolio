@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  Input,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -13,12 +14,11 @@ import { SeccionPrototipoEstilosDirective } from 'src/app/Directivas/seccion-pro
   styleUrls: ['./seccion-prototipo.component.scss'],
 })
 export class SeccionPrototipoComponent implements OnInit, AfterViewInit {
+  @Input() datosPrototipo!: any;
+
   @ViewChild('imageElement') imageElement!: ElementRef;
   @ViewChild('containerimg') containerimg!: ElementRef;
-  @ViewChild('h3') h3!: ElementRef; 
-
-  // Asignar la fuente de la imagen
-  imagesource = '../../../../../assets/Proyecto/detalle-proyecto/adoptapp2.png';
+  @ViewChild('h3') h3!: ElementRef;
 
   constructor(
     private el: ElementRef,
@@ -28,6 +28,9 @@ export class SeccionPrototipoComponent implements OnInit, AfterViewInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
+    // Asignar la fuente de la imagen desde detalle-proyecto-data.service.ts
+    const imagesource = `../../../../../assets/Proyecto/detalle-proyecto/${this.datosPrototipo.img}`;
+
     const image = this.imageElement.nativeElement;
     const mainDiv = this.containerimg.nativeElement;
 
@@ -46,13 +49,14 @@ export class SeccionPrototipoComponent implements OnInit, AfterViewInit {
       // Aplicar el color complementario como color de texto del h3
       this.h3.nativeElement.style.color = `rgb(${dominantColor.join(',')})`;
     };
-    
-    image.src = this.imagesource;
+
+    console.log(imagesource);
+    image.src = imagesource;
   }
 
   redirigirPrototipo() {
     const url =
-      'https://xd.adobe.com/view/37942285-98da-49b0-be9c-f294a9c49e68-62c7/';
+    `${this.datosPrototipo.url}`;
     window.open(url, '_blank');
   }
 }

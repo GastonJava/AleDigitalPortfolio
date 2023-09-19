@@ -5,6 +5,7 @@ import { SeccionPuntosdebilesDataService } from './seccion-puntosdebiles/seccion
 import { SeccionResponsabilidadDataService } from './seccion-responsabilidad/seccion-responsabilidad-data.service';
 import { SeccionResumenDatosService } from './seccion-resumen/seccion-resumen-datos.service';
 import { SeccionTituloDatosService } from './seccion-titulo/seccion-titulo-datos.service';
+import { SeccionPrototipoDataService } from './seccion-prototipo/seccion-prototipo-data.service';
 
 @Injectable({
   providedIn: 'root',
@@ -18,6 +19,7 @@ export class ProyectoDataService {
     private seccionResponsabilidadService: SeccionResponsabilidadDataService,
     private seccionInvestigacionService: SeccionInvestigacionDataService,
     private seccionPuntosdebilesService: SeccionPuntosdebilesDataService,
+    private seccionPrototipoService: SeccionPrototipoDataService
   ) {}
 
   getDatosProyecto(proyectoId: number) {
@@ -27,6 +29,7 @@ export class ProyectoDataService {
     const seccionResponsabilidadData = this.seccionResponsabilidadService.getSeccionResponsabilidad();
     const seccionInvestigacionData = this.seccionInvestigacionService.getSeccionInvestigacion();
     const seccionPuntosdebilesData = this.seccionPuntosdebilesService.getSeccionPuntosdebiles();
+    const seccionPrototipoData = this.seccionPrototipoService.getprototipoDatos();
 
     return {
       seccionTituloData: seccionTituloData.find(detalle => detalle.id === proyectoId),
@@ -35,6 +38,7 @@ export class ProyectoDataService {
       seccionResponsabilidadData: seccionResponsabilidadData.find(responsabilidad => responsabilidad.id === proyectoId),
       seccionInvestigacionData: seccionInvestigacionData.find(investigacion => investigacion.id === proyectoId),
       seccionPuntosdebilesData: seccionPuntosdebilesData.find(puntosdebiles => puntosdebiles.id === proyectoId),
+      seccionPrototipoData: seccionPrototipoData.find(prototipo => prototipo.id === proyectoId),
     };
   }
 }

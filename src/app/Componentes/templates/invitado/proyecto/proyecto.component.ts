@@ -12,10 +12,10 @@ export class ProyectoComponent {
   public proyectoDatos: any[] = [
     {
       id: 1,
-      nombre: 'Gaston ale dev',
-      tecnologia: 'Angular 15',
+      nombre: 'Portfolio Ale',
+      tecnologia: 'Angular 13',
       descripcion: 'Portfolio personal',
-      img: 'proyecto1.png',
+      img: 'proyecto3.png',
     },
     {
       id: 2,
