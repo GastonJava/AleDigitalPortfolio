@@ -1,0 +1,33 @@
+<div class="content-header">
+  <div class="content-header-90">
+    <h1>Prototipo De <span>Alta Fidelidad</span></h1>
+  </div>
+</div>
+
+<div class="main-prototipo">
+  <div #containerimg class="container-img">
+    <img
+      (click)="redirigirPrototipo()"
+      #imageElement
+      src="../../../../../assets/Proyecto/detalle-proyecto/proyecto3.png"
+      alt="Descripción de la imagen"
+    />
+
+    <!--
+      <img
+        [src]="'../../../../../assets/Proyecto/detalle-proyecto/' + datosResumen.img1"
+        alt="Imagen número 1"
+
+         <i class="bx bx-hand-click"></i>
+      /> -->
+
+    <i (click)="redirigirPrototipo()" class="bx bxs-pointer"></i>
+
+    <div class="img-descripcion">
+      <div class="texto-container">
+        <h3 #h3>Toca la imagen para ver el prototipo</h3>
+      </div>
+      <div class="icono"></div>
+    </div>
+  </div>
+</div>

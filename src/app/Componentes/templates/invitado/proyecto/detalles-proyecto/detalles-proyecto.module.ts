@@ -9,6 +9,7 @@ import { SeccionUsuarioComponent } from './detalle-secciones/seccion-usuario/sec
 import { SeccionInvestigacionComponent } from './detalle-secciones/seccion-investigacion/seccion-investigacion.component';
 import { SeccionPuntosdebilesComponent } from './detalle-secciones/seccion-puntosdebiles/seccion-puntosdebiles.component';
 import { CaruselModule } from './detalle-secciones/seccion-carusel/carusel.module';
+import { SeccionPrototipoComponent } from './detalle-secciones/seccion-prototipo/seccion-prototipo.component';
 
 
 
@@ -23,7 +24,8 @@ import { CaruselModule } from './detalle-secciones/seccion-carusel/carusel.modul
     SeccionResponsabilidadComponent,
     SeccionUsuarioComponent,
     SeccionInvestigacionComponent,
-    SeccionPuntosdebilesComponent
+    SeccionPuntosdebilesComponent,
+    SeccionPrototipoComponent
   ],
   imports: [
     CommonModule,
