@@ -9,7 +9,6 @@ import { InvitadoModule } from './Componentes/templates/invitado/invitado.module
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +19,7 @@ import { InvitadoModule } from './Componentes/templates/invitado/invitado.module
     InvitadoModule,
     TemplatesModule,
     UsuarioformModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

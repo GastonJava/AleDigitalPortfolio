@@ -5,6 +5,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { SeccionPrototipoEstilosDirective } from 'src/app/Directivas/seccion-prototipo-estilos.directive';
 
 @Component({
   selector: 'app-seccion-prototipo',
@@ -14,9 +15,15 @@ import {
 export class SeccionPrototipoComponent implements OnInit, AfterViewInit {
   @ViewChild('imageElement') imageElement!: ElementRef;
   @ViewChild('containerimg') containerimg!: ElementRef;
-  @ViewChild('h3') h3!: ElementRef; // Agregar ViewChild para el elemento h3
+  @ViewChild('h3') h3!: ElementRef; 
 
-  constructor() {}
+  // Asignar la fuente de la imagen
+  imagesource = '../../../../../assets/Proyecto/detalle-proyecto/adoptapp2.png';
+
+  constructor(
+    private el: ElementRef,
+    private seccionPrototipoEstilosDirective: SeccionPrototipoEstilosDirective
+  ) {}
 
   ngOnInit() {}
 
@@ -24,13 +31,14 @@ export class SeccionPrototipoComponent implements OnInit, AfterViewInit {
     const image = this.imageElement.nativeElement;
     const mainDiv = this.containerimg.nativeElement;
 
-    // Esperar a que la imagen se cargue
     image.onload = () => {
-      // Obtener el color dominante
-      const dominantColor = this.getColorDominante(image);
-      // Calcular el color complementario
+      // Utilizar los métodos de la directiva
+      const dominantColor =
+        this.seccionPrototipoEstilosDirective.getColorDominante(image);
       const complementaryColor =
-        this.calculateComplementaryColor(dominantColor);
+        this.seccionPrototipoEstilosDirective.calculateComplementaryColor(
+          dominantColor
+        );
 
       // Aplicar el color complementario como fondo del div main-prototipo
       mainDiv.style.backgroundColor = complementaryColor;
@@ -38,46 +46,13 @@ export class SeccionPrototipoComponent implements OnInit, AfterViewInit {
       // Aplicar el color complementario como color de texto del h3
       this.h3.nativeElement.style.color = `rgb(${dominantColor.join(',')})`;
     };
-
-    // Asignar la fuente de la imagen
-    image.src = '../../../../../assets/Proyecto/detalle-proyecto/proyecto3.png';
-  }
-
-  getColorDominante(image: HTMLImageElement): number[] {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = image.width;
-    canvas.height = image.height;
-    ctx!.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-    // Obtener el color dominante como un arreglo [r, g, b]
-    const imageData = ctx!.getImageData(0, 0, canvas.width, canvas.height).data;
-    const colorCounts: any = {};
-
-    for (let i = 0; i < imageData.length; i += 4) {
-      const r = imageData[i];
-      const g = imageData[i + 1];
-      const b = imageData[i + 2];
-      const color = `${r},${g},${b}`;
-      colorCounts[color] = colorCounts[color] ? colorCounts[color] + 1 : 1;
-    }
-
-    const dominantColor = Object.keys(colorCounts)
-      .reduce((a, b) => (colorCounts[a] > colorCounts[b] ? a : b))
-      .split(',')
-      .map(Number);
-
-    return dominantColor;
-  }
-
-  calculateComplementaryColor(color: number[]): string {
-    // Calcular el color complementario (inverso)
-    const complementaryColor = color.map((c) => 255 - c);
-    return `rgb(${complementaryColor.join(',')})`;
+    
+    image.src = this.imagesource;
   }
 
   redirigirPrototipo() {
-    const url = 'https://xd.adobe.com/view/37942285-98da-49b0-be9c-f294a9c49e68-62c7/'; // Reemplaza con la URL que deseas abrir
+    const url =
+      'https://xd.adobe.com/view/37942285-98da-49b0-be9c-f294a9c49e68-62c7/';
     window.open(url, '_blank');
   }
 }

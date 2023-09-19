@@ -10,9 +10,7 @@ import { SeccionInvestigacionComponent } from './detalle-secciones/seccion-inves
 import { SeccionPuntosdebilesComponent } from './detalle-secciones/seccion-puntosdebiles/seccion-puntosdebiles.component';
 import { CaruselModule } from './detalle-secciones/seccion-carusel/carusel.module';
 import { SeccionPrototipoComponent } from './detalle-secciones/seccion-prototipo/seccion-prototipo.component';
-
-
-
+import { SeccionPrototipoEstilosDirective } from 'src/app/Directivas/seccion-prototipo-estilos.directive';
 
 
 @NgModule({
@@ -25,11 +23,13 @@ import { SeccionPrototipoComponent } from './detalle-secciones/seccion-prototipo
     SeccionUsuarioComponent,
     SeccionInvestigacionComponent,
     SeccionPuntosdebilesComponent,
-    SeccionPrototipoComponent
+    SeccionPrototipoComponent,
+    SeccionPrototipoEstilosDirective
   ],
   imports: [
     CommonModule,
     CaruselModule
-  ]
+  ],
+  providers: [SeccionPrototipoEstilosDirective]
 })
 export class DetallesProyectoModule { }
