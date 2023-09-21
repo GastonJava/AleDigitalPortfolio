@@ -1,0 +1,97 @@
+@import "../../../Variables/global-variable.scss";
+
+.container-header {
+  background-color: $color-principal;
+  height: 10vh;
+  box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.27);
+}
+
+.divider-header {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background-color: #161920;
+  box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.75);
+}
+
+.divider {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background-color: #161920;
+  box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.75);
+  height: 8px;
+}
+
+.container-sobremi {
+  background-color: $sobremi-card-bg;
+  height: 90vh;
+}
+
+.container-educacion {
+  background-color: $color-principal;
+  //height: auto;
+}
+
+.container-hardsoft {
+  //background-color: $color-secundario;
+  //height: 50%;
+  height: 100vh;
+}
+
+.container-proyecto {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-color: $proyecto-bg;
+}
+
+.dividerb {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  background-color: #161920;
+  box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.25);
+  height: 8px;
+}
+
+.container-footer {
+  background: #161920; // $color-principal;
+  //height: 30%;
+  width: 100%;
+  height: 40vh;
+}
+
+/* Estilos para tablets */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container-header {
+    height: 10vh;
+    box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.27);
+  }
+}
+
+/* Estilos para dispositivos móviles */
+@media screen and (max-width: 767px) {
+  .container-header {
+    border: 1px solid #0000ff1a;
+    height: 10vh;
+    box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.27);
+  }
+}
+
+/*
+@media screen and (min-width: 1024px) and (max-width: 1365px) {
+   Estilos para tablets 
+  .container-header {
+    background-color: red;
+    height: 10vh;
+    box-shadow: 1px 12px 10px -2px rgba(0, 0, 0, 0.27);
+  }
+}
+*/
+
+/*
+Estilos para dispositivos móviles 
+@media screen and (max-width: 1023px) {
+}
+*/

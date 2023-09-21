@@ -1,0 +1,19 @@
+<!-- Contenido de la sección "Título" -->
+
+<div class="content">
+  <h1 class="content-titulo">
+    {{ datosTitulo.titulo }}
+    <span> {{ datosTitulo.span_titulo }}</span>
+  </h1>
+  <div class="content-divider"></div>
+  <p class="content-nombre">{{ datosTitulo.subtitulo }}</p>
+</div>
+
+<div class="floating-button">
+  <i
+    class="bx bx-chevrons-down"
+    (click)="scrollToResumen()"
+    [class.button-animation]="buttonClicked"
+  ></i>
+</div> 
+

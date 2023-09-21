@@ -1,0 +1,209 @@
+@import "../../../../Variables/global-variable.scss";
+
+.footer {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+
+  // Estilos para .footer aquí
+
+  .over-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    height: 90%;
+    width: 100%;
+    //background-color: beige;
+
+    // Estilos para .over-container aquí
+
+    .column1 {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-direction: column;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 50%;
+      height: 100%;
+      //background: grey;
+
+      .container-center {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        flex-direction: column;
+        height: 70%;
+        width: 90%;
+      }
+
+      // Estilos para .column1 aquí
+
+      .image-ico {
+        @include flex-centrado;
+        background: center;
+        height: 50%;
+        width: 40%;
+
+        img {
+          // Estilos para img aquí
+          width: 128px;
+          height: 48px;
+        }
+      }
+
+      .nombre-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 50%;
+        width: 80%;
+
+        p {
+          font-size: 13px;
+          color: #909297;
+          // Estilos para p aquí
+        }
+      }
+    }
+
+    .columna2 {
+      position: absolute;
+      right: 0;
+      z-index: 2;
+      width: 50%;
+      height: 100%;
+
+      // Estilos para .columna2 aquí
+
+      .textos {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 50%;
+        padding: 5px;
+
+        p {
+          color: #909297;
+          // Estilos para p aquí
+        }
+
+        .only-movil-icon {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .imagen-container-bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: auto;
+
+    // Estilos para .imagen-container-bg aquí
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+//responsive --- -- - - -- - -
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .columna2 {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+
+    // Estilos para .columna2 aquí
+
+    .textos {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      position: relative;
+      height: 50%;
+      padding: 5px;
+      top: 20%;
+
+      p {
+        color: #909297;
+        // Estilos para p aquí
+      }
+    }
+  }
+
+  .imagen-container-bg {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100% !important;
+
+    // Estilos para .imagen-container-bg aquí
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+
+  .footer {width: 98%;}
+  .footer .over-container .column1 .container-center .nombre-container {height: 80%; width: 100%;}
+
+  .imagen-container-bg {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100% !important;
+
+    // Estilos para .imagen-container-bg aquí
+    img {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .footer .over-container .columna2 .textos .only-movil-icon {
+    display: flex;
+    box-shadow: 0px 4px 4px 0px rgba(13, 27, 45, 0.5);
+
+    i {font-size: 30px; color: rgba(33, 150, 243, 0.15)}
+  }
+
+  .footer .over-container .columna2 .textos { align-items: flex-end; height: 80%; justify-content: space-between;} // especifisidad
+  .footer .over-container .columna2 {width: 90%;}
+  .footer .over-container .columna2 .textos > p {display: none;}
+
+  //footer for movil quitando position
+  .footer .over-container {flex-direction: column-reverse;}
+  .footer .over-container .column1 {position: unset; height: 40%;}
+  .footer .over-container .columna2 {position: unset; height: 40%;}
+
+}

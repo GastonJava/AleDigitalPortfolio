@@ -1,0 +1,50 @@
+//importaciones de otros scss 
+@import 'mixins';
+
+//importacion de animaciones
+@import 'animacion';
+
+
+// Variables específicas del header
+$color-principal: #171B23;
+$color-secundario: #161920;
+
+//Header
+$header-session-bg: rgba(14, 100, 112, 0.03); 
+$header-lenguaje-text: #4E6792;
+$header-lenguaje-bg: #D9D9D9;
+
+//sobre mi
+$sobremi-container-bg: #161920;
+$sobremi-card-bg: rgba(14, 100, 112, 0.02);
+$sobremi-footer-bg: rgba(57, 68, 67, 0.06);
+
+//educacion ----------------------------------
+$educacion-card-bg1: rgba(14, 100, 112, 0.1);
+$educacion-card-bg2: rgba(59, 67, 80, 0.1);
+
+//textos
+$texto-card-verde: #909297;
+$texto-card-gris: #dddddd91;
+
+$educacion-btnselected-bg: #A93F3F;
+$educacion-btn-bg: rgba(59, 67, 80, 0.1);
+$educacion-btn-bg: rgba(59, 67, 80, 0.1);
+
+//software skill -----------------------------
+$container-img-skill: rgba(217, 217, 217, 0.02);
+$skill-bg: #161920;
+$texto-hardskill: rgba(221, 221, 221, 0.568627451);
+
+$container-img-skill-bg: #D9D9D902;
+
+//proyectos -----------------------------------
+$proyecto-btn-bg: #A92D2D;
+$proyecto-btn-bg2: #2196F36B;
+$proyecto-btn-bg3: rgba(33, 150, 243, 0.15);
+$proyecto-letras-color: #466D6B;
+$proyecto-bg: #171B23;
+
+//footer ---------------------------------------
+$footer-texto: #ffffff;
+$footer-bg: rgba(22, 25, 32, 0.76);

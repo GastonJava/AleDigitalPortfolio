@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="container-titulo">
+    <div class="innertitulo">
+      <h3>Casos De Estudios.</h3>
+    </div>
+  </div>
+  <div class="main">
+    <div class="alto-filas">
+
+      <div *ngFor="let proyecto of proyectoDatos" class="fila">
+        <div class="columna col-flex1">
+          <!-- Aquí puedes usar proyecto.id para cargar la imagen desde tu archivo assets -->
+          <img
+            [src]="'../../../assets/Proyecto/' + proyecto.img"
+            alt="Imagen del proyecto"
+          />
+        </div>
+        <div class="columna col-flex2">
+          <h3>{{ proyecto.nombre }}</h3>
+          <p>Tecnología: {{ proyecto.tecnologia }}</p>
+          <p>{{ proyecto.descripcion }}</p>
+          <div class="btn-cover">
+            <button
+              class="detalle-proyecto"
+              (click)="redirectToDetallesProyecto(proyecto.id)"
+            >
+              <p>Detalle De Proyecto</p>
+            </button>
+          </div>
+        </div>
+      </div>
+   
+      <!-- Aquí se agregarán las filas y columnas de proyectos -->
+    </div>
+    <div class="footer">
+      <div class="cargar-mas">Cargar más</div>
+    </div>
+  </div>

@@ -1,0 +1,63 @@
+<div class="content-header">
+  <div class="content-header-90">
+    <h1>Resumen del <span>Proyecto</span></h1>
+  </div>
+</div>
+
+<div class="content-main">
+  <div class="content-izq">
+    <div class="content-elproducto">
+      <div class="content-icono">
+        <div class="container-ico-elproducto">
+          <i class="bx bx-desktop"></i>
+        </div>
+      </div>
+
+      <div class="titulo-subtitulo">
+        <div class="content-der-textos-titulo">
+          <h1>El producto</h1>
+        </div>
+
+        <div class="content-der-textos-subtitulo">
+          <p>
+            {{datosResumen.resumenTitulo}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-duracion">
+      <div class="content-icono">
+        <div class="container-ico-duracion">
+          <i class="bx bx-calendar-check"></i>
+        </div>
+      </div>
+
+      <div class="titulo-subtitulo">
+        <div class="content-der-textos-titulo">
+          <h1>Duracion del Proyecto</h1>
+        </div>
+
+        <div class="content-der-textos-subtitulo">
+          <p>{{datosResumen.resumenDuracion}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-der">
+    <div class="container-img">
+      <img
+        [src]="'../../../../../assets/Proyecto/detalle-proyecto/' + datosResumen.img1"
+        alt="Imagen número 1"
+      />
+
+      <img
+       class="second-image"
+       [src]="'../../../assets/Proyecto/detalle-proyecto/' + datosResumen.img2"
+       alt="Imagen número 2"
+      />
+
+    </div>
+  </div>
+</div>

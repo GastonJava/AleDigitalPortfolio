@@ -1,0 +1,124 @@
+@import "../../../../../../../Variables/variable-detalle-proyecto.scss";
+
+
+.content-header {
+    @include flex-centrado;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+    margin-bottom: 20px;
+    border-left: 2px solid $color-barra-ico-titulo; /* Agrega una línea vertical a la izquierda */
+    padding-left: 10px; /* Agrega espacio a la izquierda de la línea */
+
+    .content-header-90 {
+      width: 90%;
+
+      h1 {
+        color: $color-titulo;
+        text-align: start;
+      }
+
+      span {
+        color: $color-titulo-span;
+      }
+    }
+  }
+
+  //content main
+  .content-main {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    height: 80%;
+    padding: 20px;
+
+    .content-izq {
+      @include flex-jevenly-anone;
+      flex-direction: column;
+      width: 60%;
+      height: 90%;
+    }
+
+    .content-elproducto {
+      @include flex-jevenly-astart;
+      height: 40%;
+    }
+
+    .content-icono {
+      width: 10%;
+      height: 90%;
+
+      .container-ico-elproducto {
+        @include flex-centrado;
+        height: 30%;
+        i {
+          font-size: 30px;
+          color: $color-barra-ico-titulo;
+        }
+      }
+    }
+
+    .titulo-subtitulo {
+      width: 90%;
+      height: 90%;
+
+      .content-der-textos-titulo {
+        h1 {
+          color: $color-titulo;
+        }
+      }
+
+      .content-der-textos-subtitulo {
+        width: 90%;
+        p {
+          color: $color-titulo;
+        }
+      }
+    }
+
+    .content-duracion {
+      @include flex-jevenly-astart;
+      height: 40%;
+
+      .content-icono {
+        width: 10%;
+        height: 90%;
+        .container-ico-duracion {
+          @include flex-centrado;
+          height: 30%;
+
+          i {
+            font-size: 30px;
+            color: $color-barra-ico-titulo;
+          }
+        }
+      }
+    }
+
+    .content-der {
+      width: 40%;
+      height: 90%;
+
+      .container-img {
+        position: relative;
+        max-width: 90%;
+        height: 90%;
+        display: block;
+
+        img {
+          max-width: 90%;
+          height: auto;
+          display: block;
+          position: absolute;
+          box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.4);
+
+          &.second-image {
+            top: 140px;
+            left: 50%; /* Ajusta el margen derecho aquí */
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }

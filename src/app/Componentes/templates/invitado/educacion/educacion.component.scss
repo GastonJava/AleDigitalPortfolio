@@ -1,0 +1,493 @@
+//@import "../../Variables/global-variable.scss";
+@import "../../../../Variables/global-variable.scss";
+
+.container-edu {
+    padding: 20px;
+    width: 90%;
+}
+
+.fila1 {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+
+.container-izq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.container-titulo,
+.container-subtitulo {
+  width: 80%;
+}
+
+.container-titulo {
+
+  h2 {
+    color: #D9D9D9;
+  }
+}
+
+.container-subtitulo {
+
+  p {
+    color: #FFFFFF;
+  }
+}
+
+.container-der {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.container-btn {
+  display: flex;
+  justify-content: space-evenly;
+  width: 80%;
+}
+
+//botnes activos y inactivos background color
+.btn-inactivo {
+  position: relative;
+  background: rgba(221, 221, 221, 0.568627451);
+  font-weight: bold;
+  transition: background 0.9s ease; /* Agregamos la transición al cambio de color de fondo */
+
+  //sombras para botones
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra leve */
+  transition: box-shadow 0.3s ease; /* Transición suave */
+
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el cursor */
+  }
+  
+  &.active {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra aún más pronunciada en estado activo */
+    border-radius: 8px;
+  }
+
+  .container-insidebtn {
+    p {color: black;}
+  }
+  
+}
+
+.btn-inactivo.active {
+  background: #A93F3F;
+  border: 1px solid black;
+  transition: background 0.9s ease; /* Agregamos la transición al cambio de color de fondo */
+
+  .container-insidebtn {
+    p {
+      color: white;
+      margin: 0;
+    
+    }
+  }
+}
+
+.btn-bg {
+  @include flex-centrado;
+  //background: white;
+  height: 80%;
+  width: calc((80% / 3) - 20px);
+  
+}
+
+// triangulo selector del boton
+.arrow {
+  position: absolute;
+  bottom: -15px; /* Controla la posición vertical del triángulo */
+  left: 50%; /* Coloca el triángulo en el centro horizontal del botón */
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #A93F3F; /* Color del triángulo, puedes ajustarlo según tus necesidades */
+  transition: transform 0.5s ease;
+  opacity: 0; /* Oculta la flecha por defecto */
+  //transform: translateX(-50%); /* Ajusta la posición inicial del triángulo */
+}
+
+.arrow.active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-50%); /* Mueve la flecha a la posición del botón activo */
+}
+
+.btn-bg:hover {
+  cursor: pointer;
+}
+
+.container-insidebtn {
+  height: 80%;
+}
+
+/*
+.todo-btn {background-color: #A93F3F; color: white;}
+.curso-btn {color: black;}
+.otro-btn {color: black;}
+ */
+
+// fila 2 card container cardssss
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+
+  //agregar diferentes colores en las card...
+  .card:nth-child(odd){ //impar
+    background: $educacion-card-bg1;
+
+    .card-title > h2, 
+    .card-subtitle > p, 
+    .card-footer > h3 { color: $texto-card-verde;}
+
+  }
+  .card:nth-child(even) { //par
+    background: $educacion-card-bg2;
+
+    .card-title > h2, 
+    .card-subtitle > p, 
+    .card-footer > h3 { color: $texto-card-gris;}
+  }
+
+  .card {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 0 10px 20px;
+    border-radius: 10px;
+    padding: 20px;
+    @include border-educacion-card(1px, solid, rgba(0, 0, 0, 0.4));
+
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+    .card-title > h2, .card-subtitle > p, .card-footer > h3 { text-align: center;}
+
+    .card-title {
+      h2 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+
+    .card-subtitle {
+      p {
+        margin-bottom: 10px;
+        font-size: 14px;
+      }
+    }
+
+    .card-body {
+      .fecha-container {
+        display: flex;
+        justify-content: space-between;
+
+        .fecha-izq,
+        .fecha-der {
+          flex: 1;
+          text-align: center;
+
+          h4 {
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #888;
+          }
+
+          p {
+            font-size: 14px;
+            color: #FFFFFF;
+          }
+        }
+      }
+    }
+
+    .card-footer {
+      h3 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+//responsive --- -- - - -- - -
+@media screen and (min-width: 768px) and (max-width: 1023px){
+
+// el titulo y subtitulo
+.fila1 {height: 20vh; padding: 10px;}
+
+
+// las cards
+.fila2 {height: 80vh;}
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  
+    //agregar diferentes colores en las card...
+    .card:nth-child(odd){ //impar
+      background: $educacion-card-bg1;
+  
+      .card-title > h2, 
+      .card-subtitle > p, 
+      .card-footer > h3 { color: $texto-card-verde;}
+  
+    }
+    .card:nth-child(even) { //par
+      background: $educacion-card-bg2;
+  
+      .card-title > h2, 
+      .card-subtitle > p, 
+      .card-footer > h3 { color: $texto-card-gris;}
+    }
+  
+    .card {
+      flex: 0 0 calc(42% - 10px);
+      margin: 0 10px 0 10px;
+      border-radius: 10px;
+      padding: 10px;
+      @include border-educacion-card(1px, solid, rgba(0, 0, 0, 0.4));
+  
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  
+      .card-title > h2, .card-subtitle > p, .card-footer > h3 { text-align: center;}
+  
+      .card-title {
+        h2 {
+          margin-bottom: 10px;
+          font-size: 13px;
+          font-weight: bold;
+        }
+      }
+  
+      .card-subtitle {
+        p {
+          margin-bottom: 10px;
+          font-size: 14px;
+        }
+      }
+  
+      .card-body {
+        .fecha-container {
+          display: flex;
+          justify-content: space-between;
+  
+          .fecha-izq,
+          .fecha-der {
+            flex: 1;
+            text-align: center;
+  
+            h4 {
+              margin-bottom: 5px;
+              font-size: 12px;
+              color: #888;
+            }
+  
+            p {
+              font-size: 14px;
+              color: #FFFFFF;
+            }
+          }
+        }
+      }
+  
+      .card-footer {
+        h3 {
+          font-size: 13px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  
+
+}
+
+@media screen and (max-width: 767px) {
+
+  .container-edu {
+    padding: 20px;
+    width: 98%;
+}
+  
+  // el titulo y subtitulo
+.fila1 {
+  display: flex;
+  flex-direction: column;
+  height: 20vh; 
+  padding: 5px;
+margin-bottom: 10px;
+}
+
+.container-izq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  height: 70%;
+}
+
+.container-titulo,
+.container-subtitulo {
+  width: 80%;
+}
+
+.container-titulo {
+
+  h2 {
+    //font-size: 18px;
+    color: #D9D9D9;
+  }
+}
+
+.container-subtitulo {
+
+  p {
+    font-size: 13px;
+    color: #FFFFFF;
+  }
+}
+
+.container-der {
+  display: flex;
+  justify-content: center;
+  width: 98%;
+  height: 30%;
+
+}
+
+.container-btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 98%;
+}
+
+//botnes activos y inactivos background color
+.btn-inactivo {
+  position: relative;
+  background: rgba(221, 221, 221, 0.568627451);
+  font-weight: bold;
+  height: 60%;
+  transition: background 0.9s ease; /* Agregamos la transición al cambio de color de fondo */
+
+  //sombras para botones
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra leve */
+  transition: box-shadow 0.3s ease; /* Transición suave */
+
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el cursor */
+  }
+  
+  &.active {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra aún más pronunciada en estado activo */
+    border-radius: 8px;
+  }
+
+  .container-insidebtn {
+    p {color: black; font-size: 10px;}
+  }
+  
+}
+
+
+// las cards
+.fila2 {height: auto;}
+
+  .card-container {
+    //background: red;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  
+    //agregar diferentes colores en las card...
+    .card:nth-child(odd){ //impar
+      background: $educacion-card-bg1;
+  
+      .card-title > h2, 
+      .card-subtitle > p, 
+      .card-footer > h3 { color: $texto-card-verde;}
+  
+    }
+    .card:nth-child(even) { //par
+      background: $educacion-card-bg2;
+  
+      .card-title > h2, 
+      .card-subtitle > p, 
+      .card-footer > h3 { color: $texto-card-gris;}
+    }
+  
+    .card {
+      flex: 0 0 calc(100%);
+      margin: 0 10px 0 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      padding: 10px;
+      @include border-educacion-card(1px, solid, rgba(0, 0, 0, 0.4));
+  
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  
+      .card-title > h2, .card-subtitle > p, .card-footer > h3 { text-align: center;}
+  
+      .card-title {
+        h2 {
+          margin-bottom: 10px;
+          font-size: 13px;
+          font-weight: bold;
+        }
+      }
+  
+      .card-subtitle {
+        p {
+          margin-bottom: 10px;
+          font-size: 14px;
+        }
+      }
+  
+      .card-body {
+        .fecha-container {
+          display: flex;
+          justify-content: space-between;
+  
+          .fecha-izq,
+          .fecha-der {
+            flex: 1;
+            text-align: center;
+  
+            h4 {
+              margin-bottom: 5px;
+              font-size: 12px;
+              color: #888;
+            }
+  
+            p {
+              font-size: 14px;
+              color: #FFFFFF;
+            }
+          }
+        }
+      }
+  
+      .card-footer {
+        h3 {
+          font-size: 13px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

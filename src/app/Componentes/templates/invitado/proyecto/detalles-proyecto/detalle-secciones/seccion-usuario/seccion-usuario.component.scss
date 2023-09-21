@@ -1,0 +1,59 @@
+@import "../../../../../../../Variables/variable-detalle-proyecto.scss";
+
+.container-usuario {
+    @include flex-centrado;
+    width: 90%;
+    height: 90%;
+  }
+
+  .bloque1,
+  .bloque2,
+  .bloque3 {
+    height: 80%;
+  }
+
+  .bloque1 {
+    @include flex-centrado;
+    width: 49%;
+
+    .container-h1 {
+      @include flex-centrado;
+      height: 50%;
+
+      h1 {
+        font-size: 18px;
+        color: white;
+      }
+
+      span {
+        color: $color-titulo-span;
+      }
+    }
+  }
+
+  .bloque2 {
+    width: 2%;
+    height: 50%;
+    background-color: #fff;
+  }
+  .bloque3 {
+    @include flex-centrado;
+    width: 49%;
+  }
+
+  .bloque3__container-lista {
+    @include flex-centrado;
+    height: 60%;
+    width: 90%;
+
+    ul {
+      @include flex-jevenly-anone;
+      flex-direction: column;
+      height: 90%;
+      width: 90%;
+
+      li {
+        color: #fff;
+      }
+    }
+  }

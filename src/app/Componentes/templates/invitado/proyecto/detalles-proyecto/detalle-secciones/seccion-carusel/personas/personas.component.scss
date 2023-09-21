@@ -1,0 +1,56 @@
+//variable global
+@import "../../../../../../../../Variables/variable-detalle-proyecto.scss";
+
+.content-header {
+  @include flex-centrado;
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  margin-bottom: 8px;
+  border-left: 2px solid $color-barra-ico-titulo; /* Agrega una línea vertical a la izquierda */
+  padding-left: 10px; /* Agrega espacio a la izquierda de la línea */
+
+  .content-header-90 {
+    width: 90%;
+
+    h1 {
+      color: $color-titulo;
+      text-align: start;
+    }
+
+    span {
+      color: $color-titulo-span;
+    }
+  }
+}
+
+.main-personas {
+  @include flex-centrado;
+  height: 80%;
+}
+
+.content {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  width: 90%;
+  height: 98%;
+}
+
+.content-fila--titulo--container {
+  height: 20%;
+
+  h1 {
+    color: #fff;
+    padding: 30px;
+  }
+}
+
+.content-fila--subtitulo--container {
+  display: flex;
+  align-items: center;
+  height: 60%;
+  padding: 20px;
+
+  p {padding: 10px; color: #fff;}
+}

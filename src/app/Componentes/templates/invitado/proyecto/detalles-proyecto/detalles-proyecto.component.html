@@ -1,0 +1,59 @@
+
+<div class="container-detalles-proyecto">
+
+  <div class="seccion-titulo" id="seccion-titulo">
+    <!-- Contenido de la sección "Título" -->
+    <app-seccion-titulo [datosTitulo]="detallesProyectoData.seccionTituloData" (scrollToResumenEvent)="scrollToResumen()"></app-seccion-titulo>
+  </div>
+  
+  <!-- SECCION RESUMEN -->
+  <div class="seccion-resumen" id="seccion-resumen">
+    <app-seccion-resumen [datosResumen]="detallesProyectoData.seccionResumenData"></app-seccion-resumen>
+  </div>
+  
+  <!-- CONTENIDO DE SECCION PROBLEMA -->
+  <div class="seccion-problema">
+    <app-seccion-problema [datosProblema]="detallesProyectoData.seccionProblemaData"></app-seccion-problema>
+  </div>
+  
+  <!-- CONTENIDO DE SECCION RESPONSABILIDAD -->
+  <div class="seccion-responsabilidad">
+    <!-- Contenido de la sección "RESPONSABILIDAD" -->
+    <app-seccion-responsabilidad [datosResponsabilidad]="detallesProyectoData.seccionResponsabilidadData"></app-seccion-responsabilidad>
+  </div>
+  
+  <div class="seccion-usuario">
+    <app-seccion-usuario></app-seccion-usuario>
+  </div>
+  
+  <div class="seccion-investigacion">
+    <!-- Contenido de la sección "Problema" -->
+    <app-seccion-investigacion [datosInvestigacion]="detallesProyectoData.seccionInvestigacionData"></app-seccion-investigacion>
+  </div>
+  
+  <div class="seccion-puntosdebiles">
+    <!-- Contenido de la sección "Puntos debiles" -->
+    <app-seccion-puntosdebiles [datosPuntosdebiles]="detallesProyectoData.seccionPuntosdebilesData"></app-seccion-puntosdebiles>
+  </div>
+  
+  <div class="seccion-personas">
+    <!-- Contenedor del carrusel -->
+    <div class="carousel">
+      <app-carusel [caruselid]="caruselid"></app-carusel>
+  
+      <!--
+      <div class="content-icono--container">
+        <div class="icono-content">
+          <i class="bx bx-chevrons-right"></i>
+        </div>
+      </div>
+      -->
+    </div>
+  </div>
+
+  <div class="seccion-prototipo">
+    <!-- Contenido de la sección "Prototipo" -->
+    <app-seccion-prototipo [datosPrototipo]="detallesProyectoData.seccionPrototipoData"></app-seccion-prototipo>
+  </div>
+  
+</div>
