@@ -6,13 +6,13 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  max-width: 60%; // Ajusta el ancho máximo del contenido al 60% del contenedor
+  max-width: 60%; 
 }
 
 .content-titulo {
   color: #fff;
   span {
-    color: $color-secundario-titulosiguiente; // Color del texto "proyecto"
+    color: $color-secundario-titulosiguiente; 
   }
 }
 
@@ -27,13 +27,78 @@
   color: $color-secundario-titulo;
 }
 
+//DISEÑO DEL LINK QUE REDIRIGE A LA PAGINA EN VIVO DEL PROYECTO
+.online-button {
+  display: inline-block;
+  padding: 10px 20px; 
+  //background-color: #ff5733; 
+  background-color: #4CAF50;
+  color: #000; /* Color del texto */
+  text-decoration: none;
+  border-radius: 5px; 
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+
+  transition: background-color 0.3s ease; 
+  margin-top: 60px;
+
+  //efecto animacion para el texto ==================================================
+  opacity: 0; 
+  transition: opacity 1s ease; 
+
+  position: relative; 
+  overflow: hidden;
+  
+
+  //punto que parpadeara 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%; 
+    left: 5px;
+    width: 5px; 
+    height: 5px;
+    background-color: #0940e3; 
+    border-radius: 50%; 
+    animation: blink 6s ease 6s infinite; 
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1; 
+  }
+}
+
+
+//animacion para el texto del boton
+.online-button.appear {
+  opacity: 1;
+}
+
+.online-button:visited {
+  //background-color: #ff1a00; /* Color para :visited */
+}
+
+.online-button:hover {
+  background-color: $color-secundario-titulo; 
+  color: #ff5733; 
+}
+
+.online-button i {
+  background-color: $color-secundario-titulo; 
+}
+
+
 .floating-button {
   @include flex-centrado;
   position: absolute;
-  bottom: calc(20% - 30px); // Ajusta la distancia desde abajo según necesites
+  bottom: calc(20% - 30px); 
   right: calc(
     27% - 30px
-  ); // Ajusta la distancia desde la derecha según necesites
+  ); 
   //background-color: #466D6B;
   color: white;
   border: none;
@@ -53,9 +118,9 @@
 @keyframes bounce {
   0%,
   100% {
-    transform: translateY(0); /* Posición inicial y final (sin cambio) */
+    transform: translateY(0); 
   }
   50% {
-    transform: translateY(-10px); /* Posición elevada */
+    transform: translateY(-10px); 
   }
 }

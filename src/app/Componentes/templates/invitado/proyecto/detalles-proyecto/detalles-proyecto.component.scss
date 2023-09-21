@@ -1,7 +1,6 @@
 //importamos variables globales de detalle-proyecto
 @import "../../../../../Variables/variable-detalle-proyecto.scss";
 
-
 //contenedor
 .container-detalles-proyecto {
   
@@ -9,7 +8,6 @@
   flex-direction: column;
 
 }
-
 
 //TODO: General
 .seccion-titulo,
@@ -21,14 +19,14 @@
 .seccion-prototipo {
   height: 100vh;
   width: 90%;
-  max-width: 90%;
+  max-width: 80%;
 }
 
 .seccion-problema,
 .seccion-responsabilidad {
   height: 90vh;
   width: 90%;
-  max-width: 90%;
+  max-width: 80%;
 }
 
 //TODO: SECCION TITULO ===========

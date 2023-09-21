@@ -8,8 +8,9 @@ export class SeccionTituloDatosService {
     {
       id: 1,
       titulo: 'Portfolio web',
-      span_titulo: 'Alternativa',
+      span_titulo: 'Compufolio',
       subtitulo: 'Gaston Aleja.',
+      enlace: 'https://gastonjava.github.io/compufolio'
     },
 
     {
@@ -17,6 +18,7 @@ export class SeccionTituloDatosService {
       titulo: 'Diseño UX',
       span_titulo: 'AdoptApp',
       subtitulo: 'Gaston Alejandro', 
+      enlace: '#'
     },
   ];
 

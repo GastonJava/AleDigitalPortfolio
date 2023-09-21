@@ -9,7 +9,7 @@ export class SeccionPrototipoDataService {
     {
       id: 1,
       img: 'proyecto3.png',
-      url: 'https://xd.adobe.com/view/37942285-98da-49b0-be9c-f294a9c49e68-62c7/'
+      url: 'https://gastonjava.github.io/compufolio'
     },
 
     {
