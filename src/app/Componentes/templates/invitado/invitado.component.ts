@@ -1,4 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { EducacionDataService } from 'src/app/Servicios/educacion/educacion-data.service';
+import { InvitadoDataService } from 'src/app/Servicios/invitado-data.service';
 
 @Component({
   selector: 'app-invitado',
@@ -7,6 +10,9 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class InvitadoComponent implements OnInit {
 
+  parametroid: any;
+  invitadoid: any;
+  educacionDatos: any;
   
   @ViewChild('seccionheaderEl', { static: false }) seccionheaderEl!: ElementRef;
   @ViewChild('seccionsobremiEl', { static: false }) seccionsobremiEl!: ElementRef;
@@ -18,9 +24,16 @@ export class InvitadoComponent implements OnInit {
 
   //@ViewChild('animatedElement', { static: false }) animatedElement!: ElementRef;
 
-  constructor() { }
+  constructor(private educacionData: EducacionDataService) { }
 
   ngOnInit(): void {
+
+    /*
+    const paramId = this.route.snapshot.paramMap.get('id');
+    this.parametroid = paramId ? +paramId : 0;
+    this.invitadoid = this.parametroid; */
+
+    this.educacionDatos = this.educacionData.getEducacionData();
    
   }
 
