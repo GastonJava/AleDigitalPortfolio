@@ -19,16 +19,10 @@ export class EducacionComponent implements OnInit {
   ngOnInit(): void {
     this.cardsFiltradas = this.educacionData;
     this.botonactivado = 'TODO';
-
-    console.log(JSON.stringify(this.educacionData));
   }
 
   setActivarBtn(boton: string) {
-
-
-    console.log(boton);
     this.botonactivado = boton;
-
     this.posicionFlecha = boton === 'TODO' ? 0 : 100; // Ajusta los valores de posición según tus necesidades
 
     if (boton === 'TODO') {
