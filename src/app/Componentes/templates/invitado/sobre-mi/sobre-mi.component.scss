@@ -170,8 +170,9 @@ $tooltip-transition-delay: 0.3s;
     color: limegreen;
   }
 
-  .gmail-ico:hover {
-    color: gold;
+  .whatsapp-ico:hover {
+    //color:  #4DD472;
+    color: #9B59B6;
   }
 
   .linkedin-ico {
@@ -182,8 +183,8 @@ $tooltip-transition-delay: 0.3s;
     @include icon-styles(wheat, icon-animation2, $icon-animation-delay + 0.2s);
   }
 
-  .gmail-ico {
-    @include icon-styles(#d94242, icon-animation3, $icon-animation-delay + 0.4s);
+  .whatsapp-ico {
+    @include icon-styles(#25d366, icon-animation3, $icon-animation-delay + 0.4s);
   }
 
   @include keyframes(icon-animation1, -10px);
