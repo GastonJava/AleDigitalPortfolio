@@ -1,44 +1,64 @@
-
 //mixin metodos para display flex center
 @mixin flex-centrado {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin flex-jcenter-aend {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 @mixin flex-jcenter-astart {
-    display: flex;
-    justify-content: center;
-    align-items: start;
+  display: flex;
+  justify-content: center;
+  align-items: start;
 }
 
 @mixin flex-jevenly-anone {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 @mixin flex-jevenly-astart {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-start;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
-//mixin metodos para efectos Inner-shadow 
+//mixin metodos para efectos Inner-shadow
 @mixin inner-shadow($color, $blur, $x, $y) {
-    box-shadow: inset $x $y $blur $color;
+  box-shadow: inset $x $y $blur $color;
 }
 
 //mixin metodos para efectos shadow-drop
 @mixin drop-shadow($color, $blur, $x, $y) {
-    box-shadow: $x $y $blur $color;
+  box-shadow: $x $y $blur $color;
 }
 
 @mixin border-educacion-card($width, $style, $color) {
-    border: $width $style $color;
+  border: $width $style $color;
+}
+
+//mixins para VARIABLE SOBREMI -============================================================ ///
+@mixin icon-styles($color, $animation-name, $animation-delay) {
+  color: $color;
+  position: relative;
+  animation: $animation-name $icon-animation-duration;
+  animation-delay: $animation-delay;
+  transition: color $tooltip-transition-duration ease;
+}
+
+@mixin keyframes($name, $top) {
+  @keyframes #{$name} {
+    0%,
+    100% {
+      top: 0;
+    }
+    25% {
+      top: $top;
+    }
+  }
 }

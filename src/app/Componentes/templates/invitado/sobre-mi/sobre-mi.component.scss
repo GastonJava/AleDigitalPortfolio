@@ -1,13 +1,17 @@
 @import "../../../../Variables/global-variable.scss";
 
+$icon-size: 45px;
+$icon-animation-duration: 1s;
+$icon-animation-delay: 2s;
+$tooltip-transition-duration: 0.3s;
+$tooltip-transition-delay: 0.3s;
+
 .container-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
   height: 100%;
-  //width: 100%;
-  //background: $sobremi-container-bg;
 }
 
 .container-left-right {
@@ -15,14 +19,12 @@
   justify-content: center;
   height: 80%;
   width: 90%;
-  //background: red;
 }
 
 .left-card {
   @include flex-centrado;
   width: 48%;
   height: 100%;
-  //background: blue;
 }
 
 .container-left {
@@ -38,7 +40,7 @@
   background-color: $sobremi-card-bg;
   width: 80%;
   height: 90%;
-  
+
   @include drop-shadow(rgba(0, 0, 0, 0.25), 4px, 0, 4px);
 
   .card-title {
@@ -50,7 +52,7 @@
     height: 30%;
 
     h4 {
-      color: #D9D9D9;
+      color: #d9d9d9;
       text-align: center;
     }
   }
@@ -63,18 +65,16 @@
     .card-descripcion-content {
       @include flex-centrado;
       text-align: center;
-      //color: #fff;
       overflow: hidden;
       overflow-wrap: break-word;
       width: 80%;
       max-height: 100%;
 
-      //animacion 
-      animation: slideInDown 1s ease-in-out; 
-      
+
+      animation: slideInDown 1s ease-in-out;
     }
     p {
-      color: rgba(221, 221, 221, 0.97);;
+      color: rgba(221, 221, 221, 0.97);
       margin: 0;
       font-size: 14px;
       text-align: justify;
@@ -83,9 +83,7 @@
 }
 
 .right-card {
-  //animacion 
   animation: slideInRight 1s ease-in-out;
-
   width: 48%;
   height: 100%;
 }
@@ -110,9 +108,8 @@
 .footer-container {
   height: 20%;
   width: 83%;
-  /* background-color: $sobremi-container-bg; */
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
 }
 
 .container-relative {
@@ -141,6 +138,7 @@
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  height: 100%;
   padding: 10px;
 }
 
@@ -149,32 +147,90 @@
   justify-content: space-evenly;
   align-items: center;
   width: 33%;
-}
+  height: 90%;
+  cursor: pointer;
+  position: relative;
 
-.icon-letra > i {
- font-size: 22px;
-}
+  a {
+    text-decoration: none; 
+  }
 
-.linkedin-ico {
-  color: #221da8;
-}
+  i {
+    font-size: $icon-size;
+    transition: color $tooltip-transition-duration ease;
+  }
 
-.github-ico {
-  color: wheat;
-}
 
-.gmail-ico {
-  color: #d94242;
-}
 
-.text {
-  font-size: 14px;
-  color: rgba(221, 221, 221, 0.83);
+  .linkedin-ico:hover {
+    color: dodgerblue;
+  }
+
+  .github-ico:hover {
+    color: limegreen;
+  }
+
+  .whatsapp-ico:hover {
+    //color:  #4DD472;
+    color: #9B59B6;
+  }
+
+  .linkedin-ico {
+    @include icon-styles(#221da8, icon-animation1, $icon-animation-delay);
+  }
+
+  .github-ico {
+    @include icon-styles(wheat, icon-animation2, $icon-animation-delay + 0.2s);
+  }
+
+  .whatsapp-ico {
+    @include icon-styles(#25d366, icon-animation3, $icon-animation-delay + 0.4s);
+  }
+
+  @include keyframes(icon-animation1, -10px);
+  @include keyframes(icon-animation2, -20px);
+  @include keyframes(icon-animation3, -30px);
+
+  .text {
+    font-size: 11px;
+    color: rgba(221, 221, 221, 0.5);
+    transition: color $tooltip-transition-duration ease;
+  }
+
+  // Estilo para el tooltip al hacer hover sobre los iconos
+  .tooltip {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity $tooltip-transition-duration ease, top $tooltip-transition-duration ease;
+    pointer-events: none;
+    max-height: 40px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  i:hover + .tooltip {
+    opacity: 1; 
+    top: -10px; 
+    transition-delay: 0s; 
+  }
+
+  i:not(:hover) + .tooltip {
+    opacity: 0; 
+    top: -30px;
+    transition-delay: $tooltip-transition-delay; 
+  }
 }
 
 //responsive --- -- - - -- - -
-
-@media screen and (min-width: 768px) and (max-width: 1023px){
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .container-flex {
     display: flex;
     justify-content: space-between;
@@ -184,7 +240,7 @@
     width: 100%;
     //background: $sobremi-container-bg;
   }
-  
+
   .container-left-right {
     display: flex;
     justify-content: center;
@@ -192,20 +248,20 @@
     width: 98%;
     //background: red;
   }
-  
+
   .left-card {
     @include flex-centrado;
     width: 48%;
     height: 100%;
     //background: blue;
   }
-  
+
   .container-left {
     @include flex-centrado;
     width: 98%;
     height: 90%;
   }
-  
+
   .card {
     display: flex;
     justify-content: space-evenly;
@@ -213,9 +269,9 @@
     background-color: $sobremi-card-bg;
     width: 90%;
     height: 90%;
-    
+
     @include drop-shadow(rgba(0, 0, 0, 0.25), 4px, 0, 4px);
-  
+
     .card-title {
       display: flex;
       justify-content: center;
@@ -223,18 +279,18 @@
       background: rgba(0, 0, 0, 0.09);
       border-radius: 18px;
       height: 30%;
-  
+
       h4 {
-        color: #D9D9D9;
+        color: #d9d9d9;
         text-align: center;
       }
     }
-  
+
     .card-descripcion {
       @include flex-centrado;
       height: 70%;
       padding: 2px;
-  
+
       .card-descripcion-content {
         @include flex-centrado;
         text-align: center;
@@ -243,64 +299,63 @@
         overflow-wrap: break-word;
         width: 80%;
         max-height: 100%;
-        
       }
       p {
-        color: rgba(221, 221, 221, 0.97);;
+        color: rgba(221, 221, 221, 0.97);
         margin: 0;
         font-size: 14px;
         text-align: justify;
       }
     }
   }
-  
+
   .right-card {
     width: 48%;
     height: 100%;
   }
-  
+
   .container-right {
     width: 100%;
     height: 100%;
   }
-  
+
   .img-container {
     @include flex-centrado;
     width: 100%;
     height: 100%;
   }
-  
+
   .img-container > img {
     width: 90%;
     height: 70%;
     border-radius: 30px;
   }
-  
+
   .footer-container {
     height: 20%;
     width: 98%;
     /* background-color: $sobremi-container-bg; */
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
   }
-  
+
   .container-relative {
     display: block;
     width: 100%;
     height: 100%;
     position: relative;
   }
-  
+
   .image-container {
     position: relative;
     bottom: 30px;
   }
-  
+
   .img-bar {
     width: 100%;
     display: block;
   }
-  
+
   .text-container {
     position: absolute;
     top: 50%;
@@ -312,30 +367,30 @@
     width: 100%;
     padding: 10px;
   }
-  
+
   .icon-letra {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 33%;
   }
-  
+
   .icon-letra > i {
-   font-size: 22px;
+    font-size: 22px;
   }
-  
+
   .linkedin-ico {
     color: #221da8;
   }
-  
+
   .github-ico {
     color: wheat;
   }
-  
+
   .gmail-ico {
     color: #d94242;
   }
-  
+
   .text {
     font-size: 11px;
     color: rgba(221, 221, 221, 0.83);
@@ -352,7 +407,7 @@
     width: 100%;
     //background: $sobremi-container-bg;
   }
-  
+
   .container-left-right {
     display: flex;
     justify-content: center;
@@ -360,7 +415,7 @@
     width: 98%;
     //background: red;
   }
-  
+
   .left-card {
     @include flex-centrado;
     width: 98%;
@@ -368,13 +423,13 @@
 
     //background: blue;
   }
-  
+
   .container-left {
     @include flex-centrado;
     width: 98%;
     height: 90%;
   }
-  
+
   .card {
     display: flex;
     justify-content: space-evenly;
@@ -382,9 +437,9 @@
     background-color: $sobremi-card-bg;
     width: 90%;
     height: 90%;
-    
+
     @include drop-shadow(rgba(0, 0, 0, 0.25), 4px, 0, 4px);
-  
+
     .card-title {
       display: flex;
       justify-content: center;
@@ -392,18 +447,18 @@
       background: rgba(0, 0, 0, 0.09);
       border-radius: 18px;
       height: 30%;
-  
+
       h4 {
-        color: #D9D9D9;
+        color: #d9d9d9;
         text-align: center;
       }
     }
-  
+
     .card-descripcion {
       @include flex-centrado;
       height: 70%;
       padding: 2px;
-  
+
       .card-descripcion-content {
         @include flex-centrado;
         text-align: center;
@@ -412,50 +467,49 @@
         overflow-wrap: break-word;
         width: 80%;
         max-height: 100%;
-        
       }
       p {
-        color: rgba(221, 221, 221, 0.97);;
+        color: rgba(221, 221, 221, 0.97);
         margin: 0;
         font-size: 14px;
         text-align: justify;
       }
     }
   }
-  
+
   .right-card {
     display: none;
     width: 48%;
     height: 100%;
   }
-  
+
   .footer-container {
     height: 20%;
     width: 98%;
     /* background-color: $sobremi-container-bg; */
-    display: flex; 
-    align-items: center; 
+    display: flex;
+    align-items: center;
   }
-  
+
   .container-relative {
     display: block;
     width: 100%;
     height: 100%;
     position: relative;
   }
-  
+
   .image-container {
     position: relative;
     bottom: 30px;
 
-    height: 90%; 
+    height: 90%;
   }
-  
+
   .img-bar {
     width: 100%;
     display: none;
   }
-  
+
   .text-container {
     position: absolute;
     top: 50%;
@@ -467,133 +521,33 @@
     width: 100%;
     padding: 10px;
   }
-  
+
   .icon-letra {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 33%;
   }
-  
+
   .icon-letra > i {
-   font-size: 38px;
+    font-size: 38px;
   }
-  
+
   .linkedin-ico {
     color: #221da8;
   }
-  
+
   .github-ico {
     color: wheat;
   }
-  
+
   .gmail-ico {
     color: #d94242;
   }
-  
+
   .text {
     display: none;
     font-size: 11px;
     color: rgba(221, 221, 221, 0.83);
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-.container-relative {
-  display: block; 
-  width: 100%; 
-  height: 100%; 
-  position: relative;
-  background-color: red;
-
-}
-.svg-container {
-  flex: 1; 
-  
-}
-
-.svg-container svg {
-  display: block; 
-  width: 100%; 
-  height: 100%; 
-}
-
-.img-bar {
-  width: 100%;
-  bottom: 8px;
-  position: absolute;
-}
-
-
-*/
-
-
-
-/*
-.footer-container {
-  height: 20%;
-  width: 83%;
-  background-color: $sobremi-container-bg;
-  position: relative;
-}
-
-.text-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-.text {
-  color: white;
-}
-
-.svg-container {
-  width: 100%;
-  height: 100%;
-}
-
-.svg-container svg {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-*/
