@@ -46,6 +46,9 @@ Thumbs.db
 # firebase
 .firebase
 /.firebase
+/.firebase/
+.firebase/
+
 #.firebaserc
 #.github/
 #firebase.json
