@@ -1,5 +1,11 @@
 @import "../../../../Variables/global-variable.scss";
 
+$icon-size: 45px;
+$icon-animation-duration: 1s;
+$icon-animation-delay: 2s;
+$tooltip-transition-duration: 0.3s;
+$tooltip-transition-delay: 0.3s;
+
 .container-flex {
   display: flex;
   justify-content: space-between;
@@ -13,14 +19,12 @@
   justify-content: center;
   height: 80%;
   width: 90%;
-  //background: red;
 }
 
 .left-card {
   @include flex-centrado;
   width: 48%;
   height: 100%;
-  //background: blue;
 }
 
 .container-left {
@@ -61,13 +65,12 @@
     .card-descripcion-content {
       @include flex-centrado;
       text-align: center;
-      //color: #fff;
       overflow: hidden;
       overflow-wrap: break-word;
       width: 80%;
       max-height: 100%;
 
-      //animacion
+
       animation: slideInDown 1s ease-in-out;
     }
     p {
@@ -80,9 +83,7 @@
 }
 
 .right-card {
-  //animacion
   animation: slideInRight 1s ease-in-out;
-
   width: 48%;
   height: 100%;
 }
@@ -107,7 +108,6 @@
 .footer-container {
   height: 20%;
   width: 83%;
-  /* background-color: $sobremi-container-bg; */
   display: flex;
   align-items: center;
 }
@@ -152,78 +152,45 @@
   position: relative;
 
   i {
-    font-size: 45px;
-    transition: color 0.3s ease;
+    font-size: $icon-size;
+    transition: color $tooltip-transition-duration ease;
   }
 
   .linkedin-ico:hover {
-    color: dodgerblue; 
+    color: dodgerblue;
   }
 
   .github-ico:hover {
-    color: limegreen; 
+    color: limegreen;
   }
 
   .gmail-ico:hover {
-    color: gold; 
+    color: gold;
   }
 
   .linkedin-ico {
-    position: relative;
-    color: #221da8;
-    animation: icon-animation1 1s; 
-    animation-delay: 2s;
+    @include icon-styles(#221da8, icon-animation1, $icon-animation-delay);
   }
-  
+
   .github-ico {
-    position: relative; 
-    color: wheat;
-    animation: icon-animation2 1s; 
-    animation-delay: 2.2s;
+    @include icon-styles(wheat, icon-animation2, $icon-animation-delay + 0.2s);
   }
-  
+
   .gmail-ico {
-    position: relative;
-    color: #d94242;
-    animation: icon-animation3 1s; 
-    animation-delay: 2.4s;
+    @include icon-styles(#d94242, icon-animation3, $icon-animation-delay + 0.4s);
   }
-  
-   //KEYFRAMES PARA LA ANIMACION DE LOS ICONOS
-   @keyframes icon-animation1 {
-    0%, 100% {
-      top: 0;
-    }
-    25% {
-      top: -10px;
-    }
-  }
-  
-  @keyframes icon-animation2 {
-    0%, 100% {
-      top: 0;
-    }
-    25% {
-      top: -20px;
-    }
-  }
-  
-  @keyframes icon-animation3 {
-    0%, 100% {
-      top: 0;
-    }
-    25% {
-      top: -30px;
-    }
-  }
-  
+
+  @include keyframes(icon-animation1, -10px);
+  @include keyframes(icon-animation2, -20px);
+  @include keyframes(icon-animation3, -30px);
+
   .text {
     font-size: 11px;
     color: rgba(221, 221, 221, 0.5);
-    transition: color 0.3s ease;
+    transition: color $tooltip-transition-duration ease;
   }
 
-  //Defino el estilo para el tooltip al hacer hover sobre los iconos.....
+  // Estilo para el tooltip al hacer hover sobre los iconos
   .tooltip {
     position: absolute;
     top: 30px;
@@ -234,7 +201,7 @@
     padding: 5px 10px;
     border-radius: 5px;
     opacity: 0;
-    transition: opacity 0.3s ease, top 0.3s ease;
+    transition: opacity $tooltip-transition-duration ease, top $tooltip-transition-duration ease;
     pointer-events: none;
     max-height: 40px;
     overflow: hidden;
@@ -243,15 +210,15 @@
   }
 
   i:hover + .tooltip {
-    opacity: 1; /* Mostrar el tooltip en el hover */
-    top: -10px; /* Mover el tooltip arriba al hacer hover */
-    transition-delay: 0s; /* Eliminar cualquier retraso en la transición al hover */
+    opacity: 1; 
+    top: -10px; 
+    transition-delay: 0s; 
   }
 
   i:not(:hover) + .tooltip {
-    opacity: 0; /* Ocultar el tooltip al salir del hover */
-    top: -30px; /* Mantener el tooltip arriba al salir del hover */
-    transition-delay: 0.3s; /* Agregar un pequeño retraso para una transición suave al salir del hover */
+    opacity: 0; 
+    top: -30px;
+    transition-delay: $tooltip-transition-delay; 
   }
 }
 
