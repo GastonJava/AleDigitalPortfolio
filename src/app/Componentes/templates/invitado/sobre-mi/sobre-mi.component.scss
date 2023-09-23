@@ -151,10 +151,16 @@ $tooltip-transition-delay: 0.3s;
   cursor: pointer;
   position: relative;
 
+  a {
+    text-decoration: none; 
+  }
+
   i {
     font-size: $icon-size;
     transition: color $tooltip-transition-duration ease;
   }
+
+
 
   .linkedin-ico:hover {
     color: dodgerblue;
