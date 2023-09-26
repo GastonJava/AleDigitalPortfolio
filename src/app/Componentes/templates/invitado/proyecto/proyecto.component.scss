@@ -46,8 +46,6 @@
     display: flex;
     align-items: center;
     height: 250px;
-    //border-bottom: 1px solid #5f9ea02e;
-    //margin-bottom: 1rem;
     position: relative;
   }
 
@@ -58,15 +56,15 @@
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(to right, transparent, #5f9ea02e, transparent); /* Define el degradado lineal */
+    background: linear-gradient(to right, transparent, #5f9ea02e, transparent); 
   }
 
   .fila:first-child {
-    margin-top: 0; // Elimina el margen superior en la primera tarjeta de cada fila
+    margin-top: 0; 
   }
 
   .fila:not(:last-child) {
-    margin-bottom: 1rem; // Espacio vertical entre las filas de tarjetas
+    margin-bottom: 1rem; 
   }
 
   .fila:nth-child(odd){
@@ -84,14 +82,6 @@
     height: 100%;
   }
 
-  
-  /*
-  .columna h3,
-  .columna p {
-    @include flex-centrado;
-  }
-  */
-
   .columna .container-textos {
     display: flex;
     flex-direction: column;
@@ -106,8 +96,6 @@
   
   .columna h3 {
     font-size: 16px;
-    //font-weight: bold;
-    //color: #909297;
     color: #79baff;
     font-family: Arial, sans-serif;
   }
@@ -143,7 +131,6 @@
   }
   
   .cargar-mas {
-    //background-color:rgba(221, 221, 221, 0.11);
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -219,19 +206,17 @@
       margin-bottom: 1rem;
 
       //card sombra
-      background-color: #171B23; /* Fondo en tu color deseado */
+      background-color: #171B23; 
       border-radius: 8px;
-      //box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Sombra oscura */
-      //box-shadow: 4px 0px 8px rgba(0, 0, 0, 0.29);
       padding: 20px;
     }
   
     .fila:first-child {
-      margin-top: 0; // Elimina el margen superior en la primera tarjeta de cada fila
+      margin-top: 0; 
     }
   
     .fila:not(:last-child) {
-      margin-bottom: 2rem; // Espacio vertical entre las filas de tarjetas
+      margin-bottom: 2rem; 
     }
   
     .fila:nth-child(odd){
@@ -327,7 +312,6 @@
     }
     
     .cargar-mas {
-      //background-color:rgba(221, 221, 221, 0.11);
       color: #fff;
       padding: 10px 20px;
       border-radius: 5px;
