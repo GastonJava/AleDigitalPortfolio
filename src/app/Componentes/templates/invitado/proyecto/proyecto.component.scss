@@ -9,9 +9,10 @@
   
   .container-titulo {
     @include flex-centrado;
-    height: 50px;
+    height: 80px;
     width: 100%;
     color: #fff;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
   }
 
   .innertitulo {
@@ -37,7 +38,7 @@
   .alto-filas {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 90%;
     width: 100%;
   }
   
@@ -45,8 +46,19 @@
     display: flex;
     align-items: center;
     height: 250px;
-    border-bottom: 1px solid #5f9ea02e;
+    //border-bottom: 1px solid #5f9ea02e;
     //margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .fila::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #5f9ea02e, transparent); /* Define el degradado lineal */
   }
 
   .fila:first-child {
@@ -72,9 +84,18 @@
     height: 100%;
   }
 
+  
+  /*
   .columna h3,
   .columna p {
     @include flex-centrado;
+  }
+  */
+
+  .columna .container-textos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   
   .columna img {
@@ -84,24 +105,29 @@
   .columna > img {width: 42%; height: 60%; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);}
   
   .columna h3 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #909297;
+    font-size: 16px;
+    //font-weight: bold;
+    //color: #909297;
+    color: #79baff;
+    font-family: Arial, sans-serif;
   }
   
   .columna p {
     color: rgba(221, 221, 221, 0.568627451);
     margin-bottom: 10px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
   }
   
   .detalle-proyecto {
     display: unset;
     background-color: $proyecto-btn-bg3;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px;
     border: 1px solid #0b0909e5;
+    font-size: 13px;
   }
   
   .detalle-proyecto:hover {
@@ -112,7 +138,8 @@
     display: flex;
     justify-content: flex-end;
     padding: 10px;
-    width: 90%;
+    width: 100%;
+    height: 10%;
   }
   
   .cargar-mas {
