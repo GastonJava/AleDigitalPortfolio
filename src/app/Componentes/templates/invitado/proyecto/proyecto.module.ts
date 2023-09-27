@@ -4,6 +4,7 @@ import { ProyectoComponent } from './proyecto.component';
 import { DetallesProyectoComponent } from './detalles-proyecto/detalles-proyecto.component';
 import { ProyectoRouting } from './proyecto.routing';
 import { DetallesProyectoModule } from './detalles-proyecto/detalles-proyecto.module';
+import { SharedModule } from 'src/app/Shared/shared.module';
 
 
 
@@ -15,7 +16,8 @@ import { DetallesProyectoModule } from './detalles-proyecto/detalles-proyecto.mo
   imports: [
     CommonModule,
     ProyectoRouting,
-    DetallesProyectoModule
+    DetallesProyectoModule,
+    SharedModule
   ],
   exports: [
     ProyectoComponent

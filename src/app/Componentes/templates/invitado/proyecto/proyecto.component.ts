@@ -57,7 +57,9 @@ export class ProyectoComponent {
     this.router.navigate(['/proyecto/detalles-proyecto', id]);
   }
 
-  cargarMasFilas() { //Cargar Mas Proyectos
+  cargarMasFilas() {
+
+    //Cargar Mas Proyectos
     if (this.filasVisibles + this.filasPorCargar >= this.proyectoDatos.length) {
       // Mostrar todas las filas
       this.filasVisibles = this.proyectoDatos.length;
@@ -71,17 +73,27 @@ export class ProyectoComponent {
         this.mostrarCargarUno = true;
       }
     }
+
+    setTimeout(() => {
+    
+    }, 2000);
   }
 
-  cargarUnoMas() { // Cargar Siguiente
+  cargarUnoMas() {
+    // Cargar Siguiente
     this.filasVisibles += 1;
     if (this.filasVisibles >= this.proyectoDatos.length) {
       this.mostrarTodasLasFilas = true;
       this.mostrarCargarUno = false;
     }
+
+    setTimeout(() => {
+    
+
+    }, 2000);
   }
 
-  mostrarMenosFilas() { // Ocultar Proyectos
+  mostrarMenosFilas() {   
     this.filasVisibles = 2;
     this.mostrarTodasLasFilas = false;
 
@@ -114,6 +126,6 @@ export class ProyectoComponent {
       if (this.filasVisibles < this.proyectoDatos.length) {
         this.mostrarCargarUno = true;
       }
-    }, 1000);
+    }, 2000);
   }
 }

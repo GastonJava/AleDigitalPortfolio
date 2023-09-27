@@ -10,6 +10,7 @@ import { HardsoftModule } from './hardsoft/hardsoft.module';
 import { InvitadoRoutingModule } from './invitado-routing.module';
 import { ProyectoModule } from './proyecto/proyecto.module';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -19,7 +20,8 @@ import { ProyectoModule } from './proyecto/proyecto.module';
     HardsoftModule,
     ProyectoModule,
     FooterModule,
-    InvitadoRoutingModule
+    InvitadoRoutingModule,
+
   ],
   declarations: [
     InvitadoComponent,
