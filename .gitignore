@@ -43,11 +43,9 @@ testem.log
 .DS_Store
 Thumbs.db
 
-# firebase
+# firebasefiles
 .firebase
 /.firebase
+/.firebase/
 .hintrc
-#.firebaserc
-#.github/
-#firebase.json
 
