@@ -9,7 +9,7 @@
 
 
     
-    <div class="alto-filas">
+    <div class="alto-filas" [ngClass]="{'borde-verde': mostrarBordeVerde, 'borde-rojo': mostrarBordeRojo}">
       <div
         *ngFor="
           let proyecto of proyectoService.getProyectos();
@@ -49,17 +49,20 @@
     </div>
 
     <div class="footer">
-      <div *ngIf="mostrarCargarUno" class="cargar-mas" (click)="cargarUnoMas()">
+      <div *ngIf="mostrarCargarUno && proyectoService.filasVisibles < proyectoService.proyectoDatos.length"
+      class="cargar-mas"
+       (click)="cargarUnoMas()">
         Cargar Siguiente
       </div>
       <div
-        *ngIf="!mostrarTodasLasFilas"
+        *ngIf="!mostrarTodasLasFilas && proyectoService.filasVisibles < proyectoService.proyectoDatos.length"
         class="cargar-mas"
         (click)="cargarMasFilas()"
       >
         Cargar Más Proyectos
       </div>
       <div
+    
         *ngIf="mostrarTodasLasFilas"
         class="cargar-mas"
         (click)="mostrarMenosFilas()"

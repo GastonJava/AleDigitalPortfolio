@@ -9,50 +9,29 @@ import { ProyectoService } from 'src/app/Servicios/proyecto/proyecto.service';
   styleUrls: ['./proyecto.component.scss'],
 })
 export class ProyectoComponent {
-  //filasVisibles = 2; // Número de filas a mostrar inicialmente
-  //filasPorCargar = 2; // Número de filas a cargar cada vez
+  mostrarBordeVerde = false;
+  mostrarBordeRojo = false;
 
   mostrarTodasLasFilas = false;
   mostrarCargarUno = true;
 
-  /*
-  public proyectoDatos: any[] = [
-    {
-      id: 1,
-      nombre: 'Portfolio Ale',
-      tecnologia: 'Angular 13',
-      descripcion: 'Portfolio personal',
-      img: 'proyecto3.png',
-    },
-    {
-      id: 2,
-      nombre: 'Adoptapp',
-      tecnologia: 'Diseño UX/UI Figma',
-      descripcion: 'Diseño de app de adopcion de mascotas.',
-      img: 'img-adoptapp2.png',
-    },
-
-    {
-      id: 3,
-      nombre: 'nuevo proyecto 3',
-      tecnologia: 'nueva tegnologia 3',
-      descripcion: 'Diseño de app nuevo 3.',
-      img: 'img-adoptapp2.png',
-    },
-
-    {
-      id: 4,
-      nombre: 'nuevo proyecto 4',
-      tecnologia: 'nueva tegnologia 4',
-      descripcion: 'Diseño de app nuevo 4.',
-      img: 'proyecto3.png',
-    },
-  ]; */
-
+  
   constructor(
     private router: Router,
     public proyectoService: ProyectoService
   ) {}
+
+  ngOnInit() {
+    // Verificar si hay más de 2 proyectos para mostrar el borde verde
+    if (this.proyectoService.proyectoDatos.length > 2) {
+      this.mostrarBordeVerde = true;
+    }
+
+    // Verificar si no hay más filas para mostrar el borde rojo
+    if (this.proyectoService.proyectoDatos.length <= this.proyectoService.filasVisibles) {
+      this.mostrarBordeRojo = true;
+    }
+  }
 
   redirectToDetallesProyecto(id: number) {
     console.log('este seria el id ' + id);
