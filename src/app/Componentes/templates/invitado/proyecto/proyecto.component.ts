@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProyectoDataService } from 'src/app/Servicios/proyecto/detalles-proyecto/detalles-proyecto-data.service';
+import { ProyectoService } from 'src/app/Servicios/proyecto/proyecto.service';
 
 @Component({
   selector: 'app-proyecto',
@@ -8,12 +9,13 @@ import { ProyectoDataService } from 'src/app/Servicios/proyecto/detalles-proyect
   styleUrls: ['./proyecto.component.scss'],
 })
 export class ProyectoComponent {
-  filasVisibles = 2; // Número de filas a mostrar inicialmente
-  filasPorCargar = 2; // Número de filas a cargar cada vez
+  //filasVisibles = 2; // Número de filas a mostrar inicialmente
+  //filasPorCargar = 2; // Número de filas a cargar cada vez
 
   mostrarTodasLasFilas = false;
   mostrarCargarUno = true;
 
+  /*
   public proyectoDatos: any[] = [
     {
       id: 1,
@@ -45,11 +47,11 @@ export class ProyectoComponent {
       descripcion: 'Diseño de app nuevo 4.',
       img: 'proyecto3.png',
     },
-  ];
+  ]; */
 
   constructor(
     private router: Router,
-    private proyectoDataService: ProyectoDataService
+    public proyectoService: ProyectoService
   ) {}
 
   redirectToDetallesProyecto(id: number) {
@@ -58,74 +60,20 @@ export class ProyectoComponent {
   }
 
   cargarMasFilas() {
-
-    //Cargar Mas Proyectos
-    if (this.filasVisibles + this.filasPorCargar >= this.proyectoDatos.length) {
-      // Mostrar todas las filas
-      this.filasVisibles = this.proyectoDatos.length;
-      this.mostrarTodasLasFilas = true;
-      this.mostrarCargarUno = false;
-    } else {
-      this.filasVisibles += this.filasPorCargar;
-      this.mostrarTodasLasFilas = false;
-
-      if (this.filasVisibles < this.proyectoDatos.length) {
-        this.mostrarCargarUno = true;
-      }
-    }
-
-    setTimeout(() => {
-    
-    }, 2000);
+    this.proyectoService.cargarMasProyectos();
+    this.mostrarTodasLasFilas = this.proyectoService.filasVisibles === this.proyectoService.proyectoDatos.length;
+    this.mostrarCargarUno = this.proyectoService.filasVisibles < this.proyectoService.proyectoDatos.length;
   }
 
   cargarUnoMas() {
-    // Cargar Siguiente
-    this.filasVisibles += 1;
-    if (this.filasVisibles >= this.proyectoDatos.length) {
-      this.mostrarTodasLasFilas = true;
-      this.mostrarCargarUno = false;
-    }
-
-    setTimeout(() => {
-    
-
-    }, 2000);
+    this.proyectoService.cargarUnoMas();
+    this.mostrarTodasLasFilas = this.proyectoService.filasVisibles === this.proyectoService.proyectoDatos.length;
+    this.mostrarCargarUno = this.proyectoService.filasVisibles < this.proyectoService.proyectoDatos.length;
   }
 
   mostrarMenosFilas() {   
-    this.filasVisibles = 2;
-    this.mostrarTodasLasFilas = false;
-
-    if (this.filasVisibles < this.proyectoDatos.length) {
-      this.mostrarCargarUno = true;
-    }
-
-    const filas = document.querySelectorAll(
-      '.fila.visible'
-    ) as NodeListOf<HTMLElement>;
-
-    filas.forEach((fila) => {
-      fila.classList.add('deslizar-arriba');
-    });
-
-    setTimeout(() => {
-      filas.forEach((fila) => {
-        fila.style.paddingTop = '0';
-        fila.style.paddingBottom = '0';
-      });
-
-      filas.forEach((fila) => {
-        fila.classList.remove('visible');
-      });
-
-      filas.forEach((fila) => {
-        fila.classList.remove('deslizar-arriba');
-      });
-
-      if (this.filasVisibles < this.proyectoDatos.length) {
-        this.mostrarCargarUno = true;
-      }
-    }, 2000);
+    this.proyectoService.mostrarMenosFilas();
+    this.mostrarTodasLasFilas = this.proyectoService.filasVisibles === this.proyectoService.proyectoDatos.length;
+    this.mostrarCargarUno = this.proyectoService.filasVisibles < this.proyectoService.proyectoDatos.length;
   }
 }

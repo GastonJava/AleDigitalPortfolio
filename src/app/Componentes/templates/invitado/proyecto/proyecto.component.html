@@ -12,17 +12,20 @@
     <div class="alto-filas">
       <div
         *ngFor="
-          let proyecto of proyectoDatos.slice(0, filasVisibles);
+          let proyecto of proyectoService.getProyectos();
           let i = index
         "
         class="fila"
-        [ngClass]="{ visible: i < filasVisibles }"
+        [ngClass]="{ visible: i < proyectoService.filasVisibles }"
       >
         <div class="columna col-flex1">
+          <!--
           <img
             [src]="'../../../assets/Proyecto/' + proyecto.img"
             alt="Imagen del proyecto"
-          />
+          /> -->
+
+          <img [src]="proyectoService.getImageUrl(proyecto.img)" alt="Imagen del proyecto" />
         </div>
 
         <div class="columna col-flex2">
