@@ -5,9 +5,13 @@ import { ProyectoDataService } from 'src/app/Servicios/proyecto/detalles-proyect
 @Component({
   selector: 'app-proyecto',
   templateUrl: './proyecto.component.html',
-  styleUrls: ['./proyecto.component.scss']
+  styleUrls: ['./proyecto.component.scss'],
 })
 export class ProyectoComponent {
+  filasVisibles = 2; // Número de filas a mostrar inicialmente
+  filasPorCargar = 2; // Número de filas a cargar cada vez
+
+  mostrarTodasLasFilas = false;
 
   public proyectoDatos: any[] = [
     {
@@ -24,15 +28,39 @@ export class ProyectoComponent {
       descripcion: 'Diseño de app de adopcion de mascotas.',
       img: 'img-adoptapp2.png',
     },
-    // Agrega más objetos de proyecto según sea necesario
+
+    {
+      id: 3,
+      nombre: 'nuevo proyecto',
+      tecnologia: 'nueva tegnologia',
+      descripcion: 'Diseño de app nuevo.',
+      img: 'img-adoptapp2.png',
+    },
   ];
 
-  constructor(private router: Router, private proyectoDataService: ProyectoDataService) { }
+  constructor(
+    private router: Router,
+    private proyectoDataService: ProyectoDataService
+  ) {}
 
   redirectToDetallesProyecto(id: number) {
-    console.log("este seria el id "+id);
-    //this.proyectoDataService.setProyectoData(); // Almacena los datos del proyecto
+    console.log('este seria el id ' + id);
     this.router.navigate(['/proyecto/detalles-proyecto', id]);
   }
 
+  cargarMasFilas() {
+    if (this.filasVisibles + this.filasPorCargar >= this.proyectoDatos.length) {
+      // Mostrar todas las filas
+      this.filasVisibles = this.proyectoDatos.length;
+      this.mostrarTodasLasFilas = true;
+    } else {
+      // Mostrar más filas sin llegar a todas
+      this.filasVisibles += this.filasPorCargar;
+    }
+  }
+
+  mostrarMenosFilas() {
+    this.filasVisibles = 2;
+    this.mostrarTodasLasFilas = false;
+  }
 }

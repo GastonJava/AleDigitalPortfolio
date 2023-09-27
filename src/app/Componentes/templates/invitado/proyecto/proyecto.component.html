@@ -6,9 +6,8 @@
   </div>
   <div class="main">
     <div class="alto-filas">
-      <div *ngFor="let proyecto of proyectoDatos" class="fila">
+      <div *ngFor="let proyecto of proyectoDatos.slice(0, filasVisibles)" class="fila">
         <div class="columna col-flex1">
-          <!-- Aquí puedes usar proyecto.id para cargar la imagen desde tu archivo assets -->
           <img
             [src]="'../../../assets/Proyecto/' + proyecto.img"
             alt="Imagen del proyecto"
@@ -35,7 +34,7 @@
       <!-- Aquí se agregarán las filas y columnas de proyectos -->
     </div>
     <div class="footer">
-      <div class="cargar-mas">Cargar más</div>
-    </div>
+      <div *ngIf="!mostrarTodasLasFilas" class="cargar-mas" (click)="cargarMasFilas()">Cargar más</div>
+      <div *ngIf="mostrarTodasLasFilas" class="cargar-mas" (click)="mostrarMenosFilas()">Mostrar menos</div>
   </div>
 </div>
