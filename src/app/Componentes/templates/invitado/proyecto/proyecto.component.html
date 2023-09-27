@@ -6,7 +6,7 @@
   </div>
   <div class="main">
     <div class="alto-filas">
-      <div *ngFor="let proyecto of proyectoDatos.slice(0, filasVisibles)" class="fila">
+      <div *ngFor="let proyecto of proyectoDatos.slice(0, filasVisibles) let i = index" class="fila" [ngClass]="{'visible': i < filasVisibles}">
         <div class="columna col-flex1">
           <img
             [src]="'../../../assets/Proyecto/' + proyecto.img"
@@ -34,7 +34,8 @@
       <!-- Aquí se agregarán las filas y columnas de proyectos -->
     </div>
     <div class="footer">
-      <div *ngIf="!mostrarTodasLasFilas" class="cargar-mas" (click)="cargarMasFilas()">Cargar más</div>
-      <div *ngIf="mostrarTodasLasFilas" class="cargar-mas" (click)="mostrarMenosFilas()">Mostrar menos</div>
+      <div *ngIf="mostrarCargarUno" class="cargar-mas" (click)="cargarUnoMas()">Cargar Siguiente</div>
+      <div *ngIf="!mostrarTodasLasFilas" class="cargar-mas" (click)="cargarMasFilas()">Cargar Más Proyectos</div>
+      <div *ngIf="mostrarTodasLasFilas" class="cargar-mas" (click)="mostrarMenosFilas()">Ocultar Proyectos</div>
   </div>
 </div>

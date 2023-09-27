@@ -12,6 +12,7 @@ export class ProyectoComponent {
   filasPorCargar = 2; // Número de filas a cargar cada vez
 
   mostrarTodasLasFilas = false;
+  mostrarCargarUno = true;
 
   public proyectoDatos: any[] = [
     {
@@ -31,10 +32,18 @@ export class ProyectoComponent {
 
     {
       id: 3,
-      nombre: 'nuevo proyecto',
-      tecnologia: 'nueva tegnologia',
-      descripcion: 'Diseño de app nuevo.',
+      nombre: 'nuevo proyecto 3',
+      tecnologia: 'nueva tegnologia 3',
+      descripcion: 'Diseño de app nuevo 3.',
       img: 'img-adoptapp2.png',
+    },
+
+    {
+      id: 4,
+      nombre: 'nuevo proyecto 4',
+      tecnologia: 'nueva tegnologia 4',
+      descripcion: 'Diseño de app nuevo 4.',
+      img: 'proyecto3.png',
     },
   ];
 
@@ -48,19 +57,63 @@ export class ProyectoComponent {
     this.router.navigate(['/proyecto/detalles-proyecto', id]);
   }
 
-  cargarMasFilas() {
+  cargarMasFilas() { //Cargar Mas Proyectos
     if (this.filasVisibles + this.filasPorCargar >= this.proyectoDatos.length) {
       // Mostrar todas las filas
       this.filasVisibles = this.proyectoDatos.length;
       this.mostrarTodasLasFilas = true;
+      this.mostrarCargarUno = false;
     } else {
-      // Mostrar más filas sin llegar a todas
       this.filasVisibles += this.filasPorCargar;
+      this.mostrarTodasLasFilas = false;
+
+      if (this.filasVisibles < this.proyectoDatos.length) {
+        this.mostrarCargarUno = true;
+      }
     }
   }
 
-  mostrarMenosFilas() {
+  cargarUnoMas() { // Cargar Siguiente
+    this.filasVisibles += 1;
+    if (this.filasVisibles >= this.proyectoDatos.length) {
+      this.mostrarTodasLasFilas = true;
+      this.mostrarCargarUno = false;
+    }
+  }
+
+  mostrarMenosFilas() { // Ocultar Proyectos
     this.filasVisibles = 2;
     this.mostrarTodasLasFilas = false;
+
+    if (this.filasVisibles < this.proyectoDatos.length) {
+      this.mostrarCargarUno = true;
+    }
+
+    const filas = document.querySelectorAll(
+      '.fila.visible'
+    ) as NodeListOf<HTMLElement>;
+
+    filas.forEach((fila) => {
+      fila.classList.add('deslizar-arriba');
+    });
+
+    setTimeout(() => {
+      filas.forEach((fila) => {
+        fila.style.paddingTop = '0';
+        fila.style.paddingBottom = '0';
+      });
+
+      filas.forEach((fila) => {
+        fila.classList.remove('visible');
+      });
+
+      filas.forEach((fila) => {
+        fila.classList.remove('deslizar-arriba');
+      });
+
+      if (this.filasVisibles < this.proyectoDatos.length) {
+        this.mostrarCargarUno = true;
+      }
+    }, 1000);
   }
 }

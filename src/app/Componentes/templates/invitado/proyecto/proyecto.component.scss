@@ -1,5 +1,20 @@
 @import "../../../../Variables/global-variable.scss";
 
+.deslizar-arriba {
+  animation: deslizar-arriba 1s ease-in-out;
+}
+
+@keyframes deslizar-arriba {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
 .container {
   @include flex-centrado;
   flex-direction: column;
@@ -15,7 +30,6 @@
 
     .innertitulo {
       width: 90%;
-
       h3 {
         color: #909297;
         margin-bottom: 0;
@@ -42,6 +56,13 @@
         align-items: center;
         height: 250px;
         position: relative;
+
+        /* animacion */
+        transition: all 0.7s ease-in-out;
+        &.visible {
+          
+        }
+        /* animacion*/
 
         &::after {
           content: "";
