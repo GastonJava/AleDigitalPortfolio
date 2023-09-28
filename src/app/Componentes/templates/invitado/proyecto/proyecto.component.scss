@@ -1,15 +1,12 @@
 @import "../../../../Variables/global-variable.scss";
 
-
 .borde-verde {
-  border-bottom: 2px solid green; /* Puedes ajustar el grosor y el color del borde verde según tus preferencias */
+  border-bottom: 2px solid green; 
 }
 
 .borde-rojo {
-  border-bottom: 2px solid red; /* Puedes ajustar el grosor y el color del borde rojo según tus preferencias */
+  border-bottom: 2px solid red; 
 }
-
-
 
 .deslizar-arriba {
   animation: deslizar-arriba 1s ease-in-out;

@@ -5,24 +5,23 @@
     </div>
   </div>
   <div class="main">
-    
-    <div class="alto-filas" [ngClass]="{'borde-verde': mostrarBordeVerde, 'borde-rojo': mostrarBordeRojo}">
+    <div
+      class="alto-filas"
+      [ngClass]="{
+        'borde-verde': mostrarBordeVerde,
+        'borde-rojo': mostrarBordeRojo
+      }"
+    >
       <div
-        *ngFor="
-          let proyecto of proyectoService.getProyectos();
-          let i = index
-        "
+        *ngFor="let proyecto of proyectoService.getProyectos(); let i = index"
         class="fila"
-        [ngClass]="{ visible: i < proyectoService.filasVisibles }"
+        [ngClass]="{ visible: i < proyectoService.getFilasVisibles() }"
       >
         <div class="columna col-flex1">
-          <!--
           <img
-            [src]="'../../../assets/Proyecto/' + proyecto.img"
+            [src]="proyectoService.getImageUrl(proyecto.img)"
             alt="Imagen del proyecto"
-          /> -->
-
-          <img [src]="proyectoService.getImageUrl(proyecto.img)" alt="Imagen del proyecto" />
+          />
         </div>
 
         <div class="columna col-flex2">
@@ -46,20 +45,37 @@
     </div>
 
     <div class="footer">
-      <div *ngIf="mostrarCargarUno && proyectoService.filasVisibles < proyectoListaService.getProyectoData().length"
-      class="cargar-mas"
-       (click)="cargarUnoMas()">
+
+
+      <div class="proyectos-sin-abrir">
+        Quedan {{ proyectosSinAbrir }} proyectos sin abrir.
+      </div>
+      
+
+
+      <div
+        *ngIf="
+          mostrarCargarUno &&
+          proyectoService.getFilasVisibles() <
+            proyectoListaService.getProyectoData().length
+        "
+        class="cargar-mas"
+        (click)="cargarUnoMas()"
+      >
         Cargar Siguiente
       </div>
       <div
-        *ngIf="!mostrarTodasLasFilas && proyectoService.filasVisibles < proyectoListaService.getProyectoData().length"
+        *ngIf="
+          !mostrarTodasLasFilas &&
+          proyectoService.getFilasVisibles() <
+            proyectoListaService.getProyectoData().length
+        "
         class="cargar-mas"
         (click)="cargarMasFilas()"
       >
         Cargar Más Proyectos
       </div>
       <div
-    
         *ngIf="mostrarTodasLasFilas"
         class="cargar-mas"
         (click)="mostrarMenosFilas()"
@@ -68,6 +84,4 @@
       </div>
     </div>
   </div>
-
-  <!--- AGREGAREMOS UN SPINNER PARA LA CARGA DE PROYECTOS -->
 </div>
