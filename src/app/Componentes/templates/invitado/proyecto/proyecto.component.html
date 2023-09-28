@@ -46,10 +46,26 @@
 
     <div class="footer">
 
+      <div class="container-proyectos-sin-abrir">
 
-      <div class="proyectos-sin-abrir">
-        Quedan {{ proyectosSinAbrir }} proyectos sin abrir.
+        <!--
+        <div class="proyectos-sin-abrir">
+          Quedan {{ proyectosSinAbrir }} proyectos sin abrir.
+        </div> -->
+
+        <div class="proyectos-sin-abrir-indicador">
+
+          <div class="numero-circulo">
+            {{ proyectosSinAbrir }}
+
+            <span class="flecha-abajo"></span>
+          </div>
+
+          <div class="texto-indicador">Proyectos sin abrir</div>
+        </div>
+
       </div>
+      
       
 
 
@@ -63,6 +79,9 @@
         (click)="cargarUnoMas()"
       >
         Cargar Siguiente
+
+         <!-- Agregar un margen al elemento que contiene el texto -->
+         <div style="margin-right: 10px;"></div>
       </div>
       <div
         *ngIf="

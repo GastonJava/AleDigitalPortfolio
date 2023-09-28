@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProyectoService } from 'src/app/Servicios/proyecto/proyecto.service';
 import { ProyectoListaService } from 'src/app/Servicios/proyecto/proyectoLista.service';
@@ -20,10 +20,12 @@ export class ProyectoComponent implements OnInit {
   constructor(
     private router: Router,
     public proyectoService: ProyectoService,
-    public proyectoListaService: ProyectoListaService
+    public proyectoListaService: ProyectoListaService,
+    private el: ElementRef, private renderer: Renderer2
   ) {}
 
   ngOnInit() {
+
     // Verificar si hay más de 2 proyectos para mostrar el borde verde
     if (this.proyectoListaService.getProyectoData().length > 2) {
       this.mostrarBordeVerde = true;

@@ -1,11 +1,11 @@
 @import "../../../../Variables/global-variable.scss";
 
 .borde-verde {
-  border-bottom: 2px solid green; 
+  border-bottom: 2px solid #00800045;
 }
 
 .borde-rojo {
-  border-bottom: 2px solid red; 
+  border-bottom: 2px solid red;
 }
 
 .deslizar-arriba {
@@ -68,7 +68,6 @@
         /* animacion */
         transition: all 0.7s ease-in-out;
         &.visible {
-          
         }
         /* animacion*/
 
@@ -154,10 +153,79 @@
 
     .footer {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-evenly;
       padding: 10px;
       width: 100%;
       height: 10%;
+
+      .container-proyectos-sin-abrir {
+        @include flex-centrado();
+        width: 40%;
+        background: #00800008;
+
+        .proyectos-sin-abrir-indicador {
+          display: flex;
+          align-items: center;
+        }
+
+        .numero-circulo {
+          width: 24px; /* Tamaño del círculo */
+          height: 24px; /* Tamaño del círculo */
+          border-radius: 50%;
+          background-color: #ff5733; /* Puedes ajustar el color */
+          color: white;
+          font-size: 14px; /* Tamaño del número */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: 8px; /* Espacio entre el círculo y el texto */
+          position: relative; /* Añadimos posición relativa */
+        }
+
+        /*
+        .numero-circulo::before {
+          content: "";
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent; 
+          border-right: 6px solid transparent; 
+          border-top: 8px solid #ff5733; 
+          position: absolute; 
+          bottom: -12px; 
+          left: 50%; 
+          transform: translateX(-50%); 
+        
+        } */
+
+        .flecha-abajo {
+          content: "";
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent; /* Tamaño de la flecha */
+          border-right: 6px solid transparent; /* Tamaño de la flecha */
+          border-top: 8px solid #ff5733; /* Color de la flecha (igual al círculo) */
+          position: absolute; /* Añadimos posición absoluta */
+          bottom: -12px; /* Ajustamos la posición vertical para que esté debajo del círculo */
+          left: 50%; /* Centramos horizontalmente */
+          transform: translateX(-50%); /* Centramos horizontalmente */
+          //animation: arrowBounce 8s ease-in-out infinite;
+          //animation: arrowBounce 1s ease-in-out infinite 6s;
+        }
+
+       
+        .texto-indicador {
+          color: #6794ec; /* Color del texto */
+          font-size: 14px; /* Tamaño del texto */
+        }
+
+        .proyectos-sin-abrir {
+          //color: #4aa44aad;
+          color: white; // Cambiar a blanco cuando el fondo es verde
+
+          //color: #4aa44aad;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); // Agregar sombra al texto
+        }
+      }
 
       .cargar-mas {
         color: #fff;
