@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProyectoDataService } from 'src/app/Servicios/proyecto/detalles-proyecto/detalles-proyecto-data.service';
 import { ProyectoService } from 'src/app/Servicios/proyecto/proyecto.service';
+import { ProyectoListaService } from 'src/app/Servicios/proyecto/proyectoLista.service';
+
+/*  llevaremos la lista a un servicio aparte */
 
 @Component({
   selector: 'app-proyecto',
@@ -18,17 +20,18 @@ export class ProyectoComponent {
   
   constructor(
     private router: Router,
-    public proyectoService: ProyectoService
+    public proyectoService: ProyectoService,
+    public proyectoListaService: ProyectoListaService
   ) {}
 
   ngOnInit() {
     // Verificar si hay más de 2 proyectos para mostrar el borde verde
-    if (this.proyectoService.proyectoDatos.length > 2) {
+    if (this.proyectoListaService.getProyectoData().length > 2) {
       this.mostrarBordeVerde = true;
     }
 
     // Verificar si no hay más filas para mostrar el borde rojo
-    if (this.proyectoService.proyectoDatos.length <= this.proyectoService.filasVisibles) {
+    if (this.proyectoListaService.getProyectoData().length <= this.proyectoService.filasVisibles) {
       this.mostrarBordeRojo = true;
     }
   }
@@ -40,19 +43,19 @@ export class ProyectoComponent {
 
   cargarMasFilas() {
     this.proyectoService.cargarMasProyectos();
-    this.mostrarTodasLasFilas = this.proyectoService.filasVisibles === this.proyectoService.proyectoDatos.length;
-    this.mostrarCargarUno = this.proyectoService.filasVisibles < this.proyectoService.proyectoDatos.length;
+    this.mostrarTodasLasFilas = this.proyectoService.filasVisibles === this.proyectoListaService.getProyectoData().length;
+    this.mostrarCargarUno = this.proyectoService.filasVisibles < this.proyectoListaService.getProyectoData().length;
   }
 
   cargarUnoMas() {
     this.proyectoService.cargarUnoMas();
-    this.mostrarTodasLasFilas = this.proyectoService.filasVisibles === this.proyectoService.proyectoDatos.length;
-    this.mostrarCargarUno = this.proyectoService.filasVisibles < this.proyectoService.proyectoDatos.length;
+    this.mostrarTodasLasFilas = this.proyectoService.filasVisibles === this.proyectoListaService.getProyectoData().length;
+    this.mostrarCargarUno = this.proyectoService.filasVisibles < this.proyectoListaService.getProyectoData().length;
   }
 
   mostrarMenosFilas() {   
     this.proyectoService.mostrarMenosFilas();
-    this.mostrarTodasLasFilas = this.proyectoService.filasVisibles === this.proyectoService.proyectoDatos.length;
-    this.mostrarCargarUno = this.proyectoService.filasVisibles < this.proyectoService.proyectoDatos.length;
+    this.mostrarTodasLasFilas = this.proyectoService.filasVisibles === this.proyectoListaService.getProyectoData().length;
+    this.mostrarCargarUno = this.proyectoService.filasVisibles < this.proyectoListaService.getProyectoData().length;
   }
 }

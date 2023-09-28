@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class ProyectoDataService {
+export class ProyectoListaService {
 
-  public proyectoDatos: any[] = [
+  private proyectoDatos: any[] = [
     {
       id: 1,
       nombre: 'Portfolio Ale',
