@@ -166,6 +166,7 @@
         .proyectos-sin-abrir-indicador {
           display: flex;
           align-items: center;
+          width: 90%;
         }
 
         .numero-circulo {
@@ -198,25 +199,39 @@
         } */
 
         .flecha-abajo {
-          content: "";
-          width: 0;
-          height: 0;
-          border-left: 6px solid transparent; /* Tamaño de la flecha */
-          border-right: 6px solid transparent; /* Tamaño de la flecha */
-          border-top: 8px solid #ff5733; /* Color de la flecha (igual al círculo) */
-          position: absolute; /* Añadimos posición absoluta */
-          bottom: -12px; /* Ajustamos la posición vertical para que esté debajo del círculo */
-          left: 50%; /* Centramos horizontalmente */
-          transform: translateX(-50%); /* Centramos horizontalmente */
-          //animation: arrowBounce 8s ease-in-out infinite;
-          //animation: arrowBounce 1s ease-in-out infinite 6s;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent; 
+          border-top: 8px solid #ff5733; 
+          position: absolute; 
+          bottom: -10px;
+          transform: translateX(-50%);
+          animation: moverFlecha 1s infinite paused;
+        }
+        
+        @keyframes moverFlecha {
+          0% {
+            transform: translateY(0); /* La flecha está en su posición original */
+          }
+          100% {
+            transform: translateY(6px); /* La flecha se desplaza hacia abajo 10px */
+          }
+        }
+        
+
+        .texto-indicador {
+          color: #6794ec;
+          font-size: 14px;
         }
 
-       
-        .texto-indicador {
-          color: #6794ec; /* Color del texto */
-          font-size: 14px; /* Tamaño del texto */
+        /* PROBANDO ESTILOS PARA EL TEXTO */
+        .estilo-sutil {
+          font-size: 14px;
+          font-weight: normal;
+          text-transform: uppercase;
+          color: #666;
+          font-family: 'Helvetica', sans-serif;
         }
+         /* PROBANDO ESTILOS PARA EL TEXTO */
 
         .proyectos-sin-abrir {
           //color: #4aa44aad;

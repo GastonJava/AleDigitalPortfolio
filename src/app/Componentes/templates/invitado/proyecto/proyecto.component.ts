@@ -9,6 +9,12 @@ import { ProyectoListaService } from 'src/app/Servicios/proyecto/proyectoLista.s
   styleUrls: ['./proyecto.component.scss'],
 })
 export class ProyectoComponent implements OnInit {
+
+  private intervalID: any; // Variable para almacenar el ID del setInterval
+  private timeoutID: any; // Variable para almacenar el ID del setTimeout
+
+  animacionEnEjecucion: boolean = true;
+
   proyectosSinAbrir!: number;
 
   mostrarBordeVerde = false;
@@ -26,6 +32,8 @@ export class ProyectoComponent implements OnInit {
 
   ngOnInit() {
 
+    this.iniciarAnimacion();
+
     // Verificar si hay más de 2 proyectos para mostrar el borde verde
     if (this.proyectoListaService.getProyectoData().length > 2) {
       this.mostrarBordeVerde = true;
@@ -42,6 +50,18 @@ export class ProyectoComponent implements OnInit {
     // Calcular proyectos sin abrir en la inicialización
     this.proyectosSinAbrir = this.calcularProyectosSinAbrir();
   }
+  
+  //animacion de la flecha-abajo =================================================
+
+  iniciarAnimacion() {
+    const flecha = document.querySelector('.flecha-abajo') as HTMLElement;
+    this.intervalID = setInterval(() => {
+      flecha.style.animationPlayState = 'running'; 
+      this.timeoutID = setTimeout(() => {
+        flecha.style.animationPlayState = 'paused'; 
+      }, 5000);
+    }, 12000);
+  } 
 
   redirectToDetallesProyecto(id: number) {
     console.log('este sería el id ' + id);
@@ -84,5 +104,10 @@ export class ProyectoComponent implements OnInit {
 
     // Actualizar proyectos sin abrir
     this.proyectosSinAbrir = this.calcularProyectosSinAbrir();
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.intervalID);
+    clearTimeout(this.timeoutID); 
   }
 }
