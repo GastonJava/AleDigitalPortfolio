@@ -4,8 +4,16 @@
   border-bottom: 2px solid #00800045;
 }
 
+.background-verde {
+  background-color: #00800045;
+}
+
+.background-rojo {
+  background-color: #ff000026;
+}
+
 .borde-rojo {
-  border-bottom: 2px solid red;
+  border-bottom: 2px solid #ff000026;
 }
 
 .deslizar-arriba {
@@ -173,7 +181,7 @@
           width: 24px; /* Tamaño del círculo */
           height: 24px; /* Tamaño del círculo */
           border-radius: 50%;
-          background-color: #ff5733; /* Puedes ajustar el color */
+          //background-color: #ff5733; /* Puedes ajustar el color */
           color: white;
           font-size: 14px; /* Tamaño del número */
           display: flex;
@@ -182,21 +190,6 @@
           margin-right: 8px; /* Espacio entre el círculo y el texto */
           position: relative; /* Añadimos posición relativa */
         }
-
-        /*
-        .numero-circulo::before {
-          content: "";
-          width: 0;
-          height: 0;
-          border-left: 6px solid transparent; 
-          border-right: 6px solid transparent; 
-          border-top: 8px solid #ff5733; 
-          position: absolute; 
-          bottom: -12px; 
-          left: 50%; 
-          transform: translateX(-50%); 
-        
-        } */
 
         .flecha-abajo {
           border-left: 6px solid transparent;
@@ -217,7 +210,6 @@
           }
         }
         
-
         .texto-indicador {
           color: #6794ec;
           font-size: 14px;

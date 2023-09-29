@@ -7,10 +7,7 @@
   <div class="main">
     <div
       class="alto-filas"
-      [ngClass]="{
-        'borde-verde': mostrarBordeVerde,
-        'borde-rojo': mostrarBordeRojo
-      }"
+      [ngClass]="getColorClass('borde')"
     >
       <div
         *ngFor="let proyecto of proyectoService.getProyectos(); let i = index"
@@ -48,10 +45,10 @@
 
       <div class="container-proyectos-sin-abrir">
         <div class="proyectos-sin-abrir-indicador">
-          <div class="numero-circulo">
+          <div class="numero-circulo" [ngClass]="getColorClass('background')">
             {{ proyectosSinAbrir }}
 
-            <span class="flecha-abajo"></span>
+            <div class="flecha-abajo" [hidden]="proyectosSinAbrir <= 0"></div>
           </div>
 
           <div class="estilo-sutil">Proyectos Por Ver</div>

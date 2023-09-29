@@ -17,8 +17,8 @@ export class ProyectoComponent implements OnInit {
 
   proyectosSinAbrir!: number;
 
-  mostrarBordeVerde = false;
-  mostrarBordeRojo = false;
+  //mostrarBordeVerde = false;
+  //mostrarBordeRojo = false;
 
   mostrarTodasLasFilas = false;
   mostrarCargarUno = true;
@@ -36,7 +36,7 @@ export class ProyectoComponent implements OnInit {
 
     // Verificar si hay más de 2 proyectos para mostrar el borde verde
     if (this.proyectoListaService.getProyectoData().length > 2) {
-      this.mostrarBordeVerde = true;
+      //this.mostrarBordeVerde = true;
     }
 
     // Verificar si no hay más filas para mostrar el borde rojo
@@ -44,7 +44,7 @@ export class ProyectoComponent implements OnInit {
       this.proyectoListaService.getProyectoData().length <=
       this.proyectoService.getFilasVisibles()
     ) {
-      this.mostrarBordeRojo = true;
+      //this.mostrarBordeRojo = true;
     }
 
     // Calcular proyectos sin abrir en la inicialización
@@ -81,6 +81,16 @@ export class ProyectoComponent implements OnInit {
   mostrarMenosFilas() {
     this.proyectoService.mostrarMenosFilas();
     this.actualizarEstado();
+  }
+
+/*
+  getColorClass(): string {
+    return this.proyectosSinAbrir > 0 ? 'borde-verde' : 'borde-rojo';
+  }
+*/
+
+  getColorClass(className: string): string {
+    return this.proyectosSinAbrir > 0 ? className + '-verde' : className + '-rojo';
   }
 
   private calcularProyectosSinAbrir(): number {
