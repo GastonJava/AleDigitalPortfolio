@@ -20,6 +20,14 @@ export class SeccionTituloDatosService {
       subtitulo: 'Gaston Alejandro', 
       enlace: '#'
     },
+
+    {
+      id: 3,
+      titulo: 'Pagina web de eventos',
+      span_titulo: 'Aevents',
+      subtitulo: 'Gaston Alejandro', 
+      enlace: 'https://dancing-kataifi-1451df.netlify.app'
+    },
   ];
 
   constructor() {}

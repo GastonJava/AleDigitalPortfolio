@@ -23,11 +23,20 @@ export class SeccionPuntosdebilesDataService {
       puntosdebilesExp:
         'Al navegar entre diferentes paginas puede resultar confuso el flujo de navegacion.',
     },
+
+    {
+      id: 3,
+      puntosdebilesNavegacion:
+        'La ausencia de una función de búsqueda eficaz hizo que encontrar eventos específicos fuera una tarea difícil y frustrante.',
+      puntosdebilesInteraccion:
+        'Muchos usuarios encontraron las interfaces de usuario complejas y poco intuitivas, lo que dificulta la participación activa en los eventos.',
+      puntosdebilesExp:
+        'Interfaces de usuario confusas y poco intuitivas pueden dificultar la navegación y frustrar a los usuarios, especialmente aquellos que son nuevos en la plataforma.',
+    },
   ];
 
   constructor() {}
-
-  getSeccionPuntosdebiles(){
+  getSeccionPuntosdebiles() {
     return this.seccionPuntosdebiles;
   }
 }

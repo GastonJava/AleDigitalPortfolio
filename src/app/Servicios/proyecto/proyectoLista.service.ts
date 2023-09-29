@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProyectoListaService {
-
   private proyectoDatos: any[] = [
     {
       id: 1,
@@ -20,30 +19,28 @@ export class ProyectoListaService {
       descripcion: 'Diseño de app de adopcion de mascotas.',
       img: 'img-adoptapp2.png',
     },
-    
+
     {
       id: 3,
-      nombre: 'nuevo proyecto 3',
-      tecnologia: 'nueva tegnologia 3',
-      descripcion: 'Diseño de app nuevo 3.',
-      img: 'img-adoptapp2.png',
+      nombre: 'AEvents - Mindhub',
+      tecnologia: 'Javascript Vanilla',
+      descripcion: 'Pagina Web de eventos',
+      img: 'aevents_portada.png',
     },
+
+    /*
     {
       id: 4,
-      nombre: 'nuevo proyecto 4',
-      tecnologia: 'nueva tegnologia 4',
-      descripcion: 'Diseño de app nuevo 4.',
-      img: 'proyecto3.png',
-    },
-    
-
+      nombre: 'Hockey page - Mindhub',
+      tecnologia: 'Javascript Vanilla',
+      descripcion: 'Pagina Web de equipo de hockey',
+      img: 'img-adoptapp2.png',
+    }, */
   ];
-    
 
-constructor() { }
+  constructor() {}
 
-getProyectoData(){
-  return this.proyectoDatos;
-}
-
+  getProyectoData() {
+    return this.proyectoDatos;
+  }
 }

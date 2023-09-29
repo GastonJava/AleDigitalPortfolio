@@ -15,11 +15,16 @@ export class SeccionInvestigacionDataService {
       investigacionTitulo:
         'Descubrí que los usuarios objetivo son personas que buscan una raza de mascota específica para adoptar.',
     },
+    {
+      id: 3,
+      investigacionTitulo:
+        'Los resultados revelaron varias tendencias y patrones en el comportamiento del usuario: Se observó que los usuarios valoran la interacción social en las plataformas de eventos en línea.',
+    },
   ];
 
   constructor() {}
 
-  getSeccionInvestigacion(){
+  getSeccionInvestigacion() {
     return this.seccionInvestigacion;
   }
 }

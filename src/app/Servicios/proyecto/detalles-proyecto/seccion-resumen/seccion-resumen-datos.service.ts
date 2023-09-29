@@ -24,6 +24,16 @@ export class SeccionResumenDatosService {
       img2: 'adoptapp2.png',
       // Datos de la sección Resumen para el proyecto 1
     },
+
+    {
+      id: 3,
+      resumenTitulo:
+        'Aevents, es una pagina web donde se podra reibir informacion sobre eventos actuales, pasados y futuros.',
+      resumenDuracion: 'Desde marzo 2022 hasta abril 2022',
+      img1: 'aevents1.png',
+      img2: 'aevents2.png',
+      // Datos de la sección Resumen para el proyecto 1
+    },
   ];
 
   constructor() {}
