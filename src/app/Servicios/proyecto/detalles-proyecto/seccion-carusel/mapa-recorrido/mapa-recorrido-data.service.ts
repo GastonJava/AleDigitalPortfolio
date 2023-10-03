@@ -49,6 +49,25 @@ export class MapaRecorridoDataService {
         'Enviar recordatorio de encuentro.',
         'Mostrar direccion en el mapa.'
       ]
+    },
+    {
+      id: 3,
+      actions: [
+        'Explorar eventos.',
+        'Comprar boletos.',
+        'Asistir a eventos.',
+      ],
+      tasklist: [
+        'Ir a eventos por categoría o ubicación.',
+        'Ver detalles y comprar boletos con facilidad.',
+        'Participar en foros y conectar con otros asistentes.',
+      ],
+      feelings: ['😄', '😃', '😕'],
+      improvements: [
+        'Agregar filtro de búsqueda por tipo de evento o fecha para una experiencia más rápida.',
+        'Mostrar detalles de artistas y temas para atraer a más participantes.',
+        'Enviar recordatorios y actualizaciones del evento para mantener a los asistentes informados.',
+      ]
     }
   ];
 

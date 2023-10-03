@@ -30,6 +30,20 @@ export class MetasDataService {
       frustracion_li3: 'No hay una seccion con Preguntas y respuestas FAQ.',
       cita: 'No Compres Mascotas, Adopta',
     },
+
+    {
+      id: 3,
+      metas_li1: 'Aspira a organizar eventos que dejen una impresión duradera en los asistentes.',
+      metas_li2: 'Quiere expandir su red de contactos en la industria de eventos.',
+      metas_li3: 'Tiene como meta establecer su propia marca en la industria de eventos.',
+
+      frustracion_li1: 'La falta de presupuesto a veces limita su capacidad para realizar eventos tan grandes o impactantes como le gustaría.',
+      frustracion_li2: 'La falta de colaboración o apoyo de ciertos proveedores, artistas o socios potenciales a veces puede obstaculizar sus esfuerzos.',
+      frustracion_li3: 'La naturaleza competitiva de la industria de eventos puede ser frustrante.',
+      cita: 'En cada evento, veo una oportunidad para crear algo verdaderamente especial.',
+    },
+
+    
   ];
 
   constructor() { }

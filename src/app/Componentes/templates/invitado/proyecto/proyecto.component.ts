@@ -17,9 +17,6 @@ export class ProyectoComponent implements OnInit {
 
   proyectosSinAbrir!: number;
 
-  //mostrarBordeVerde = false;
-  //mostrarBordeRojo = false;
-
   mostrarTodasLasFilas = false;
   mostrarCargarUno = true;
 
