@@ -15,10 +15,21 @@
         [ngClass]="{ visible: i < proyectoService.getFilasVisibles() }"
       >
         <div class="columna col-flex1">
-          <img
-            [src]="proyectoService.getImageUrl(proyecto.img)"
-            alt="Imagen del proyecto"
-          />
+          
+          <ng-container *ngIf="!proyectoService.getProyectos().length; else proyectosTemplate">
+ 
+            <p>No hay proyectos disponibles.</p>
+          </ng-container>
+          <ng-template #proyectosTemplate>
+            <div class="imagen-proyecto">
+              <img [src]="proyectoService.getImageUrl(proyecto.img)" alt="Imagen del proyecto">
+              <div class="overlay">
+                <a href="{{ proyecto.link }}" class="ver-proyecto-link" target="_blank">
+                  <i class='bx bx-link-alt' ></i> Ver el proyecto en vivo
+                </a>
+              </div>
+            </div>
+          </ng-template> 
         </div>
 
         <div class="columna col-flex2">
@@ -37,7 +48,6 @@
           </div>
         </div>
       </div>
-
       <!-- Aquí se agregarán las filas y columnas de proyectos -->
     </div>
 

@@ -118,6 +118,71 @@
       flex-direction: column;
       height: 100%;
 
+      .imagen-proyecto {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        max-width: 80%;
+      }
+
+      .imagen-proyecto img {
+        width: 100%;
+        height: 150px;
+        transition: filter 0.3s ease;
+        object-fit: fill;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        color: white;
+        transition: opacity 0.3s ease;
+      }
+
+      .imagen-proyecto:hover {
+        transform: scale(1.05);
+      }
+
+      .imagen-proyecto:hover img {
+        filter: brightness(0.8);
+      }
+
+      .imagen-proyecto:hover .overlay {
+        opacity: 1;
+      }
+
+      .ver-proyecto-link {
+        text-decoration: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: rgba(0, 0, 0);
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .ver-proyecto-link i {
+        margin-right: 8px;
+      }
+
       .container-textos {
         display: flex;
         flex-direction: column;
@@ -178,59 +243,53 @@
         }
 
         .numero-circulo {
-          width: 24px; /* Tamaño del círculo */
-          height: 24px; /* Tamaño del círculo */
+          width: 24px;
+          height: 24px;
           border-radius: 50%;
-          //background-color: #ff5733; /* Puedes ajustar el color */
           color: white;
-          font-size: 14px; /* Tamaño del número */
+          font-size: 14px;
           display: flex;
           justify-content: center;
           align-items: center;
-          margin-right: 8px; /* Espacio entre el círculo y el texto */
-          position: relative; /* Añadimos posición relativa */
+          margin-right: 8px;
+          position: relative;
         }
 
         .flecha-abajo {
           border-left: 6px solid transparent;
-          border-right: 6px solid transparent; 
-          border-top: 8px solid #ff5733; 
-          position: absolute; 
+          border-right: 6px solid transparent;
+          border-top: 8px solid #ff5733;
+          position: absolute;
           bottom: -10px;
           transform: translateX(-50%);
           animation: moverFlecha 1s infinite paused;
         }
-        
+
         @keyframes moverFlecha {
           0% {
-            transform: translateY(0); /* La flecha está en su posición original */
+            transform: translateY(0);
           }
           100% {
-            transform: translateY(6px); /* La flecha se desplaza hacia abajo 10px */
+            transform: translateY(6px);
           }
         }
-        
+
         .texto-indicador {
           color: #6794ec;
           font-size: 14px;
         }
 
-        /* PROBANDO ESTILOS PARA EL TEXTO */
         .estilo-sutil {
           font-size: 14px;
           font-weight: normal;
           text-transform: uppercase;
           color: #666;
-          font-family: 'Helvetica', sans-serif;
+          font-family: "Helvetica", sans-serif;
         }
-         /* PROBANDO ESTILOS PARA EL TEXTO */
 
         .proyectos-sin-abrir {
-          //color: #4aa44aad;
-          color: white; // Cambiar a blanco cuando el fondo es verde
-
-          //color: #4aa44aad;
-          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); // Agregar sombra al texto
+          color: white;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
       }
 

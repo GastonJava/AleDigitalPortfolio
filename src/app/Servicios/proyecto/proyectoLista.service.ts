@@ -11,6 +11,7 @@ export class ProyectoListaService {
       tecnologia: 'Angular 13',
       descripcion: 'Portfolio personal',
       img: 'proyecto3.png',
+      link: 'https://gastonjava.github.io/compufolio'
     },
     {
       id: 2,
@@ -18,6 +19,7 @@ export class ProyectoListaService {
       tecnologia: 'Diseño UX/UI Figma',
       descripcion: 'Diseño de app de adopcion de mascotas.',
       img: 'img-adoptapp2.png',
+      link: 'https://xd.adobe.com/view/37942285-98da-49b0-be9c-f294a9c49e68-62c7/'
     },
 
     {
@@ -26,6 +28,7 @@ export class ProyectoListaService {
       tecnologia: 'Javascript Vanilla',
       descripcion: 'Pagina Web de eventos',
       img: 'aevents_portada.png',
+      link: 'https://dancing-kataifi-1451df.netlify.app/'
     },
 
     /*
