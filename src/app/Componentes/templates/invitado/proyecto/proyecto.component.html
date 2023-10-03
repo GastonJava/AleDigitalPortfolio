@@ -5,14 +5,31 @@
     </div>
   </div>
   <div class="main">
-    <div class="alto-filas">
-      <div *ngFor="let proyecto of proyectoDatos" class="fila">
+    <div
+      class="alto-filas"
+      [ngClass]="getColorClass('borde')"
+    >
+      <div
+        *ngFor="let proyecto of proyectoService.getProyectos(); let i = index"
+        class="fila"
+        [ngClass]="{ visible: i < proyectoService.getFilasVisibles() }"
+      >
         <div class="columna col-flex1">
-          <!-- Aquí puedes usar proyecto.id para cargar la imagen desde tu archivo assets -->
-          <img
-            [src]="'../../../assets/Proyecto/' + proyecto.img"
-            alt="Imagen del proyecto"
-          />
+          
+          <ng-container *ngIf="!proyectoService.getProyectos().length; else proyectosTemplate">
+ 
+            <p>No hay proyectos disponibles.</p>
+          </ng-container>
+          <ng-template #proyectosTemplate>
+            <div class="imagen-proyecto">
+              <img [src]="proyectoService.getImageUrl(proyecto.img)" alt="Imagen del proyecto">
+              <div class="overlay">
+                <a href="{{ proyecto.link }}" class="ver-proyecto-link" target="_blank">
+                  <i class='bx bx-link-alt' ></i> Ver el proyecto en vivo
+                </a>
+              </div>
+            </div>
+          </ng-template> 
         </div>
 
         <div class="columna col-flex2">
@@ -31,11 +48,55 @@
           </div>
         </div>
       </div>
-
       <!-- Aquí se agregarán las filas y columnas de proyectos -->
     </div>
+
     <div class="footer">
-      <div class="cargar-mas">Cargar más</div>
+
+      <div class="container-proyectos-sin-abrir">
+        <div class="proyectos-sin-abrir-indicador">
+          <div class="numero-circulo" [ngClass]="getColorClass('background')">
+            {{ proyectosSinAbrir }}
+
+            <div class="flecha-abajo" [hidden]="proyectosSinAbrir <= 0"></div>
+          </div>
+
+          <div class="estilo-sutil">Proyectos Por Ver</div>
+        </div>
+      </div>
+
+      <div
+        *ngIf="
+          mostrarCargarUno &&
+          proyectoService.getFilasVisibles() <
+            proyectoListaService.getProyectoData().length
+        "
+        class="cargar-mas"
+        (click)="cargarUnoMas()"
+      >
+        Cargar Siguiente
+
+         <!-- Agregar un margen al elemento que contiene el texto -->
+         <div style="margin-right: 10px;"></div>
+      </div>
+      <div
+        *ngIf="
+          !mostrarTodasLasFilas &&
+          proyectoService.getFilasVisibles() <
+            proyectoListaService.getProyectoData().length
+        "
+        class="cargar-mas"
+        (click)="cargarMasFilas()"
+      >
+        Cargar Más Proyectos
+      </div>
+      <div
+        *ngIf="mostrarTodasLasFilas"
+        class="cargar-mas"
+        (click)="mostrarMenosFilas()"
+      >
+        Ocultar Proyectos
+      </div>
     </div>
   </div>
 </div>

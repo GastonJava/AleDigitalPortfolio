@@ -15,6 +15,11 @@ export class RecorridoDataService {
       recorridoTitulo:
         'Mapa de recorrido para oportunidades de mejora del proyecto.',
     },
+    {
+      id: 3,
+      recorridoTitulo:
+        'Mapa de recorrido para oportunidades de mejora del caso de estudio.',
+    },
   ];
 
   constructor() {}

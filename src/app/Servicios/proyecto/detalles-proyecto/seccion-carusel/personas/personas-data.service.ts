@@ -17,7 +17,17 @@ export class PersonasDataService {
       id: 2,
       nombre: 'Natalia',
       nombre_span: 'J',
-      subtitulo: 'Estudiante de Marketing que necesita una pagina de adopción donde poder adoptar una mascota.',
+      subtitulo:
+        'Estudiante de Marketing que necesita una pagina de adopción donde poder adoptar una mascota.',
+    },
+    {
+      id: 3,
+      nombre: 'Jorge',
+      nombre_span: 'L',
+      subtitulo:
+        'Joge Lujan es un apasionado organizador de eventos ' + 
+        'con una sólida formación en planificación de eventos y gestión de proyectos,' +
+        ' Necesita reducir la carga administrativa mediante la gestión de ventas de boletos y listas de asistentes.',
     },
   ];
 

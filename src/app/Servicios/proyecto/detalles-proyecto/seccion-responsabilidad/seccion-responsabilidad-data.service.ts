@@ -19,6 +19,13 @@ export class SeccionResponsabilidadDataService {
       responsabilidadTitulo:
         'Realizar diseño de esquemas en papel y digitales junto al desarrollo web adaptativo.',
     },
+    {
+      id: 3,
+      mifuncionTitulo:
+        'Diseñador de UX que dirige el diseño de la pagina “Aevents" desde el concepto hasta la entrega.',
+      responsabilidadTitulo:
+        'Realizar diseño de esquemas en papel y digitales junto al desarrollo web adaptativo.',
+    },
   ];
 
   constructor() {}
